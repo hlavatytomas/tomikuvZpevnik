@@ -1,0 +1,147 @@
+\documentclass[onecolumn,10pt]{article}
+% \documentclass[twocolumn,10pt]{article}
+\usepackage[utf8]{inputenc}  % Enable UTF-8 typing
+\usepackage{emptypage}
+% \usepackage[OT2,T1]{fontenc} 
+\usepackage[hidelinks]{hyperref}        % Interactive PDF
+% \usepackage[xetex]{hyperref}        % Interactive PDF
+% \usepackage[dvipdfm]{hyperref}
+\usepackage[top=20.0mm, bottom=20.0mm, left=10.0mm, right=10.0mm]{geometry}
+%\usepackage{savetrees}      % Enable to save paper!
+
+%% Songbook packages
+\usepackage[chorded]{songs}
+
+% \usepackage{minted}
+% \usepackage{musixtex}
+
+%% Song aesthetics
+% \noversenumbers
+\setlength\baselineadj{0.0em}
+\renewcommand{\colbotglue}    % Compact verses
+             {0pt plus .5\textheight minus 0pt}
+
+
+%% Song index settings
+\newindex{titleidx}{titleidx} % Index name
+\indexsongsas{titleidx}{\thepage}
+
+% \renewcommand{\stitlefont}{
+  % \Large\bf\baselineskip=20pt\lineskiplimit=0pt
+% }
+\renewcommand{\stitlefont}{
+  \Large\bf
+}
+\makeatletter\renewcommand\showauthors{\setbox\SB@box\hbox{\itshape\sfcode`.\@m\large\songauthors}\ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi}\makeatother
+
+\renewcommand{\lyricfont}{\sffamily}
+
+% \renewcommand{\printchord}[1]{\rmfamily\large\bf#1}
+\renewcommand{\printchord}[1]{\sffamily\large\bf#1}
+
+\renewcommand{\idxtitlefont}{\rmfamily\large}
+
+\renewcommand{\everychorus}{\textnote{\textbf{R:}}}
+
+\renewcommand{\printversenum}[1]{\textbf{#1: }}
+\setlength{\versenumwidth}{7pt}
+% \renewcommand{\chorusjustify}{\justifycenter}
+
+% \baselineadj=-200pt plus 2pt minus 2pt
+\baselineadj=-200pt 
+
+% \renewcommand{\clineparams}{
+  % \baselineskip=1pt
+%   \lineskiplimit=1pt
+%   \lineskip=1pt
+% }
+\setlength{\cbarwidth}{1pt}
+\setlength{\sbarheight}{0pt}
+
+% \renewcommand\makeprelude{%
+%   \resettitles
+%   \centering
+%   {\Large\bfseries\thesongnum. \songtitle\par
+%    \nexttitle\foreachtitle{(\songtitle)\par}}%
+%   \extendprelude
+% }
+
+% \versesep=10pt plus 2pt minus 2pt
+\versesep=10pt
+% \sepindexesfalse
+
+%% Author, songbook title, year, etc.
+\title{\textbf{\Huge All you need is quitar \dots \quad\quad\quad\quad \\[1cm] \quad\quad\quad \dots and few chords}}
+\author{\Large Tomíkův zpěvník}
+\date{\the\year}
+
+\begin{document}
+\songcolumns{2}
+% % \onecolumn
+% \songcolumns{1}
+% \flushbottom
+% \twocolumn[\LARGE\centering My Songs]
+%% Front page: title, etc.
+  \maketitle
+  \thispagestyle{empty}
+  % \vspace{4cm}
+
+%% Songbook owner's signature
+%   \begin{center}
+%     {\huge{This songbook belongs to}}\\
+%     \vspace{1cm}
+% {\begin{music}\trebleclef\end{music}\huge{\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots}\begin{music}\trebleclef\end{music}}
+%    \end{center}
+\clearpage
+%% Include rules section
+% \include{rules}
+
+%% Display table of content + song index
+% \setcounter{tocdepth}{1}
+% \tableofcontents
+\showindex[1]{Songs}{titleidx}
+% \showindex{Songs}{titlfile}
+% \showindex{Lactani}{titleidx}
+
+\include{songs/index}
+\flushbottom
+\end{document}
+
+% \documentclass{article}
+
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+
+% \usepackage{songs}
+
+% \newindex{titleidx}{titleidx}
+% \newauthorindex{authidx}{authidx}
+
+% \begin{document}
+
+% \showindex[2]{Índex de títols}{titleidx}
+% \showindex[2]{Índex de d'autors}{authidx}
+
+% \begin{songs}{titleidx,authidx}
+
+% \beginsong{Mi alma glorifica al Señor, mi Dios}[by={Tradicional}]
+
+% \begin{chorus}
+% Mi \[E]alma glorifica al Señor, mi \[B7]Dios,
+% \[C#m]gózase mi espíritu en mi Salva\[G#m]dor.
+% \[A]El es mi ale\[B7]gría, \[E]es mi pleni\[C#m]tud,
+% \[A6]El es todo \[B7]para \[E]mí.
+% \end{chorus}
+
+% \begin{verse}
+% \[G#] Ha mi\[C#m]rado la ba\[G#]jeza de su es\[C#m]clava,
+% muy di\[B7]chosa me dirán todos los \[E]pueblos
+% porque en \[C#7]mí ha hecho grandes mara\[F#m]villas
+% El que \[C#m]todo puede, \[G#]cuyo Nombre es \[C#m]Santo. \[B7]
+% \end{verse}
+
+% \endsong
+
+% \end{songs}
+
+% \end{document}
