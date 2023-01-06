@@ -98,7 +98,13 @@ class SongBook:
 
         # prepare page to load
         pageStrW = input('Link for song: ')
-        page = urllib.request.urlopen(pageStrW)
+        # page = urllib.request.urlopen(pageStrW)
+
+        req = urllib.request.Request(
+            url=pageStrW, 
+            headers={'User-Agent': 'Mozilla/5.0'}
+        )
+        page = urllib.request.urlopen(req)
         pageStr = (page.read()).decode('utf-8')
 
 

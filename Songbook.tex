@@ -6,7 +6,7 @@
 \usepackage[hidelinks]{hyperref}        % Interactive PDF
 % \usepackage[xetex]{hyperref}        % Interactive PDF
 % \usepackage[dvipdfm]{hyperref}
-\usepackage[top=20.0mm, bottom=20.0mm, left=10.0mm, right=10.0mm]{geometry}
+\usepackage[landscape,top=15.0mm, bottom=15.0mm, left=15.0mm, right=15.0mm]{geometry}
 %\usepackage{savetrees}      % Enable to save paper!
 
 %% Songbook packages
@@ -19,7 +19,7 @@
 % \noversenumbers
 \setlength\baselineadj{0.0em}
 \renewcommand{\colbotglue}    % Compact verses
-             {0pt plus .5\textheight minus 0pt}
+             {2pt plus .5\textheight minus 2pt}
 
 
 %% Song index settings
@@ -34,7 +34,7 @@
 }
 \makeatletter\renewcommand\showauthors{\setbox\SB@box\hbox{\itshape\sfcode`.\@m\large\songauthors}\ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi}\makeatother
 
-\renewcommand{\lyricfont}{\sffamily}
+\renewcommand{\lyricfont}{\sffamily\large}
 
 % \renewcommand{\printchord}[1]{\rmfamily\large\bf#1}
 \renewcommand{\printchord}[1]{\sffamily\large\bf#1}
@@ -55,7 +55,7 @@
 %   \lineskiplimit=1pt
 %   \lineskip=1pt
 % }
-\setlength{\cbarwidth}{1pt}
+\setlength{\cbarwidth}{2pt}
 \setlength{\sbarheight}{0pt}
 
 % \renewcommand\makeprelude{%
@@ -76,7 +76,7 @@
 \date{\the\year}
 
 \begin{document}
-\songcolumns{2}
+\songcolumns{3}
 % % \onecolumn
 % \songcolumns{1}
 % \flushbottom
