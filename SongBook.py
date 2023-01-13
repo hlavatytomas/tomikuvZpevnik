@@ -5,6 +5,7 @@
 from calendar import c
 import urllib.request
 import os
+import re
 
 
 class SongBook:
@@ -109,14 +110,30 @@ class SongBook:
 
 
         # name of the song
-        nameI = pageStr.find("tag.setTargeting('song'")
-        nameIF = pageStr[nameI:].find(")")
-        name = pageStr[nameI:nameI+nameIF].replace("tag.setTargeting('song'",'').split('"')[1]
+        try:
+            nameI = pageStr.find("tag.setTargeting('song'")
+            nameIF = pageStr[nameI:].find(")")
+            name = pageStr[nameI:nameI+nameIF].replace("tag.setTargeting('song'",'').split('"')[1]
 
-        # artist
-        nameI = pageStr.find("tag.setTargeting('artist',")
-        nameIF = pageStr[nameI:].find(")")
-        artist = pageStr[nameI:nameI+nameIF].replace("tag.setTargeting('artist',",'').split('"')[1]
+            # artist
+            nameI = pageStr.find("tag.setTargeting('artist',")
+            nameIF = pageStr[nameI:].find(")")
+            artist = pageStr[nameI:nameI+nameIF].replace("tag.setTargeting('artist',",'').split('"')[1]
+        
+        except:
+            byArtI = pageStr.find('"byArtist": {')
+            byArtE = pageStr[byArtI:].find("}")
+            nameI = pageStr[byArtI:].find('"name":"')
+            nameE = pageStr[nameI+byArtI+8:].find('"')
+            artist = pageStr[nameI+byArtI:8+nameI+byArtI+nameE].replace('"name":"','')
+            # print(artist)
+            byArtI = byArtI + byArtE
+            nameI = pageStr[byArtI:].find('"name":"')
+            nameE = pageStr[nameI+byArtI+8:].find('"')
+            name = pageStr[nameI+byArtI:8+nameI+byArtI+nameE].replace('"name":"','')
+            # print(name)
+            # artist = 
+            # print([m.start() for m in re.finditer("}", pageStr[byArtI:])])
 
         # prepare raw text
         # delete bordel
@@ -128,8 +145,8 @@ class SongBook:
                     canWanish = False
             if 'quot' in toDel[i] and canWanish:
                 pageStr = pageStr.replace(toDel[i],'')
-        cuttedText = pageStr.replace('&','').replace('iacute;','í').replace('oacute;','ó').replace('uacute;','ú').replace('aacute;','á').replace('eacute;','é').replace('yacute;','ý').replace('scaron;','š').replace('Scaron;','Š').replace('ocirc;','o').replace('auml;','a')
-    
+        cuttedText = pageStr.replace('&','').replace('iacute;','í').replace('oacute;','ó').replace('uacute;','ú').replace('aacute;','á').replace('eacute;','é').replace('yacute;','ý').replace('scaron;','š').replace('Scaron;','Š').replace('ocirc;','o').replace('auml;','a').replace('rsquo;',"'")
+
         while not songAdded:            
             #find indices of the first and last Word
             zacatekI = cuttedText.find(firstWord)
@@ -264,10 +281,10 @@ class SongBook:
                             buffer += finLst[j+i]
                         else:
                             break
-                    finLst2.append(buffer)
+                    finLst2.append(buffer.replace('rsquo;',"'"))
                     i = i + j
                 else:
-                    finLst2.append(line)
+                    finLst2.append(line.replace('rsquo;',"'"))
                     i = i + 1
         
 
