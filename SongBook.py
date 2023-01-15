@@ -360,10 +360,10 @@ class SongBook:
                 if 'o' in wTD:
                     ownS = (input('Write owner ("H"onzik, "D"omca or "L"ucka): '))
                     if 'H' in ownS:
-                        owner = 'Ž_HonzikSongs/' 
+                        owner = 'ŽŽ_HonzikSongs/' 
                     elif 'D' in ownS:
-                        owner = 'Ž_DomcaSongs/' 
+                        owner = 'ŽŽ_DomcaSongs/' 
                     elif 'L' in ownS:
-                        owner = 'Ž_LuckaSongs/' 
+                        owner = 'ŽŽ_LuckaSongs/' 
 
 
