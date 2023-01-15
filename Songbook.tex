@@ -1,4 +1,4 @@
-\documentclass[onecolumn,10pt]{article}
+\documentclass[onecolumn,12pt]{article}
 % \documentclass[twocolumn,10pt]{article}
 \usepackage[utf8]{inputenc}  % Enable UTF-8 typing
 \usepackage{emptypage}
@@ -6,57 +6,90 @@
 \usepackage[hidelinks]{hyperref}        % Interactive PDF
 % \usepackage[xetex]{hyperref}        % Interactive PDF
 % \usepackage[dvipdfm]{hyperref}
-\usepackage[landscape,top=15.0mm, bottom=15.0mm, left=15.0mm, right=15.0mm]{geometry}
+% \usepackage[landscape,top=10.0mm, bottom=15.0mm, left=10.0mm, right=10.0mm]{geometry}
+\usepackage[top=10.0mm, bottom=15.0mm, left=15.0mm, right=10.0mm]{geometry}
 %\usepackage{savetrees}      % Enable to save paper!
 
 %% Songbook packages
 \usepackage[chorded]{songs}
 
+\renewcommand{\familydefault}{\sfdefault}
+
 % \usepackage{minted}
 % \usepackage{musixtex}
 
+% -- font nazvu obsahu
+\renewcommand{\idxtitlefont}{\sffamily\large}
+
+% -- font cisla pisnicky (vedle nazvu)
+% \renewcommand{\thesongnum}{A\arabic{songnum}}   % -- neco okolo
+\renewcommand{\printsongnum}[1]{\sffamily\LARGE#1}    % -- font
+% \setlength{\songnumwidth}{0.5cm}                % -- sirka ohraniceni
+
+% -- font autora 
+\makeatletter\renewcommand\showauthors{\setbox\SB@box\hbox{\sfcode`.\@m\large\songauthors}\ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi}\makeatother
+
+
+% -- font nazev pisne
+\renewcommand{\stitlefont}{\bf\sffamily\Large}
+
+% -- font pisne sloky
+\renewcommand{\lyricfont}{\sffamily\large}
+\renewcommand{\everychorus}{\vspace{0.2cm}} % -- na zacatku refrenu
+% \renewcommand{\everychorus}{{\textnote{\textbf{R:}}}} % -- na zacatku refrenu
+% \renewcommand{\printversenum}[1]{\textbf{}}     % -- na zacatku sloky
+\renewcommand{\printversenum}[1]{\textbf{\hspace{-0.6cm}#1:\,}}     % -- na zacatku sloky
+% \renewcommand{\chorusfont}{\it}               % -- font refrenu, podobne sloka atd
+
+% -- font akordu 
+\renewcommand{\printchord}[1]{\sffamily\bf\large#1}
+
+% -- mezery
+% -- posunuti sloky doprava
+\setlength{\versenumwidth}{0pt}
+
+% -- mezera mezi refrenem a slokou
+\versesep=17pt plus 14pt minus -14pt
+
+% -- zacatek pisne 
+% \beforepostludeskip=-15pt plus 15pt minus 0pt
+
+% -- odskok akord 
+\baselineadj=-20pt plus 12pt minus 0pt
+
+% -- cary
+\setlength{\cbarwidth}{2pt}
+\setlength{\sbarheight}{0pt}
+
+
+% -- penalties
+% \interlinepenalty=-1000
+% \brkpenalty=100000
+
+% \renewcommand{\clineparams}{
+%   \baselineskip=0pt
+%   \lineskiplimit=0pt
+%   \lineskip=0pt
+% }
+
 %% Song aesthetics
 % \noversenumbers
-\setlength\baselineadj{0.0em}
-\renewcommand{\colbotglue}    % Compact verses
-             {2pt plus .5\textheight minus 2pt}
+% \setlength\baselineadj{0.0em}
+% \renewcommand{\colbotglue}{2pt plus .5\textheight minus 2pt}
 
 
 %% Song index settings
 \newindex{titleidx}{titleidx} % Index name
 \indexsongsas{titleidx}{\thepage}
 
-% \renewcommand{\stitlefont}{
-  % \Large\bf\baselineskip=20pt\lineskiplimit=0pt
-% }
-\renewcommand{\stitlefont}{
-  \Large\bf
-}
-\makeatletter\renewcommand\showauthors{\setbox\SB@box\hbox{\itshape\sfcode`.\@m\large\songauthors}\ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi}\makeatother
-
-\renewcommand{\lyricfont}{\sffamily\large}
-
-% \renewcommand{\printchord}[1]{\rmfamily\large\bf#1}
-\renewcommand{\printchord}[1]{\sffamily\large\bf#1}
-
-\renewcommand{\idxtitlefont}{\rmfamily\large}
-
-\renewcommand{\everychorus}{\textnote{\textbf{R:}}}
-
-\renewcommand{\printversenum}[1]{\textbf{#1: }}
-\setlength{\versenumwidth}{7pt}
 % \renewcommand{\chorusjustify}{\justifycenter}
-
-% \baselineadj=-200pt plus 2pt minus 2pt
-\baselineadj=-200pt 
 
 % \renewcommand{\clineparams}{
   % \baselineskip=1pt
 %   \lineskiplimit=1pt
 %   \lineskip=1pt
 % }
-\setlength{\cbarwidth}{2pt}
-\setlength{\sbarheight}{0pt}
+
 
 % \renewcommand\makeprelude{%
 %   \resettitles
@@ -65,9 +98,6 @@
 %    \nexttitle\foreachtitle{(\songtitle)\par}}%
 %   \extendprelude
 % }
-
-% \versesep=10pt plus 2pt minus 2pt
-\versesep=10pt
 % \sepindexesfalse
 
 %% Author, songbook title, year, etc.
@@ -76,7 +106,7 @@
 \date{\the\year}
 
 \begin{document}
-\songcolumns{3}
+\songcolumns{2}
 % % \onecolumn
 % \songcolumns{1}
 % \flushbottom
@@ -99,7 +129,7 @@
 %% Display table of content + song index
 % \setcounter{tocdepth}{1}
 % \tableofcontents
-\showindex[1]{Songs}{titleidx}
+\showindex[2]{Songs}{titleidx}
 % \showindex{Songs}{titlfile}
 % \showindex{Lactani}{titleidx}
 
