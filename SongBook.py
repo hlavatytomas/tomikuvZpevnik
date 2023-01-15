@@ -358,10 +358,12 @@ class SongBook:
                 if 't' in wTD:
                     transpose = int(input('Write transposition: '))
                 if 'o' in wTD:
-                    ownS = (input('Write owner ("H"onzik or "D"omca): '))
+                    ownS = (input('Write owner ("H"onzik, "D"omca or "L"ucka): '))
                     if 'H' in ownS:
                         owner = 'Ž_HonzikSongs/' 
                     elif 'D' in ownS:
                         owner = 'Ž_DomcaSongs/' 
+                    elif 'L' in ownS:
+                        owner = 'Ž_LuckaSongs/' 
 
 
