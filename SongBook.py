@@ -88,6 +88,7 @@ class SongBook:
 
         # default parameters
         songAdded = False
+        owner = ''          # default owner --->me
         firstWord = '<div class="js-store"'
         lastWord = '<'
         capo = ''
@@ -313,7 +314,8 @@ class SongBook:
             # nameF = name.replace('\\u00ed','i').replace('\\u00e1','a').replace('\\u00fa','u').replace('\\u0159','r').replace('\\u0161','s')
 
             print('\nI have prepared song %s by %s, capo %s'%(name,artist,capo))
-            print('First line = %s\nPre-Last line = %s\nLast line = %s'%(finLst[0],finLst[-2],finLst[-1]))
+            print('First line = %s\nPre-Last line = %s\nLast line = %s\nowner = %s'%(finLst[0],finLst[-2],finLst[-1],owner))
+            
             wTD = input('Do you want to change:'  
                             + '\n\t["1"]. word' 
                             + '\n\t["l"]. (last) word' 
@@ -321,9 +323,10 @@ class SongBook:
                             + '\n\t["i"] name of the author/interpret' 
                             + '\n\t["c"] capo'
                             + '\n\t["t"] transpose'
+                            + '\n\t["o"] owner'
                             + '\nor ["n"] nothing?')
             if wTD == 'n':
-                with open('songs/%s.tex'%nameF.replace(' ','_'),'w') as fl:
+                with open('songs/%s%s.tex'%(owner,nameF.replace(' ','_')),'w') as fl:
                     fl.writelines('\\sclearpage')
                     fl.writelines('\\beginsong{%s}[by={%s}]\n'%(name,artist))
                     if playingNow == False:
@@ -354,5 +357,11 @@ class SongBook:
                     capo = input('Write capo: ')
                 if 't' in wTD:
                     transpose = int(input('Write transposition: '))
+                if 'o' in wTD:
+                    ownS = (input('Write owner ("H"onzik or "D"omca): '))
+                    if 'H' in ownS:
+                        owner = 'Ž_HonzikSongs/' 
+                    elif 'D' in ownS:
+                        owner = 'Ž_DomcaSongs/' 
 
 
