@@ -29,10 +29,7 @@ class SongBook:
             if (('00-title' == nazev or 'index' == nazev or 'ZZ-endsongs' == nazev)):
                 pass
             else:
-                try:
-                    self.songsLst.append(nazev.split('-')[1])
-                except:
-                    self.songsLst.append(nazev)
+                self.songsLst.append(nazev)
         self.songsLst = sorted(self.songsLst)
         self.nSongs = len(self.songsLst)
     
@@ -80,10 +77,10 @@ class SongBook:
         os.system('./link-doc.sh %s.pdf > log'%self.songBookTex)
         os.system('texlua ./songidx.lua titleidx.sxd titleidx.sbx > log')
         # os.system('./songidx titleidx.sxd titleidx.sbx > log')
-        os.system('lualatex --shell-escape %s.tex > log'%self.songBookTex)
+        os.system('pdflatex --shell-escape %s.tex > log'%self.songBookTex)
         os.system('texlua ./songidx.lua titleidx.sxd titleidx.sbx > log')
         # os.system('./songidx titleidx.sxd titleidx.sbx > log')
-        os.system('lualatex --shell-escape %s.tex > log'%self.songBookTex)
+        os.system('pdflatex --shell-escape %s.tex > log'%self.songBookTex)
         print('end of not important stuff\n')
 
     def addSong(self):
