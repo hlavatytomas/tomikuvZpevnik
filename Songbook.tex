@@ -23,7 +23,7 @@
 
 % -- font cisla pisnicky (vedle nazvu)
 % \renewcommand{\thesongnum}{A\arabic{songnum}}   % -- neco okolo
-\renewcommand{\printsongnum}[1]{\sffamily\LARGE#1}    % -- font
+\renewcommand{\printsongnum}[1]{\sffamily\LARGE\hyperlink{page.2}#1}    % -- font
 % \setlength{\songnumwidth}{0.5cm}                % -- sirka ohraniceni
 
 % -- font autora 
@@ -31,7 +31,7 @@
 
 
 % -- font nazev pisne
-\renewcommand{\stitlefont}{\bf\sffamily\Large}
+\renewcommand{\stitlefont}{\bf\sffamily\Large\hyperlink{page.2}}
 
 % -- font pisne sloky
 \renewcommand{\lyricfont}{\sffamily\large}
@@ -60,6 +60,7 @@
 % -- cary
 \setlength{\cbarwidth}{2pt}
 \setlength{\sbarheight}{0pt}
+
 
 
 % -- penalties
@@ -130,6 +131,7 @@
 % \setcounter{tocdepth}{1}
 % \tableofcontents
 \showindex[2]{Songs}{titleidx}
+
 % \showindex{Songs}{titlfile}
 % \showindex{Lactani}{titleidx}
 
