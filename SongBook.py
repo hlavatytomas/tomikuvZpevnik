@@ -354,7 +354,7 @@ class SongBook:
             </head>
             <body>
             <p>
-            <a href="index.html">Index</a>
+            <a href="../index.html">Index</a>
             </p>
             <div>
             <button onclick="transpose(-1)">Transpose +1</button>
@@ -362,7 +362,7 @@ class SongBook:
             <button onclick="transpose(+1)">Transpose +1</button>
             </div>
             '''
-        with open(f"html/index.html","w", encoding='utf-8') as index:
+        with open(f"index.html","w", encoding='utf-8') as index:
             index.write('''<!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -393,7 +393,7 @@ class SongBook:
                 with open(f"html/{songFile}.html","w", encoding='utf-8') as html:
                     html.write(content)
              
-                index.write(f'<p><a href="{songFile}.html">{re.sub("_"," ",songFile)}</a></p>')
+                index.write(f'<p><a href="html/{songFile}.html">{re.sub("_"," ",songFile)}</a></p>')
 
             index.write("</body></html>")
                 
