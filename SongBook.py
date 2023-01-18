@@ -5,7 +5,7 @@
 from calendar import c
 import urllib.request
 import os
-
+import re
 
 class SongBook:
     def __init__(self,songsDir,songBookTex):
@@ -341,4 +341,59 @@ class SongBook:
                 if 't' in wTD:
                     transpose = int(input('Write transposition: '))
 
+    def createHTML(self):
+        htmlHead = r'''<!DOCTYPE html>
+            <html lang="en">
 
+            <head>
+            <title>\1</title>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="style.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="transpose.js"></script>
+            </head>
+            <body>
+            <p>
+            <a href="index.html">Index</a>
+            </p>
+            <div>
+            <button onclick="transpose(-1)">Transpose +1</button>
+            <div class="trans" id="trans" style="text-align:center">0</div>
+            <button onclick="transpose(+1)">Transpose +1</button>
+            </div>
+            '''
+        with open(f"html/index.html","w", encoding='utf-8') as index:
+            index.write('''<!DOCTYPE html>
+                <html lang="en">
+                <head>
+                <title>Philosophy</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+                <h3>Písničky</h3>
+                '''
+            )
+            #Convert all songs to html 
+            for songFile in self.songsLst:
+                with open(f"songs/{songFile}.tex","r", encoding='utf-8') as tex:
+                    content=tex.read()
+
+                content = re.sub(r'\\beginverse', '<p class="verse">', content)
+                content = re.sub(r'\\endverse', '</p class="verse">', content)
+                content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1>\1</h1>\n<h3>\2</h3>', content,1)
+                content = re.sub(r'\\\[(.)(#*)([^\]]*)\]',r'<span class="chord" tone="\1\2" type="\3"><span class="innerchord">\1\2\3</span></span>',content)
+                content = re.sub(r'\\brk',r'<br>',content)
+                content += "</body></html>"
+                content = re.sub(r'\\beginchorus', '<p class="chorus">', content)
+                content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
+                content = re.sub(r'\\capo{([^}]*)}', r'</p style="font-weight:bold">CAPO \1 </p>', content)
+                content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
+
+                with open(f"html/{songFile}.html","w", encoding='utf-8') as html:
+                    html.write(content)
+             
+                index.write(f'<p><a href="{songFile}.html">{re.sub("_"," ",songFile)}</a></p>')
+
+            index.write("</body></html>")
+                
