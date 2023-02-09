@@ -6,6 +6,7 @@ from calendar import c
 import urllib.request
 import os
 import re
+from pathlib import Path
 
 
 class SongBook:
@@ -326,7 +327,7 @@ class SongBook:
                             + '\n\t["o"] owner'
                             + '\nor ["n"] nothing?')
             if wTD == 'n':
-                with open('songs/%s%s.tex'%(owner,nameF.replace(' ','_')),'w') as fl:
+                with open(Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex"),'w') as fl:
                     fl.writelines('\\sclearpage')
                     fl.writelines('\\beginsong{%s}[by={%s}]\n'%(name,artist))
                     if playingNow == False:
@@ -367,3 +368,94 @@ class SongBook:
                         owner = 'ŽŽ_LuckaSongs/' 
 
 
+    def createHTML(self,htmlDir):
+
+        htmlHead = r'''<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>\1</title>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="style.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="transpose.js"></script>
+            </head>
+            <body>
+            <p>
+            <a href="../index.html">Index</a>
+            </p>
+            <div>
+            <button onclick="transpose(-1)">Transpose +1</button>
+            <div class="trans" id="trans" style="text-align:center">0</div>
+            <button onclick="transpose(+1)">Transpose +1</button>
+            </div>
+            '''
+
+        htmlDir = Path(htmlDir)
+
+        if not htmlDir.joinpath("songs").exists():
+            print(f"Creating new directory: {htmlDir}")
+            os.makedirs(htmlDir.joinpath("songs"),exist_ok=True)
+
+        with open(f"html/index.html","w", encoding='utf-8') as index:
+            index.write('''<!DOCTYPE html>
+                <html lang="en">
+                <head>
+                <title>Tomíkův zpěvník</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+                <h3>Písničky</h3>
+                '''
+            )
+            #Convert all songs to html 
+            songCount = 0
+            print("Converting songs...")
+            for songFile in self.songsLst:
+                try:
+                    with open(Path(self.songsDir).joinpath(f"{songFile}.tex"),"r", encoding='utf-8') as tex:
+                        content=tex.read()
+
+                    content = re.sub(r'\\beginverse', '<p class="verse">', content)
+                    content = re.sub(r'\\endverse', '</p class="verse">', content)
+                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1>\1</h1>\n<h3>\2</h3>', content,1)
+                    content = re.sub(r'\\\[(.)(#*)([^\]]*)\]',r'<span class="chord" tone="\1\2" type="\3"><span class="innerchord">\1\2\3</span></span>',content)
+                    content = re.sub(r'\\brk',r'<br>',content)
+                    content += "</body></html>"
+                    content = re.sub(r'\\beginchorus', '<p class="chorus">', content)
+                    content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
+                    content = re.sub(r'\\capo{([^}]*)}', r'</p style="font-weight:bold">CAPO \1 </p>', content)
+                    content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
+
+                    with open(htmlDir.joinpath("songs",f"{songFile}.html"),"w", encoding='utf-8') as html:
+                        html.write(content)
+
+                    index.write(f'<p><a href="./songs/{songFile}.html">{re.sub("_"," ",songFile)}</a></p>')
+
+                    songCount +=1
+                except FileNotFoundError:
+                    print(f"Song not found: {songFile}")
+
+            index.write("</body></html>")
+
+            print(f"{songCount} songs converted to html")
+
+
+# if ran separately, launch songbook
+if __name__ == "__main__":
+    songsDir = './songs/'
+    songBookTex = 'Songbook'
+
+    # create song book
+    songBook = SongBook(songsDir,songBookTex)
+
+    # introduction
+    songBook.giveIntro()
+    while True:
+        if songBook.askIfQuit():
+            break
+    
+    songBook.createHTML("html")
+    # songBook.createSongBook()
+    # songBook.addSong()
