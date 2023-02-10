@@ -397,7 +397,7 @@ class SongBook:
             print(f"Creating new directory: {htmlDir}")
             os.makedirs(htmlDir.joinpath("songs"),exist_ok=True)
 
-        with open(f"html/index.html","w", encoding='utf-8') as index:
+        with open(f"%s/index.html"%htmlDir,"w", encoding='utf-8') as index:
             index.write('''<!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -456,6 +456,6 @@ if __name__ == "__main__":
         if songBook.askIfQuit():
             break
     
-    songBook.createHTML("html")
+    songBook.createHTML("docs")
     # songBook.createSongBook()
     # songBook.addSong()
