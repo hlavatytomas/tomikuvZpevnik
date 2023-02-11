@@ -387,9 +387,9 @@ class SongBook:
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
             <div class="song">
@@ -440,7 +440,7 @@ class SongBook:
                     with open(htmlDir.joinpath("songs",f"{songFile}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
 
-                    index.write(f'<p class="song_ref"><a href="./songs/{songFile}.html">{re.sub("_"," ",songFile)}</a></p>')
+                    index.write(f'<p class="song_ref"><a href="./songs/{songFile}.html">{re.sub("_"," ",songFile)}</a></p>\n')
 
                     songCount +=1
                 except FileNotFoundError:
