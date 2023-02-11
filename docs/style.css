@@ -3,8 +3,8 @@
  }
 
 .chord .innerchord {  
-    position: absolute;
-    top: -1.3em;
+    position:absolute;
+    top: -1.4em;
     font-weight: bold;
 }
 
@@ -39,11 +39,6 @@ p {
 
 .chorus {
     line-height: 200%;
-}
-
-.nolyrics .chord{
-    padding-right: .5em;
-    position: static
 }
 
 .trans

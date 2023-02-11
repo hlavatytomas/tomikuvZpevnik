@@ -2,6 +2,8 @@ let trans = 0;
 
 const notes = ["C", "C#","D","D#","E","F", "F#","G","G#","A","B","H"];
 
+const mindist = 5; //minimal distance between chords in pixels
+
 function transpose(dir) {
     trans+= dir;
     if(trans==12 || trans ==-12){
@@ -22,13 +24,14 @@ function transpose(dir) {
 
         chord.getElementsByClassName("innerchord")[0].innerHTML = tone + type;
     }
+    calibrateChords();
 }
 
 function chordsOverlap(el1, el2) {
     const domElement1 = el1.getBoundingClientRect();
     const domElement2 = el2.getBoundingClientRect();
     if (domElement1.bottom > domElement2.top && domElement2.left >= domElement1.left){
-        return Math.max(domElement1.right - domElement2.left,0);
+        return Math.max(domElement1.right - domElement2.left+mindist,0);
     }else{
         return 0;
     }
@@ -40,12 +43,15 @@ function chordsOverlap(el1, el2) {
   function calibrateChords() {
     const chords = document.querySelectorAll('span.chord');
     const inner_chords = document.querySelectorAll('span.innerchord');
+    for (let i = 0; i < chords.length; i++) {
+        chords[i].style.marginLeft = '';
+      }
     for (let i = 0; i < chords.length - 1; i++) {
       let ch1 = inner_chords[i];
       let ch2 = inner_chords[i + 1];
       let diff = chordsOverlap(ch1, ch2);
       if (diff>0) {
-        chords[i + 1].style.marginLeft = (Math.round(diff)+5).toString() + 'px';
+        chords[i + 1].style.marginLeft = (Math.round(diff)+mindist).toString() + 'px';
       } 
     }
   }
