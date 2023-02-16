@@ -9,23 +9,24 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Magdalena</h1>
-<h3>Jelen (Czech Republic)</h3><div class="songtext"><div class="song_container">
-<p class="verse">*<span class="nolyrics"> Intro: 
+
+            <h1 id="song_name">Magdalena</h1>
+<h3 id="author">Jelen (Czech Republic)</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: 
  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>   <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>   <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 Zapal ten oheň ve mně. <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Čeho se bojíš?<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Zápalkou škrtni jemně. <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Zapal ten oheň ve mně. <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Čeho se bojíš?<br>
@@ -33,31 +34,31 @@ Zapal ten oheň ve mně. <span class="chord" tone="D" type=""><span class="inner
 Pojď <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>dál, prosím tě, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nenech se,  prosit se <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>dál - <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nenech se.<br>
 A<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>hhhh <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ah ah  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ahh a<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>h ah  <br>
 </p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Sedíme na pavlači, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>přichází ráno, <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>tobě se lesknou o<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>či.<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Sedíme na pavlači, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>přichází ráno <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>a mně se hlava to<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>čí.<br>
 Pojď <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>dál, prosím tě, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nenech se, prosit se <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>dál <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nenech se.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Hodiny se zastaví a v <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>devět třicet v pondělí.<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Magdaléno, tvoje vlasy,<br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Leží pod mou postelí a <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>i když jsme to nechtěli,<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Oblíkáš se, pročpak asi?<br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Hodiny se zastaví a v <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>devět třicet v pondělí jsem <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>sám.    <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Stojíme na rozcest<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>í a zvony zvoní, <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>daleko od boles<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tí.<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Stojíme na rozcest<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>í a zvony zvoní, <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>možná nás čeká štěs<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tí.<br>
 Pojď <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>dál. Prosím tě <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nenech se. Prosit se <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>dá <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nenech se.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Hodiny se zastaví a v <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>devět třicet v pondělí.<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Magdaléno, tvoje vlasy,<br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Leží pod mou postelí a <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>i když jsme to nechtěli,<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Oblíkáš se, pročpak asi?<br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Hodiny se zastaví a v <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>devět třicet v pondělí jsem <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>sám.    <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
 </p class ="chorus">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Hodiny se zastaví a v <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>devět třicet v pondělí.<br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Magdaléno, tvoje vlasy,<br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Leží pod mou postelí a <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>i když jsme to nechtěli,<br>

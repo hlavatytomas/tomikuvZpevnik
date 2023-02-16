@@ -9,23 +9,24 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Wonderwall</h1>
-<h3>Oasis</h3><div class="songtext"><div class="song_container">
-</p style="font-weight:bold">CAPO 2 </p>
-<p class="verse">*<span class="nolyrics"> Intro:    <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>   <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>     <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>        <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>   <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>       <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>         <br>
+
+            <h1 id="song_name">Wonderwall</h1>
+<h3 id="author">Oasis</h3><div class="songtext"><div class="song_container">
+<div id="capo">CAPO 2 </div>
+<p class="verse"><br>*<span class="nolyrics"> Intro:    <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>   <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>     <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>        <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>   <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>       <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>         <br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Today is <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>gonna be the day<br>
 That they're <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>gonna throw it back to <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>you,<br>
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>By now you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>should have somehow<br>
@@ -33,7 +34,7 @@ Rea<span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>I don't believe that <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>anybody <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>feels the way I <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>do<br>
 About you <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>no<span class="chord" tone="D" type="sus2"><span class="innerchord">Dsus2</span></span>w.      <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
 </p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Back beat, the <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>word is on the street<br>
 That the <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>fire in your heart is <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>out.<br>
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>I'm sure you've <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>heard it all before,<br>
@@ -41,19 +42,19 @@ But you <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4<
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>I don't believe that <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>anybody <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>feels the way I <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>do<br>
 About you <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>now<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>.   <span class="chord" tone="D" type="sus2"><span class="innerchord">Dsus2</span></span>     <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
 </p class="verse">
-<p class="verse">*<span class="nolyrics"> [Bridge]: 
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
 And <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>all the roads we <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>have to walk are <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>winding,<br>
 And <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>all the lights that <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lead us there are <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>blinding.<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>There are many <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>things that I would <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>like to say to you,<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>But I don't know <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>how.    <span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span>         <br>
 </span></p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Because <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>may<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>be,   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 You're <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>gonna be the one that <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>saves me,<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 And <span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>after <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>all<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>,     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 You're my <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>wonder<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>wal<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>l.    <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Today was <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>gonna be the day,<br>
 But they'll <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>never throw it back to <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>you.<br>
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>By now you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>should have somehow<br>
@@ -61,19 +62,19 @@ Real<span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</spa
 <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>I don't believe that <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>anybody <span class="chord" tone="D" type="sus4"><span class="innerchord">Dsus4</span></span>feels the way I <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>do,<br>
 About you <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>now.<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>   <span class="chord" tone="D" type="sus2"><span class="innerchord">Dsus2</span></span>     <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
 </p class="verse">
-<p class="verse">*<span class="nolyrics"> [Bridge]: 
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
 And <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>all the roads that <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lead you there were <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>winding,<br>
 And <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>all the lights that <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>light the way are <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>blinding.<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>There are many <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>things that I would <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>like to say to you,<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>But I don't know <span class="chord" tone="A" type="7sus4"><span class="innerchord">A7sus4</span></span>how.    <span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span>         <br>
 </span></p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Because <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>may<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>be,   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 You're <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>gonna be the one that <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>saves me,<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 And <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>after <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>all<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>,     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 You're my <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>wonder<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>wal<span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>l.    <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>         <br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> [Outro]: 
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
 I said m<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>aybe,  <span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 You're <span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>gonna be the one that <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>saves me, <span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 You're <span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>gonna be the one that <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>saves me, <span class="chord" tone="E" type="m7"><span class="innerchord">Em7</span></span>     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>

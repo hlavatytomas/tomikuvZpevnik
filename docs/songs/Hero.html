@@ -9,20 +9,21 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Hero</h1>
-<h3>Enrique Iglesias</h3><div class="songtext"><div class="song_container">
-<p class="verse">
+
+            <h1 id="song_name">Hero</h1>
+<h3 id="author">Enrique Iglesias</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>
 Would you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>dance,<br>
 If I asked you to <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>dance?<br>
 Would you <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>run,<br>
@@ -31,7 +32,7 @@ Would you <span class="chord" tone="G" type=""><span class="innerchord">G</span>
 If you saw me <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>crying?<br>
 Would you <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>save my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>soul to<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>night?<br>
 </p class="verse">
-<p class="verse">
+<p class="verse"><br>
 Would you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tremble<br>
 If I touched your <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lips?<br>
 Would you <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>laugh,<br>
@@ -40,13 +41,13 @@ Now would you <span class="chord" tone="G" type=""><span class="innerchord">G</s
 For the one you <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>love.<br>
 Hold me <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>in your <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>arms to<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>night.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>be your hero, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>baby.<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>kiss away the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pain.<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I will <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>stand by you for<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ever.<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>You can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>take my <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>breath away.<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 Would you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>swear,<br>
 That you'll always be <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>mine?<br>
 Would you <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lie,<br>
@@ -55,18 +56,18 @@ Am I in too <span class="chord" tone="G" type=""><span class="innerchord">G</spa
 Have I lost my <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>mind?<br>
 I don't <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>care, you're <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>here to<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>night.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>be your hero, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>baby.   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>kiss away the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pain.   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I will <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>stand by you for<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ever.  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>You can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>take my breath a<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>way.<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 Oh yeah, Am I in too <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>deep?<br>
 Have I lost my <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>mind?<br>
 Well I don't <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>care, you're <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>here to<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>night.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>be your hero, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>baby.<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I can <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>kiss away the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pain. (Oh yeah!)<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I will <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>stand by you for<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ever.<br>

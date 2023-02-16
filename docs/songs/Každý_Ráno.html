@@ -9,21 +9,22 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Každý Ráno</h1>
-<h3>Chinaski</h3><div class="songtext"><div class="song_container">
-</p style="font-weight:bold">CAPO 1 </p>
-<p class="verse">
+
+            <h1 id="song_name">Každý Ráno</h1>
+<h3 id="author">Chinaski</h3><div class="songtext"><div class="song_container">
+<div id="capo">CAPO 1 </div>
+<p class="verse"><br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Každý ráno když si<span class="chord" tone="D" type=""><span class="innerchord">D</span></span> vzpomenu,<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>vzpomenu si<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> na to jak měl jsem tě<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> rád,<br>
 a nevzal si tě <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>za ženu,<br>
@@ -36,7 +37,7 @@ a od tý doby <span class="chord" tone="D" type=""><span class="innerchord">D</s
 jedi<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ná<br>
 <span class="chord" tone="H" type="mi"><span class="innerchord">Hmi</span></span>lásko<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>...  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Každý ráno když si<span class="chord" tone="A" type=""><span class="innerchord">A</span></span> vzpomenu,<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>vzpomenu si<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> na to, jak měl jsem tě<span class="chord" tone="D" type=""><span class="innerchord">D</span></span> rád,<br>
 a nevzal si tě<span class="chord" tone="A" type=""><span class="innerchord">A</span></span> za ženu,<br>
@@ -45,7 +46,7 @@ já vůl,<span class="chord" tone="A" type=""><span class="innerchord">A</span><
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>kdo postaví<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> mé nohy na zem,<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>kdo to<span class="chord" tone="A" type=""><span class="innerchord">A</span></span> pro mě kromě <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tebe udě<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lá?<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Jednou ráno až si <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>vzpomeneš,<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>pošli mi <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>prosím adres<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>u,<br>
 ať mé noční můry <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>zaženeš,<br>
@@ -58,7 +59,7 @@ ať chceš nebo ne já<span class="chord" tone="D" type=""><span class="innercho
 jedi<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ná<br>
 <span class="chord" tone="H" type="mi"><span class="innerchord">Hmi</span></span>lásko<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>...  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Každý ráno když si<span class="chord" tone="A" type=""><span class="innerchord">A</span></span> vzpomenu,<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>vzpomenu si<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> na to, jak měl jsem tě<span class="chord" tone="D" type=""><span class="innerchord">D</span></span> rád,<br>
 a nevzal si tě<span class="chord" tone="A" type=""><span class="innerchord">A</span></span> za ženu,<br>
@@ -67,7 +68,7 @@ já vůl,<span class="chord" tone="A" type=""><span class="innerchord">A</span><
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>kdo postaví<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> mé nohy na zem,<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>kdo to<span class="chord" tone="A" type=""><span class="innerchord">A</span></span> pro mě kromě <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tebe udě<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lá?<br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> Bridge: 
+<p class="verse"><br>*<span class="nolyrics"> Bridge: 
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Všechna má <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>rána jsou prázdná,<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>a v nedohlednu <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>šťastný konec příběh<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>u,<br>
 příběhu <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>starýho blázna,<br>
@@ -77,7 +78,7 @@ jedi<span class="chord" tone="G" type=""><span class="innerchord">G</span></span
 <span class="chord" tone="H" type="mi"><span class="innerchord">Hmi</span></span>lásko<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>...  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> 
 </span>
 </p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Slibuju v příštím <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>životě<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>po druhý s<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tejnou chybu, neudě<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lám,<br>
 ať chceš nebo ne já <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>najdu tě,<br>

@@ -9,21 +9,22 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Co Z Tebe Bude</h1>
-<h3>Pokáč</h3><div class="songtext"><div class="song_container">
-</p style="font-weight:bold">CAPO 3 </p>
-<p class="verse">
+
+            <h1 id="song_name">Co Z Tebe Bude</h1>
+<h3 id="author">Pokáč</h3><div class="songtext"><div class="song_container">
+<div id="capo">CAPO 3 </div>
+<p class="verse"><br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Když jsem byl prcek,<span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span> tak se mě všude<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Dospěláci ptali chlapče,<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> co z tebe bude<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Já řek, že nevim a <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>div se nerozbrečel<br>
@@ -33,7 +34,7 @@ Dyť <span class="chord" tone="G" type=""><span class="innerchord">G</span></spa
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Jo, kdyby na mě dneska <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>stejnej dotaz měl<br>
 Moc <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>rád bych mu odpově<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>děl<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Já pane učitel chci <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>milovat já chci <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>poznat svět<br>
 Já chci <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lítat na měsíc <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a pak zpět<br>
 Já chci <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>drink a pláž ne tvou <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>kancelář<br>
@@ -43,7 +44,7 @@ Já chci <span class="chord" tone="G" type=""><span class="innerchord">G</span><
 Já chci <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>drink a pláž ne tvou <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>kancelář<br>
 Tak <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>proč se mě tak blbě <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ptáš?<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>občas se zdá že <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>účel dospívání<br>
 je <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>úspěšně se vyvinout ve <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>vzorný plátce daní<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>možná by ale někdy <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>stálo za to říct<br>
@@ -53,7 +54,7 @@ a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>k
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>život je dar tak žij ho <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>než uteče ti<br>
 čekáním <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>na důchod ve stopě<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ti<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Já chci <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>milovat já chci <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>poznat svět<br>
 Já chci <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lítat na měsíc <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a pak zpět<br>
 Já chci <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>drink a pláž ne tvou <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>kancelář<br>
@@ -63,13 +64,13 @@ Já chci <span class="chord" tone="G" type=""><span class="innerchord">G</span><
 Já chci <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>drink a pláž ne tvou <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>kancelář<br>
 Tak <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>proč se mě tak blbě <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ptáš?<br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> [Bridge]: 
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>uo o o <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>o co z tebe bude<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>uo o o <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>o co z tebe bude<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>uo o o <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>o co z tebe bude<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>uo o o <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>o<br>
 </span></p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Já chci <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>milovat já chci <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>poznat svět<br>
 Já chci <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lítat na měsíc <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a pak zpět<br>
 Já chci <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>drink a pláž ne tvou <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>kancelář<br>

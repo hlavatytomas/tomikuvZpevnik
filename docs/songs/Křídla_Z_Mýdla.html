@@ -9,22 +9,23 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Křídla Z Mýdla</h1>
-<h3>Kryštof</h3><div class="songtext"><div class="song_container">
-<p class="verse">*<span class="nolyrics"> Intro: 
+
+            <h1 id="song_name">Křídla Z Mýdla</h1>
+<h3 id="author">Kryštof</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: 
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Na všechno mám dost času <br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Než přijde ticho hlasu <br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Než přijdou první kroky <br>
@@ -34,7 +35,7 @@
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Zmizí záchranné čluny <br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>A pro mě jen nezbylo <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Křídla <br>
 Mít z<span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span> mýdla <br>
 A <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tá<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>t<br>
@@ -42,7 +43,7 @@ Když se <span class="chord" tone="A" type=""><span class="innerchord">A</span><
 Že další <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>fází<br>
 Je <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>pá<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>d <br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Tak skromně bez protestu <br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Sundám plovací vestu <br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Než skončí tikot hodin<br>
@@ -52,7 +53,7 @@ Je <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>A nikam nepospíchám<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Vím, že na mě zbylo <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Křídla <br>
 Mít z<span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span> mýdla <br>
 A <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tá<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>t<br>
@@ -66,19 +67,19 @@ Když se <span class="chord" tone="A" type=""><span class="innerchord">A</span><
 Že další <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>fází<br>
 Je <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>pá<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>d<br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> [Bridge]: 
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
 Do<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>lů <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span> <br>
 Do<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lů<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span> <br>
 Do<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>lů <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <br>
 D<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ol<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ů <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>   <br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Na všechno bylo času<br>
 <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Než přišlo ticho hlasu<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Než přišly první kroky<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Naší poslední sloky <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Křídla <br>
 Mít z<span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span> mýdla <br>
 A <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tá<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>t<br>

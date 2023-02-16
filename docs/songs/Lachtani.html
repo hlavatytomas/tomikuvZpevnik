@@ -9,23 +9,24 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Lachtani</h1>
-<h3>Jaromír Nohavica</h3><div class="songtext"><div class="song_container">
-<p class="chorus">
+
+            <h1 id="song_name">Lachtani</h1>
+<h3 id="author">Jaromír Nohavica</h3><div class="songtext"><div class="song_container">
+<p class="chorus"><br>
 [: L<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ach, lach<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> l<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ach, lac<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>h.<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> :]<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 J<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>edna lachtaní r<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>odin<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a<br>
 r<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ozhodla se, že si vyjde <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>do ki<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>na,<br>
 jeli lodí, metrem, vlakem a pak tr<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>amvaj<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>í<br>
@@ -35,10 +36,10 @@ k<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ou
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>táta lachtan řekl <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>nebudem třít <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>bídu<br>
 a pro <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>každého koupil pytlík <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>arašidů, ó.       <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>     <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 [: L<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ach, lach, <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>mm-<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>m  <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>lach, lach,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> mm<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>-m :]<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 N<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a jižním pólu je <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>nehezk<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>y<br>
 a tak <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>lachtani si vyjeli na<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> grotes<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ky,<br>
 těšili se, jak bude <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>vesel<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>o,<br>
@@ -48,10 +49,10 @@ s<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>n�
 p<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ro veliký úspěch změna <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>program<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>u,<br>
 dnes <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>dáváme film ze života<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> lachta<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>nů, ó.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 [: L<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ach, lach, <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>jé-<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>é  <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>lach, lach,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> jé<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>-é :]<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 T<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>áta lachtan vyskočil ze <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>sedadl<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>nevídaná zlost ho<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> popad<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>la<br>
 proto jsem se netrmácel <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>přes celý <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>svět <br>
@@ -61,10 +62,10 @@ kde má chudák <span class="chord" tone="C" type=""><span class="innerchord">C<
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Nedivte se té lachtaní <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>rodině,<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>     <br>
 že p<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ak rozšlapala arašidy<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> po ki<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ně, jé.<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 [: L<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ach, lach, <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>jé-<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>é  <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>lach, lach,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> jé<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>-é :]<br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> [Outro]: 
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
 T<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ahle lachtaní r<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>odin<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>od té doby nechodí už<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> do k<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ina, lach,<br>
 </span></p class="verse"></div></div></div></body></html>

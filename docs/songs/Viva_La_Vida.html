@@ -9,30 +9,31 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Viva La Vida</h1>
-<h3>Coldplay</h3><div class="songtext"><div class="song_container">
-</p style="font-weight:bold">CAPO 1 </p>
-<p class="verse">*<span class="nolyrics"> Intro: <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span><br>
+
+            <h1 id="song_name">Viva La Vida</h1>
+<h3 id="author">Coldplay</h3><div class="songtext"><div class="song_container">
+<div id="capo">CAPO 1 </div>
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span><br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 I used to <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>rule the <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>world<br>
 Seas would <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>rise when I gave the <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>word<br>
 Now in the morning I <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>sleep a<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lone<br>
 Sweep the <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>streets I used to <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>own<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span><br>
 </p class="verse">
-<p class="verse">
+<p class="verse"><br>
 I used to <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>roll the <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>dice<br>
 Feel the <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>fear in my enemy's <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>eyes<br>
 Listen as the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>crowd would <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>sing:<br>
@@ -41,7 +42,7 @@ Next the <span class="chord" tone="G" type=""><span class="innerchord">G</span><
 And I discovered that my <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>castles <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>stand<br>
 Upon <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>pillars of salt and pill<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>ars of sand<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 I <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>hear Jerusalem <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>bells are ringing<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Roman Cavalry <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>choirs are singing<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Be my mirror, my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>sword, and shield<br>
@@ -51,7 +52,7 @@ My <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>
 That was <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>when I ruled the <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>world<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span><br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 It was the wicked and <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>wild <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>wind<br>
 Blew down the <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>doors to let me <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>in.<br>
 Shattered windows and the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>sound of <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>drums<br>
@@ -61,7 +62,7 @@ For my <span class="chord" tone="G" type=""><span class="innerchord">G</span></s
 Just a puppet on a <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lonely <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>string<br>
 Oh <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>who would ever want to be <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>king?<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 I <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>hear Jerusalem <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>bells are ringing<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Roman Cavalry <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>choirs are singing<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Be my mirror, my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>sword, and shield<br>
@@ -73,7 +74,7 @@ But that was <span class="chord" tone="B" type="m"><span class="innerchord">Bm</
 Oh<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>hhhh<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>h  Oh<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>hhhh<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>hh<br>
 Oh<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>hhhh<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>h  Oh<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>hhhh<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>hh<br>
 </p class ="chorus">
-<p class="chorus">
+<p class="chorus"><br>
 I <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>hear Jerusalem <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>bells are ringing<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Roman Cavalry <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>choirs are singing<br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Be my mirror, my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>sword, and shield<br>

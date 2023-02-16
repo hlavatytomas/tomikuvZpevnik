@@ -30,7 +30,7 @@ function transpose(dir) {
 function chordsOverlap(el1, el2) {
     const domElement1 = el1.getBoundingClientRect();
     const domElement2 = el2.getBoundingClientRect();
-    if (domElement1.bottom > domElement2.top && domElement2.left >= domElement1.left){
+    if (domElement2.bottom > domElement1.top && domElement1.bottom > domElement2.top && domElement2.left >= domElement1.left && domElement2.right > domElement1.left){
         return Math.max(domElement1.right - domElement2.left+mindist,0);
     }else{
         return 0;

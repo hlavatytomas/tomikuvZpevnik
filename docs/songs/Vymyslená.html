@@ -9,28 +9,29 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Vymyslená</h1>
-<h3>Elán</h3><div class="songtext"><div class="song_container">
-<p class="verse">*<span class="nolyrics"> Intro: <span class="chord" tone="D" type=""><span class="innerchord">D</span></span><span class="chord" tone="A" type=""><span class="innerchord">A</span></span><span class="chord" tone="G" type=""><span class="innerchord">G</span></span><span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <br>
+
+            <h1 id="song_name">Vymyslená</h1>
+<h3 id="author">Elán</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="D" type=""><span class="innerchord">D</span></span><span class="chord" tone="A" type=""><span class="innerchord">A</span></span><span class="chord" tone="G" type=""><span class="innerchord">G</span></span><span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Čakám ju pred <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>domom <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>prší mi za go<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lier<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Odkiaľ sa pozná<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>me <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>nikomu nepo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>viem<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Klasicky hanbli<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>vá, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>smeje sa oča<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>mi<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>má sinku na lak<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ti a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tašku od ma<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>my<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Chcem s ňou <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ísť, vláči<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>kom na vý<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let do Mod<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ry<br>
 Najprv <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>sa poškrie<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>piť, potom <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>sa udob<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>riť<br>
 Mať svo<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>je tajomst<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>vá zamknúť <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ich na kľú<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>čik<br>
@@ -39,14 +40,14 @@ držať <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span>
 Škoda <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>že je, škoda <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>že je iba <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>vymysle<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ná<br>
 Škoda <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>že je, škoda <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>že je iba <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>vymysle<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ná<br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> [Bridge]: 
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Čakám ju pred <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>domom <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>prší mi za go<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lier<br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Odkiaľ sa pozná<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>me <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>nikomu nepo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>viem<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Chcem s ňou <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ísť, vláči<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>kom na vý<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let do Mod<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ry<br>
 Najprv <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>sa poškrie<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>piť, potom <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>sa udob<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>riť<br>
 Mať svo<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>je tajomst<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>vá zamknúť <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ich na kľú<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>čik<br>

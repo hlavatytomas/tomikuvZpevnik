@@ -9,20 +9,21 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Slzy Tvý Mámy</h1>
-<h3>Olympic</h3><div class="songtext"><div class="song_container">
-<p class="verse">
+
+            <h1 id="song_name">Slzy Tvý Mámy</h1>
+<h3 id="author">Olympic</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Chvilku vzpomínej,<span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span> je to všechno jen pár let<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Na kytaru v duchu hrej,<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> tvoje parta<span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span> je tu hned<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Z cigaret je modrej dým,<span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span> hraje magne<span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>ťák<br>
@@ -37,13 +38,13 @@ trochu <span class="chord" tone="A" type="m"><span class="innerchord">Am</span><
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>Nebejt nože <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ve tvejch dětskej rukách<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>Nebejt strachu<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> mohlo to bejt<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> všechno<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> jináč <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>         <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Slzy tvý mámy<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> šedivý<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span> stékají <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>na polštář<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>Kdo tě zná, se vůbec <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>nediví, že stárne <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>její tvář <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>         <br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Nečekej úsměv od ženy, který si <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>všechno vzal<br>
 Jen pro tvý <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>touhy zborcený, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>léta ztracený,<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span> ty oči <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>pláčou dál.<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Když jsi vyšel ven,<span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span> ze žalárnich vrat<br>
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Možná, že jsi tenkrát chtěl <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>znovu začí<span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>nat<br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Poctivejma rukama,<span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span> jako správnej <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>chlap<br>
@@ -53,7 +54,7 @@ I <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>k
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>Tvůj pocit křivdy<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> se pak těžko smejvá<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>Když hledáš vinu <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>vždycky <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>jenom v<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> druhejch. <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>         <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Slzy tvý mámy <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>šedivý <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>stékají <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>na polštář<br>
 <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>Kdo tě zná, se vůbec <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>nediví, že stárne <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>její tvář <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>         <br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Nečekej úsměv od ženy, který si <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>všechno vzal<br>

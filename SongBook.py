@@ -382,6 +382,7 @@ class SongBook:
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
@@ -392,7 +393,7 @@ class SongBook:
             <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
+
             '''
 
         htmlDir = Path(htmlDir)
@@ -425,15 +426,15 @@ class SongBook:
                     with open(Path(self.songsDir).joinpath(f"{songFile}.tex"),"r", encoding='utf-8') as tex:
                         content=tex.read()
 
-                    content = re.sub(r'\\beginverse', '<p class="verse">', content)
+                    content = re.sub(r'\\beginverse', '<p class="verse"><br>', content)
                     content = re.sub(r'\\endverse', '</p class="verse">', content)
-                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1>\1</h1>\n<h3>\2</h3><div class="songtext"><div class="song_container">', content,1)
+                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">', content,1)
                     content = re.sub(r'\\\[(.)(#*)([^\]]*)\]',r'<span class="chord" tone="\1\2" type="\3"><span class="innerchord">\1\2\3</span></span>',content)
                     content = re.sub(r'\\brk',r'<br>',content)
                     content += "</div></div></div></body></html>"
-                    content = re.sub(r'\\beginchorus', '<p class="chorus">', content)
+                    content = re.sub(r'\\beginchorus', '<p class="chorus"><br>', content)
                     content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
-                    content = re.sub(r'\\capo{([^}]*)}', r'</p style="font-weight:bold">CAPO \1 </p>', content)
+                    content = re.sub(r'\\capo{([^}]*)}', r'<div id="capo">CAPO \1 </div>', content)
                     content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
                     content = re.sub(r'\\endsong', '', content)
 

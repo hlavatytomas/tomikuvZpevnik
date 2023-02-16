@@ -9,24 +9,25 @@
             <script src="../transpose.js"></script>
             </head>
             <body>
+            <div class="song">
             <div id="control">
             <div id ="return">
             <a href="../index.html">Index</a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(+1)">Transpose +1</button>
+            <button onclick="transpose(-1)">Transpose -1</button>
             </div>
             </div>
-            <div class="song">
-            <h1>Šrouby A Matice</h1>
-<h3>Mandrage</h3><div class="songtext"><div class="song_container">
-</p style="font-weight:bold">CAPO 2 </p>
-<p class="verse">*<span class="nolyrics"> Intro: 
+
+            <h1 id="song_name">Šrouby A Matice</h1>
+<h3 id="author">Mandrage</h3><div class="songtext"><div class="song_container">
+<div id="capo">CAPO 2 </div>
+<p class="verse"><br>*<span class="nolyrics"> Intro: 
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>         <br>
 </span></p class="verse">
-<p class="verse">
+<p class="verse"><br>
 Mezi zemí<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> a nebem<br>
 A širým <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>světem<br>
 Je jeden <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>náš<br>
@@ -36,13 +37,13 @@ Jsou věci <span class="chord" tone="D" type=""><span class="innerchord">D</span
 Moje milá <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>         <br>
 Můžu jen <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>já   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Tahat tě <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>za vlasy, dýchat ti d<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o tváře,<br>
 Dělat si <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>nároky na tvoje p<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>olštáře<br>
 Sahat ti <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>pod sukni, kousat tě n<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>a ruce<br>
 Dělat ti <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>snídani, říkat ti o<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pice.<br>
 </p class ="chorus">
-<p class="verse">
+<p class="verse"><br>
 Mezi svět<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lem a nocí<br>
 Houpu tě<span class="chord" tone="D" type=""><span class="innerchord">D</span></span> v bocích<br>
 Na tisíck<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>rát, dělám to <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>rád   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
@@ -51,7 +52,7 @@ Zimou i l<span class="chord" tone="D" type=""><span class="innerchord">D</span><
 Je spousta <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>rán,<br>
 kdy můžu <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>jen s<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ám<br>
 </p class="verse">
-<p class="chorus">
+<p class="chorus"><br>
 Tahat tě <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>za vlasy, dýchat ti d<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o tváře,<br>
 Dělat si <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>nároky na tvoje p<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>olštáře<br>
 Sahat ti <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>pod sukni, kousat tě n<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>a ruce<br>
@@ -61,7 +62,7 @@ Kvůli tvé<span class="chord" tone="A" type="m"><span class="innerchord">Am</sp
 nosit ti <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lekníny, vrtat ti poli<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ce.<br>
 Jsme čase<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>m kalený šrouby a m<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>atice (2x)<br>
 </p class ="chorus">
-<p class="verse">*<span class="nolyrics"> [Outro]: 
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
 Vysoko <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>nad zemí,<br>
 životem <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>kalený,<br>
 navěky <span class="chord" tone="H" type="m"><span class="innerchord">Hm</span></span>spojení.<br>
