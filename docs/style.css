@@ -1,0 +1,79 @@
+.chord { position: relative;
+    min-width: 10px;
+ }
+
+.chord .innerchord {  
+    position:absolute;
+    top: -1.4em;
+    font-weight: bold;
+}
+
+.verse {
+    line-height: 200%;
+}
+
+p {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.song_ref {
+    text-align: left;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.list_container
+{
+    text-align: center;
+    margin-left:min(160px,10%)
+}
+
+.song_list
+{   
+    max-width: 1000px;
+    column-width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+}
+
+.chorus {
+    line-height: 200%;
+}
+
+.trans
+{
+   width:20px;
+   max-width:20px;
+   display: inline-block;
+}
+
+.song
+{
+    text-align: center;
+}
+
+.songtext
+{
+    max-width: fit-content;
+    font-family: Arial;
+    display: inline-block;
+    max-width: 500px;
+}
+
+.song_container{
+    display: inline-block;
+}
+
+#control {
+    overflow: hidden; /* add this to contain floated children */
+}
+#trans_control {
+    width: 100px;
+    float:right; /* add this */
+    text-align: center;
+}
+#return {
+    float: left; /* add this */
+    margin: 10px;
+}

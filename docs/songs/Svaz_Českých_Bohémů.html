@@ -4,21 +4,24 @@
             <head>
             <title>Svaz Českých Bohémů</title>
             <meta charset="UTF-8">
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="../style.css">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src="transpose.js"></script>
+            <script src="../transpose.js"></script>
             </head>
             <body>
-            <p>
+            <div id="control">
+            <div id ="return">
             <a href="../index.html">Index</a>
-            </p>
-            <div>
-            <button onclick="transpose(-1)">Transpose +1</button>
-            <div class="trans" id="trans" style="text-align:center">0</div>
+            </div>
+            <div id="trans_control">
+            <button onclick="transpose(-1)">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
             <button onclick="transpose(+1)">Transpose +1</button>
             </div>
+            </div>
+            <div class="song">
             <h1>Svaz Českých Bohémů</h1>
-<h3>Wohnout</h3>
+<h3>Wohnout</h3><div class="songtext"><div class="song_container">
 </p style="font-weight:bold">CAPO 1 </p>
 \transpose{9}
 <p class="chorus">
@@ -73,4 +76,4 @@ bojovat <span class="chord" tone="C" type=""><span class="innerchord">C</span></
 <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Tak jsme se tu všichni sešli, <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>co myslíš, osobo?<br>
 Tak jsme se tu všichni sešli, co myslíš, osude?              <span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>         <br>
 <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>Na to nelze říci než  <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>to nebude.
-</p class="verse">\endsong</body></html>
+</p class="verse"></div></div></div></body></html>
