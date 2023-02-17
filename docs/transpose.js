@@ -57,3 +57,8 @@ function chordsOverlap(el1, el2) {
   }
   
   window.onload = calibrateChords;
+
+  function scrollpage() {
+    window.scrollBy(0,1);
+    scrolldelay = setTimeout(scrollpage,50);
+  }

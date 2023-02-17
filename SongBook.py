@@ -390,6 +390,7 @@ class SongBook:
             <button onclick="transpose(+1)">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
             <button onclick="transpose(-1)">Transpose -1</button>
+            <button onclick="scrollpage()">Scroll down</button>
             </div>
             </div>
             <div class="song">
