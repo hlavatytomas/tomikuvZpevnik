@@ -22,22 +22,25 @@ class SongBook:
         '''load songs function -- update songs list and number of songs'''
 
         self.songs = []
-        songsLst = os.listdir(self.songsDir)
-        nSongs = len(songsLst)
+        songsLst = Path(songsDir).rglob("*.tex")
         self.songsLst = []
-        for i in range(nSongs):
-            nazev = songsLst[i].split('.')[0]
-            if (('00-title' == nazev or 'index' == nazev or 'ZZ-endsongs' == nazev)):
+        for path in songsLst:
+            nazev = path.name.split('.')[0]
+            if nazev in ['index','00-title','ZZ-endsongs','ŽŽŽ-endsongs','AA_intro']:
                 pass
             else:
-                self.songsLst.append(nazev)
-        self.songsLst = sorted(self.songsLst)
+                if path.parents[0].name[:2]=="ŽŽ":
+                    owner = path.parents[0].name[3]
+                else:
+                    owner = ""
+                self.songsLst.append((nazev,path,owner))
+        self.songsLst = self.songsLst
         self.nSongs = len(self.songsLst)
     
     def info(self):
         '''give info about songbook'''
 
-        print('Song book by Tomas\nnumber of songs: %d\nsongs: %s'%(self.nSongs,self.songsLst))
+        print('Song book by Tomas\nnumber of songs: %d\nsongs: %s'%(self.nSongs,[song[0] for song in self.songsLst]))
     
     def giveIntro(self):
         '''Write start of the program'''
@@ -367,7 +370,6 @@ class SongBook:
                     elif 'L' in ownS:
                         owner = 'ŽŽ_LuckaSongs/' 
 
-
     def createHTML(self,htmlDir):
         # prepare headers
         # my be eventually moved to a file
@@ -422,36 +424,60 @@ class SongBook:
             #Convert all songs to html 
             songCount = 0
             print("Converting songs...")
-            for songFile in self.songsLst:
+            for songName,songPath,songOwner in self.songsLst:
                 try:
-                    with open(Path(self.songsDir).joinpath(f"{songFile}.tex"),"r", encoding='utf-8') as tex:
+                    with open(songPath,"r", encoding='utf-8') as tex:
                         content=tex.read()
 
                     content = re.sub(r'\\beginverse', '<p class="verse"><br>', content)
-                    content = re.sub(r'\\endverse', '</p class="verse">', content)
-                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">', content,1)
-                    content = re.sub(r'\\\[(.)(#*)([^\]]*)\]',r'<span class="chord" tone="\1\2" type="\3"><span class="innerchord">\1\2\3</span></span>',content)
+                    content = re.sub(r'\\endverse', '</p>', content)
+
+                    capo = re.search(r'\\capo{([^}]*)}',content)
+                    if capo is None:
+                        capo=""
+                    else:
+                        capo = '<div id="capo">CAPO'+capo.group(1)+'</div>'
+                    content = re.sub(r'\\capo{([^}]*)}', r'', content)
+
+                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">'+capo, content,1)
+
+                    transpose = re.search(r'\\transpose{([^}]*)}',content)
+                    if transpose is None:
+                        transpose=0
+                    else:
+                        transpose = int(transpose.group(1))
+                    content = re.sub(r'\\transpose{([^}]*)}', r'', content)
+                    
+                    transposer = SongBook.__getTransposer(transpose)
+                    content = re.sub(r'\\\[(.#*)([^\]]*)\]',lambda x: f'<span class="chord" tone="{transposer(x.group(1))}" type="{x.group(2)}"><span class="innerchord">{transposer(x.group(1))}{x.group(2)}</span></span>',content)
+
                     content = re.sub(r'\\brk',r'<br>',content)
                     content += "</div></div></div></body></html>"
                     content = re.sub(r'\\beginchorus', '<p class="chorus"><br>', content)
                     content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
-                    content = re.sub(r'\\capo{([^}]*)}', r'<div id="capo">CAPO \1 </div>', content)
                     content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
                     content = re.sub(r'\\endsong', '', content)
 
-                    with open(htmlDir.joinpath("songs",f"{songFile}.html"),"w", encoding='utf-8') as html:
+                    with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
 
-                    index.write(f'<p class="song_ref"><a href="./songs/{songFile}.html">{re.sub("_"," ",songFile)}</a></p>\n')
+                    index.write(f'<p class="song_ref"><span class="owner">{songOwner}</span><a href="./songs/{songName}.html" owner="{songOwner}">{re.sub("_"," ",songName)}</a></p>\n')
 
                     songCount +=1
                 except FileNotFoundError:
-                    print(f"Song not found: {songFile}")
+                    print(f"Song not found: {songName}")
 
             index.write("</div></div></body></html>")
 
             print(f"{songCount} songs converted to html")
 
+    def __getTransposer(by):
+        if by==0:
+            return lambda x: x
+        else:
+            chords = ["C","C#","D","D#","E","F","F#","G","G#","A","B","H"]
+            chordMap = {chords[i]:chords[(i+by) % len(chords)] for i in range(len(chords))}
+            return lambda x: chordMap[x]
 
 # if ran separately, launch songbook
 if __name__ == "__main__":
