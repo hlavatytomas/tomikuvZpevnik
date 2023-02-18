@@ -60,5 +60,7 @@ function chordsOverlap(el1, el2) {
 
   function scrollpage() {
     window.scrollBy(0,1);
-    scrolldelay = setTimeout(scrollpage,50);
+    if ((window.innerHeight + window.scrollY) < document.body.offsetHeight) { //scrolling stops at the bottom
+      scrolldelay = setTimeout(scrollpage,50);
+    }
   }
