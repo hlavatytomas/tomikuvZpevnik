@@ -11,14 +11,18 @@
             <body>
             <div class="song">
             <div id="control">
-            <div id ="return">
-            <a href="../index.html">Index</a>
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(+1)">Transpose +1</button><br>
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(-1)">Transpose -1</button>
-            <button onclick="scrollpage()">Scroll down</button>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
             </div>
             </div>
 

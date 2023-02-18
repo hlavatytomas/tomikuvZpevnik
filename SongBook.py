@@ -386,14 +386,18 @@ class SongBook:
             <body>
             <div class="song">
             <div id="control">
-            <div id ="return">
-            <a href="../index.html">Index</a>
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
             </div>
             <div id="trans_control">
-            <button onclick="transpose(+1)">Transpose +1</button><br>
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(-1)">Transpose -1</button>
-            <button onclick="scrollpage()">Scroll down</button>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
             </div>
             </div>
 
@@ -461,7 +465,7 @@ class SongBook:
                     with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
 
-                    index.write(f'<p class="song_ref"><span class="owner">{songOwner}</span><a href="./songs/{songName}.html" owner="{songOwner}">{re.sub("_"," ",songName)}</a></p>\n')
+                    index.write(f'<div><a href="./songs/{songName}.html" owner="{songOwner}"><div class="song_ref">{re.sub("_"," ",songName)}<span class="owner">{songOwner}</span></div></a></div>\n')
 
                     songCount +=1
                 except FileNotFoundError:

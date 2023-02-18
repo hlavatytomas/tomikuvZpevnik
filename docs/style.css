@@ -17,10 +17,88 @@
     padding-left: 5px;
 }
 
+.control_button {
+    transition-duration: 0.4s;
+    background-color: white;
+    color: #363636;
+    border-radius: 2px;
+    border: 2px solid #d6d6d6; /* Green */
+    width:100px
+  }
+  
+.control_button:hover {
+    background-color: #e6e6e6; /* Green */
+    color: black;
+}
+
+.scroll_button{
+    height:60px;
+    margin-left: 10px;
+}
+
+#control {
+    overflow: hidden; /* add this to contain floated children */
+    display: flex;
+    justify-content: space-between;
+}
+#trans_control {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+#return {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    border: 2px solid #d6d6d6;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    width: 80px;
+    height: 58px;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  #return span {
+    cursor: pointer;
+    display: inline-block;
+    padding:8px;
+    transition: 0.5s;
+  }
+  
+  #return:after {
+    content: 'Index';
+    position: absolute;
+    opacity: 0;
+    top: 17px;
+    font-size:20px;
+    right: 0px;
+    transition: 0.5s;
+  }
+  
+  #return:hover span {
+    margin-right: 35px;
+    opacity: 0;
+  }
+  
+  #return:hover:after  {
+    opacity: 1;
+    right: 20px;
+  }
+
+
 #song_name,#author{
     line-height: 100%;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+#author{
+    font-style: italic;
 }
 
 #capo {
@@ -28,16 +106,31 @@
     margin-left: 10%;
 }
 
+a {
+    color: black;
+    text-decoration: none; /* no underline */
+  }
+
 .song_ref {
+    color: black;
+    text-decoration: none;
     text-align: left;
-    margin-bottom: 10px;
+    padding: 10px;
     text-align: left;
+    transition: 0.5s;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.song_ref:hover {
+    background-color: #e6e6e6; /* Green */
+    transition: 0.25s;
 }
 
 .list_container
 {
     text-align: center;
-    margin-left:min(160px,10%)
+    margin-left:min(60px,5%);
+    margin-right:min(60px,5%);
 }
 
 .song_list
@@ -50,9 +143,9 @@
 
 .owner {
     font-family: 'Comic Sans MS';
-    position: absolute;
-    margin-left: -20px;
-    margin-top: -4px;
+    text-align: right;
+    float: right;
+    color: #a6a6a6;
 }
 
 .chorus {
@@ -93,15 +186,3 @@
 
 }
 
-#control {
-    overflow: hidden; /* add this to contain floated children */
-}
-#trans_control {
-    width: 100px;
-    float:right; /* add this */
-    text-align: center;
-}
-#return {
-    float: left; /* add this */
-    margin: 10px;
-}
