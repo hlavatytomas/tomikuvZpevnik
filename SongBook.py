@@ -7,6 +7,7 @@ import urllib.request
 import os
 import re
 from pathlib import Path
+import pickle
 
 
 class SongBook:
@@ -22,7 +23,7 @@ class SongBook:
         '''load songs function -- update songs list and number of songs'''
 
         self.songs = []
-        songsLst = Path(songsDir).rglob("*.tex")
+        songsLst = Path(self.songsDir).rglob("*.tex")
         self.songsLst = []
         for path in songsLst:
             nazev = path.name.split('.')[0]
@@ -474,6 +475,139 @@ class SongBook:
             index.write("</div></div></body></html>")
 
             print(f"{songCount} songs converted to html")
+    
+    def createHTMLForDjango(self,htmlDir):
+        # prepare headers
+        # my be eventually moved to a file
+        htmlHead = r'''<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>\1</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            '''
+
+        htmlDir = Path(htmlDir)
+
+        if not htmlDir.joinpath("songs").exists():
+            print(f"Creating new directory: {htmlDir}")
+            os.makedirs(htmlDir.joinpath("songs"),exist_ok=True)
+
+        with open(htmlDir.joinpath("index.html"),"w", encoding='utf-8') as index:
+            index.write('''<!DOCTYPE html>
+                <html lang="en">
+                <head>
+                {% load static %}   
+                <link rel="stylesheet" href=" {% static './style.css' %}">
+                <title>Tomíkův zpěvník</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+                <h2 style="text-align:center">Tomíkův zpěvník</h3>
+                <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
+                <div class="list_container">
+                <div class="song_list">
+                '''
+            )
+            #Convert all songs to html 
+            songCount = 0
+            print("Converting songs...")
+            for songName,songPath,songOwner in self.songsLst:
+                try:
+                    with open(songPath,"r", encoding='utf-8') as tex:
+                        content=tex.read()
+
+                    content = re.sub(r'\\beginverse', '<p class="verse"><br>', content)
+                    content = re.sub(r'\\endverse', '</p>', content)
+
+                    capo = re.search(r'\\capo{([^}]*)}',content)
+                    if capo is None:
+                        capo=""
+                    else:
+                        capo = '<div id="capo">CAPO'+capo.group(1)+'</div>'
+                    content = re.sub(r'\\capo{([^}]*)}', r'', content)
+
+                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">'+capo, content,1)
+
+                    transpose = re.search(r'\\transpose{([^}]*)}',content)
+                    if transpose is None:
+                        transpose=0
+                    else:
+                        transpose = int(transpose.group(1))
+                    content = re.sub(r'\\transpose{([^}]*)}', r'', content)
+                    
+                    transposer = SongBook.__getTransposer(transpose)
+                    content = re.sub(r'\\\[(.#*)([^\]]*)\]',lambda x: f'<span class="chord" tone="{transposer(x.group(1))}" type="{x.group(2)}"><span class="innerchord">{transposer(x.group(1))}{x.group(2)}</span></span>',content)
+
+                    content = re.sub(r'\\brk',r'<br>',content)
+                    content += "</div></div></div></body></html>"
+                    content = re.sub(r'\\beginchorus', '<p class="chorus"><br>', content)
+                    content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
+                    content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
+                    content = re.sub(r'\\endsong', '', content)
+
+                    with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
+                        html.write(content)
+
+                    index.write(f'<div><a href="./songs/{songName}.html" owner="{songOwner}"><div class="song_ref">{re.sub("_"," ",songName)}<span class="owner">{songOwner}</span></div></a></div>\n')
+
+                    songCount +=1
+                except FileNotFoundError:
+                    print(f"Song not found: {songName}")
+
+            index.write("</div></div></body></html>")
+
+            print(f"{songCount} songs converted to html")
+
+            with open(htmlDir.joinpath('../project/urlsTmpl.py'), 'r') as urls:
+                urlsLns = urls.readlines()
+            newUrlLns = []
+            uz = False
+            for i in range(len(urlsLns)):
+                if "urlpatterns" in urlsLns[i]:
+                    uz = True
+                elif "]" in urlsLns[i] and uz:
+                    uz = False
+                    for songInd in range(len(self.songsLst)):
+                        song = self.songsLst[songInd][0]
+                        newUrlLns.append("\tpath('docs/songs/%s.html', views.p%d, name='%s'),\n" % (song, songInd, song))
+                newUrlLns.append(urlsLns[i])
+            with open(htmlDir.joinpath('../project/urls.py'), 'w') as urls:
+                urls.writelines(newUrlLns)
+            
+            with open(htmlDir.joinpath('../pisnicky/viewsTmpl.py'), 'r') as views:
+                viewsLst = views.readlines()
+            for songInd in range(len(self.songsLst)):
+                song = self.songsLst[songInd][0]
+                viewsLst.append("\ndef p%d(request):\n\treturn render(request, '%s.html')\n" % (songInd, song))
+            with open(htmlDir.joinpath('../pisnicky/views.py'), 'w') as views:
+                views.writelines(viewsLst)
+                
+
 
     def __getTransposer(by):
         if by==0:
@@ -498,5 +632,8 @@ if __name__ == "__main__":
             break
     
     songBook.createHTML("docs")
+    songBook.createHTMLForDjango("django/docs")
+    with open('songbook.pkl', 'wb') as f:
+        pickle.dump(songBook, f)
     # songBook.createSongBook()
     # songBook.addSong()

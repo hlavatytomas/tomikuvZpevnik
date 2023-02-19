@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Zombie</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Zombie</h1>
+<h3 id="author">The Cranberries</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: 
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span><br>
+</span></p>
+<p class="verse"><br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Another h<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ead hangs lowly, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>child is slowly t<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>aken<br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>And the violence <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>caused such silence, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>who are we mista<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>ken <br>
+But you <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>see it's not me, it's not <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>my family<br>
+In your <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>head, in your head, they are fig<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>hting <br>
+With their <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>tanks and their bombs and their <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>bombs and their guns <br>
+in your h<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ead, in your head, they are cr<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>ying<br>
+</p>
+<p class="chorus"><br>
+In your <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>head, in your <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>head, zombie,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> zombie, zombi<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>e <br>
+What's in your <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>head, in your <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>head, zombie,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> zombie, zombi<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>e <br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span><br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Another mo<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ther's breaking hea<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>rt is taking ov<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>er<br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>When the violence <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>causes silence, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>we must be mi<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>staken<br>
+It's the <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>same old theme since <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>1916<br>
+In your <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>head, in your head, they're still f<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>ighting<br>
+With their <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>tanks and their bombs and their <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>bombs and their guns<br>
+In your <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>head, in your head, they're d<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>ying<br>
+</p>
+<p class="chorus"><br>
+In your <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>head, in your <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>head, zombie,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> zombie, zombi<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>e <br>
+What's in your <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>head, in your <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>head, zombie,<span class="chord" tone="G" type=""><span class="innerchord">G</span></span> zombie, zombi<span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>e <br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="C" type=""><span class="innerchord">C</span></span><br>
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="C" type=""><span class="innerchord">C</span></span> <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span><br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>buy<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> l<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>yrics is not correct.<br>
+</span></p>
+<p class="verse"><br>
+</p></div></div></div></body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Baroko</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Baroko</h1>
+<h3 id="author">Richard Muller</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>    <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>    <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>Schoulené holky spí <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>nahé <br>
+u h<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>robu Tycha de Bra<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>he <br>
+z k<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>amene oživlá světi<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ce <br>
+poz<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>vedá monstranci měsí<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ce <br>
+</p>
+<p class="chorus"><br>
+T<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>aková z<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ář je jen <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>jedna <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span><br>
+odtu<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>d až do <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>nedohled<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>na    <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+no a<span class="chord" tone="F" type=""><span class="innerchord">F</span></span> z něj dale<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ko šir<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>oko     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+prou<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>dem se rozl<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>évá baro<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>ko     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>Andělé odhalte tv<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>áře <br>
+pro<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span> slepé harmonikář<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>e <br>
+Kte<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>ré jsem čekal a ne<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>propás <br>
+Dův<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>erně známý je kaž<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>dý z vás <br>
+</p>
+<p class="chorus"><br>
+J<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>ste-li <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tak důvěrný <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>známý <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span><br>
+Pojď<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>te a zp<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ívejte s nám<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>i     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+My d<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>ole vy <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>zase vysoko<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>      <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+O to<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>m jak m<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ocné je baro<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>ko     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>Sedlejme koně a v<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>zhůru <br>
+Zap<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>lašme zlou denní můr<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>u <br>
+Kte<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>rá nám sežrala sto<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>letí <br>
+Zpě<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>nění hřebci se roz<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>letí <br>
+</p>
+<p class="chorus"><br>
+V<span class="chord" tone="F" type=""><span class="innerchord">F</span></span> tuto n<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>oc lámání <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>kostí <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span><br>
+Chyt<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>rácké m<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>alověrnost<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>i     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Sraž<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>me tu b<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>estii hlubo<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>ko    <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Tak <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>jak to <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>umí jen bar<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>oko   <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Dne<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>s je dnes, ale co<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> zítra <br>
+Zby<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>de tu zázračná mitr<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>a? <br>
+Kom<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>u dá svou hlavu do <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>klína <br>
+ryz<span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>áček svatého Mart<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ina <br>
+</p class ="chorus">
+<p class="chorus"><br>
+Z<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>em kter<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>á nemá své <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>nebe   <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Ztra<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>tila vš<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>echno i seb<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>e      <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Zaro<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>stla pa<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>stvou jen pr<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>o oko   <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Proč<span class="chord" tone="F" type=""><span class="innerchord">F</span></span> si tak vzdá<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lené - v perutí<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>ch oděné <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span> baroko ? <br>
+</p class ="chorus">
+<p class="chorus"><br>
+Z<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>em kter<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>á nemá své <span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>nebe  <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Ztra<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>tila vš<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>echno i seb<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>e     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+Zarů<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>stá pas<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tvou jen pro ok<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>o     <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span>         <br>
+   P<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>roč si <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tak vzdálené ba<span class="chord" tone="D" type="mi"><span class="innerchord">Dmi</span></span>roko  <span class="chord" tone="B" type="b"><span class="innerchord">Bb</span></span> <br>
+</p class ="chorus"></div></div></div></body></html>

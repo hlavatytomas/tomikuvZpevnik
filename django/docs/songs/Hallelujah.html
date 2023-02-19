@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Hallelujah</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Hallelujah</h1>
+<h3 id="author">Jeff Buckley</h3><div class="songtext"><div class="song_container">
+
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+I <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>heard there was a <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>secret chord<br>
+That <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>David played and it <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>pleased the lord<br>
+But <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>you don't really <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>care for music, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>do you?  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+Well it <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>goes like this the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>fourth, the <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>fifth<br>
+The <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>minor fall and the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>major lift<br>
+The <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>baffled king <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>composing halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah<br>
+</p>
+<p class="chorus"><br>
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>jah          <br>
+</p class ="chorus">
+<p class="verse"><br>
+Well, your <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>faith was strong but you <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>needed proof<br>
+You <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>saw her bathing <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>on the roof<br>
+Her <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>beauty and the <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>moonlight over<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>threw you    <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+She <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tied you to her <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>kitchen <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>chair<br>
+She <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>broke your throne and she <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>cut your hair<br>
+And <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>from your lips she <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>drew the halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah<br>
+</p>
+<p class="chorus"><br>
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>jah          <br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Baby, I've been <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>here before<br>
+I've <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>seen this room and I've <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>walked this floor<br>
+I <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>used to live a<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lone before I <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>knew you   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+I've <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>seen your flag on the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>marble <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>arch<br>
+But <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>love is not a vic<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tory march<br>
+It's a <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>cold and it's a <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>broken halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah<br>
+</p>
+<p class="chorus"><br>
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>jah          <br>
+</p class ="chorus">
+<p class="verse"><br>
+Well, there <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>was a time when you <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>let me know<br>
+What's <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>really going <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>on below<br>
+But <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>now you never <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>show that to me <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>do you   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+But re<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>member when I <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>moved in <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>you<br>
+And the <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>holy dove was <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>moving too<br>
+And <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>every breath we <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>drew was halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah<br>
+</p>
+<p class="chorus"><br>
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>jah          <br>
+</p class ="chorus">
+<p class="verse"><br>
+Well, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>maybe there's a <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>god above<br>
+But <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>all I've ever <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>learned from love<br>
+Was <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>how to shoot some<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>body who out<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>drew you   <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+It's <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>not a cry that you <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>hear at <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>night<br>
+It's <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>not somebody who's <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>seen the light<br>
+It's a <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>cold and it's a <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>broken halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah<br>
+</p>
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>....<br>
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>....<br>
+Halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lujah, halle<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lujah, halle<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lu-u-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>u-u-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>jah ....<br>
+
+</span></p></div></div></div></body></html>

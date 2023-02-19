@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Mrs Robinson</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Mrs Robinson</h1>
+<h3 id="author">Simon  Garfunkel</h3><div class="songtext"><div class="song_container"><div id="capo">CAPO2</div>
+
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>Di di-di-di di di di-di di di di-di di<br><span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Doo doo-doo-doo doo doo-doo doo doo doo<br><span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Di-di-di-di di d<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>i di-di-di <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>di di-<span class="chord" tone="G" type="/B"><span class="innerchord">G/B</span></span>di di <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>     <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>    <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+</span></p>
+<p class="chorus"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>And here's to <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>you Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+J<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>esus loves you m<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>ore than you will kn<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ow, <span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>      wo wo w<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>God bless you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>please Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Heaven holds a <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>place for those who <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pray,<span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>     hey hey h<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ey<br>
+Hey hey <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>hey<br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>We'd like to know a little bit about you for our <span class="chord" tone="E" type="7"><span class="innerchord">E7</span></span>files<br>
+<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>We'd like to help you learn to help y<span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span>ourself<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Look around you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>all you see are <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>sympat<span class="chord" tone="G" type="/B"><span class="innerchord">G/B</span></span>hetic <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>eyes<br>
+<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>Stroll around the grounds un<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>til you feel at home<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>And here's to <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>you Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+J<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>esus loves you m<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>ore than you will kn<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ow, <span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>      wo wo w<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>God bless you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>please Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Heaven holds a <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>place for those who <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pray,<span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>     hey hey h<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ey<br>
+Hey hey <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>hey<br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>Hide it in a hiding place where no one ever go<span class="chord" tone="E" type="7"><span class="innerchord">E7</span></span>es<br>
+<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Put it in your pantry with your c<span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span>upcakes<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>It's a little <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>secret just the <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Robin<span class="chord" tone="G" type="/B"><span class="innerchord">G/B</span></span>sons' af<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>fair<br>
+<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>Most of all you've got to <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>hide it from the kids<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Koo-koo-ka-ch<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>oo, Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+J<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>esus loves you m<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>ore than you will kn<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ow, <span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>      wo wo w<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>God bless you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>please Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Heaven holds a <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>place for those who <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pray,<span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>     hey hey h<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ey<br>
+Hey hey <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>hey<br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>Sitting on a sofa on a Sunday afte<span class="chord" tone="E" type="7"><span class="innerchord">E7</span></span>rnoon<br>
+<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>Going to the candidates debate  <span class="chord" tone="A" type="7"><span class="innerchord">A7</span></span>         <br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Laugh about it <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>shout about it <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>when you've <span class="chord" tone="G" type="/B"><span class="innerchord">G/B</span></span>got to c<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>hoose<br>
+<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>Any way you look at it you <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lose<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Where have you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>gone Joe Di<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Maggio<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>A nation turns its <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>lonely eyes to <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>you, <span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>       woo woo wo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>What's that you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>say Mrs. <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>Robinson<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Joltin' Joe has <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>left and gone <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>away,<span class="chord" tone="C" type="/B"><span class="innerchord">C/B</span></span>    <span class="chord" tone="A" type="m7"><span class="innerchord">Am7</span></span>    <span class="chord" tone="A" type="m7/G"><span class="innerchord">Am7/G</span></span>      hey hey h<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ey, hey hey   <span class="chord" tone="E" type=""><span class="innerchord">E</span></span>A D G B   amp;   amp;   amp;   amp;   amp;   amp;   amp;   amp;  on 2nd with solo   amp;  is th<br>
+</p class ="chorus"></div></div></div></body></html>

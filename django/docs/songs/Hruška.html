@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Hruška</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Hruška</h1>
+<h3 id="author">Čechomor</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: 
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+Stojí<span class="chord" tone="D" type=""><span class="innerchord">D</span></span> hruška v ši<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>rém poli<br>
+vr<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>šek se ji <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>zele<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ná<br>
+</p>
+<p class="chorus"><br>
+Pod <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ní se <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>pase k<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ůn vra<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ný<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>pase ho <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>má mi<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lá <br>
+Pod<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ní se <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>pase k<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ůn vra<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ný<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>pase ho <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>má mi<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lá <br>
+</p class ="chorus">
+<p class="verse"><br>
+Proč <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> má milá dnes <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> pásete<br>
+z ve<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>čera <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> do rá<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>na<br>
+</p>
+<p class="chorus"><br>
+Kam <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> můj mi<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lý po<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>jede<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>te<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>já poje<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>du s v<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>áma <br>
+Kam <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> můj mi<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lý po<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>jede<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>te<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>já poje<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>du s v<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>áma <br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+O <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> já pojedu <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> daleko<br>
+přes <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> vody <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> hlubo<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ké<br>
+</p>
+<p class="chorus"><br>
+Kéž <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> bych byl <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> nikdy <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> nepoz<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nal<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>panny <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> černoo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ké <br>
+Kéž <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> bych byl <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> nikdy <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> nepoz<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>nal<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>panny <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> černoo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ké <br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+</span></p></div></div></div></body></html>

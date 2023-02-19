@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Toulavej</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Toulavej</h1>
+<h3 id="author">Vojta Kiďák Tomáško</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="F" type=""><span class="innerchord">F</span></span> <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+Něk<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>do z vás, kdo chutnal dálk<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>u, jeden z tě<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ch, co roz<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>uměj<br>
+Ať vám pov<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>í, proč mi ří<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>kaj, proč mi ří<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>kaj toulave<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>j<br>
+Kdo<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> mě zná a v sále sed<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>í, kdo si mys<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>lí, je mu h<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>ej<br>
+Tomu zpí<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>vá pro všední d<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>en, tom<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>u zpívá toulavej<br>
+</p>
+<p class="chorus"><br>
+Sob<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>otní ráno mě neu<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>vidí u cesty s klukama stá<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>t<br>
+na <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>půdě celta se pra<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>chem stydí a sta<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>rý songy jsem<br>
+zap<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>omněl hrát, zapomněl hrá<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>t<br>
+</p class ="chorus">
+<p class="verse"><br>
+Něk<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>dy v noci je mi smu<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tno, čas<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>to bejvám doma zle<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>j<br>
+Malá daň<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> za vaše umí<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>, kte<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>rou splácí toulavej<br>
+Každ<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ej měsíc jin<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>á štace, čekáš kam<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> tě uložej<br>
+Je to faj<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>n, vždyť pře<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ce zpívá, třeba smu<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>tně toulavej<br>
+</p>
+<p class="chorus"><br>
+Sob<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>otní ráno mě neu<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>vidí u cesty s klukama stá<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>t<br>
+na <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>půdě celta se pra<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>chem stydí a sta<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>rý songy jsem<br>
+zap<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>omněl hrát, zapomněl hrá<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>t<br>
+</p class ="chorus">
+<p class="verse"><br>
+Vím,<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> že jednou někd<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>o přijde, tiše písk<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ne, no tak jdem<br>
+Známí klu<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ci ruku sti<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>sknou, řeknou vít<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>ej, toulave<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>j<br>
+Bud<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ou hvězdy jako ten<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>krát až tě v o<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>čích zabolej<br>
+Celou noc<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span> jim bude zp<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ívat jeden blá<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>zen toulave<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>j<br>
+</p>
+<p class="chorus"><br>
+Sob<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>otní ráno mi po<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>letí vstříc, budeme u cesty st<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>át<br>
+vyp<span class="chord" tone="F" type=""><span class="innerchord">F</span></span>ráším celtu a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>můžu vám říct, že na<span class="chord" tone="F" type=""><span class="innerchord">F</span></span> starý songy<br>
+si vzpomenu rá<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>d, vzpomenu rá<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>d<br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
+<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span> <span class="chord" tone="F" type=""><span class="innerchord">F</span></span> <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+Něk<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>do z vás, kdo chu<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tnal dálku, jeden z tě<span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>ch, co rozuměj<br>
+   Ať vám <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>poví, proč mi ří<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>kaj   <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>           <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>         <br>
+</p></div></div></div></body></html>

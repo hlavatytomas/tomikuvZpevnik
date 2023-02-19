@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Mamma Mia</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="../transpose.js"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Mamma Mia</h1>
+<h3 id="author">ABBA</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>I've been <span class="chord" tone="A" type="/D"><span class="innerchord">A/D</span></span>cheated by <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>you, since I don't know <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>when<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>So I <span class="chord" tone="A" type="/D"><span class="innerchord">A/D</span></span>made up my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>mind, it must come to an <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>end<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Look at me now, <span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span>will I ever learn?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>I don't know ho<span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span>w, but I suddenly <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>lose control<br>
+There's a fire with<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>in my soul<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Just <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>one  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>look and I can hear a bell ring<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>One <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>more <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>look and I forget everything<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, here I go again<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, how can I re<span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>sist you?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, does it show again?<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, just how much I've <span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>missed you<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Yes, I've been <span class="chord" tone="A" type="/C#"><span class="innerchord">A/C#</span></span>brokenhearted<br>
+<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>Blue since the <span class="chord" tone="F#" type="m/A"><span class="innerchord">F#m/A</span></span>day we parted<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>Why, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>why <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>did I ever <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let you go?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia,<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span> now I really know,<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>I could never <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let you go<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>  <span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>I've been <span class="chord" tone="A" type="/D"><span class="innerchord">A/D</span></span>angry and <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>sad about the things that you <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>do<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>I can't <span class="chord" tone="A" type="/D"><span class="innerchord">A/D</span></span>count all the <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>times that I've told you we're <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>through<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>And when you go,<span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span> when you slam the door<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>I think you kno<span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span>w, that you won't be a<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>way too long<br>
+You know that I'm <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>not that strong<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Just <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>one  <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>look and I can hear a bell ring<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>One <span class="chord" tone="D" type="/F#"><span class="innerchord">D/F#</span></span>more <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>look and I forget everything<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, here I go again<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, how can I re<span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>sist you?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, does it show again?<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, just how much I've <span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>missed you<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Yes, I've been <span class="chord" tone="A" type="/C#"><span class="innerchord">A/C#</span></span>brokenhearted<br>
+<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>Blue since the <span class="chord" tone="F#" type="m/A"><span class="innerchord">F#m/A</span></span>day we parted<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>Why, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>why <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>did I ever <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let you go?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, even if I say<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>Bye <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>bye, leave me now or <span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>never<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>mamma mia, it's a game we play<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>Bye <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>bye doesn't mean for<span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>ever<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, here I go again<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, how can I re<span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>sist you?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia, does it show again?<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, just how much I've <span class="chord" tone="D" type="/G"><span class="innerchord">D/G</span></span>missed you<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Yes, I've been <span class="chord" tone="A" type="/C#"><span class="innerchord">A/C#</span></span>brokenhearted<br>
+<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>Blue since the <span class="chord" tone="F#" type="m/A"><span class="innerchord">F#m/A</span></span>day we parted<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>Why, <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>why <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>did I ever <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let you go?<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Mamma mia,<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span> now I really know,<br>
+<span class="chord" tone="C" type="/G"><span class="innerchord">C/G</span></span>My   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>my, <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>I could never <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>let you go<br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>(fa<span class="chord" tone="D" type="aug"><span class="innerchord">Daug</span></span>de  A D G B   <br>
+</span></p></div></div></div></body></html>
