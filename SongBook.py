@@ -488,7 +488,7 @@ class SongBook:
             {% load static %}   
             <link rel="stylesheet" href=" {% static './style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src="../transpose.js"></script>
+            <script src=" {% static './transpose.js' %}"></script>
             </head>
             <body>
             <div class="song">
