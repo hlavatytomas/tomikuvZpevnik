@@ -8,6 +8,7 @@ import os
 import re
 from pathlib import Path
 import pickle
+import locale
 
 
 class SongBook:
@@ -18,6 +19,11 @@ class SongBook:
         self.songBookTex = songBookTex
         self.loadSongs()
         # self.info()
+
+    def comparator(song):
+        czech_alphabet = '0123456789 aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž'
+        return [song[2]] + [(czech_alphabet.index(c) if c in czech_alphabet else 50) for c in song[0].lower()]
+
     
     def loadSongs(self):
         '''load songs function -- update songs list and number of songs'''
@@ -35,7 +41,7 @@ class SongBook:
                 else:
                     owner = ""
                 self.songsLst.append((nazev,path,owner))
-        self.songsLst = sorted(self.songsLst)
+        self.songsLst = sorted(self.songsLst,key=SongBook.comparator)
         self.nSongs = len(self.songsLst)
     
     def info(self):
