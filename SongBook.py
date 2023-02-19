@@ -35,7 +35,7 @@ class SongBook:
                 else:
                     owner = ""
                 self.songsLst.append((nazev,path,owner))
-        self.songsLst = self.songsLst
+        self.songsLst = sorted(self.songsLst)
         self.nSongs = len(self.songsLst)
     
     def info(self):
