@@ -433,6 +433,7 @@ class SongBook:
             '''
 
         htmlDir = Path(htmlDir)
+        print(htmlDir.absolute)
 
         if not htmlDir.joinpath("songs").exists():
             print(f"Creating new directory: {htmlDir}")

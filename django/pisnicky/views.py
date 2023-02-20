@@ -26,9 +26,10 @@ def addSong(request):
 			# create song book
 			songBook = SongBook(songsDir,songBookTex)
 			songBook.addSong(runFromWeb=True, pageStrW=form.cleaned_data['your_name'])
+			songBook.loadSongs()
 			songBook.createHTML('../docs')
 			songBook.createHTMLForDjango('./docs')
-			return HttpResponseRedirect('index.html')
+			return HttpResponseRedirect('addSong.html')
 
 	# if a GET (or any other method) we'll create a blank form
 	else:
