@@ -31,6 +31,7 @@ from django.shortcuts import render
 
 urlpatterns = [
     path('docs/index.html', views.home, name='home'),    # added
+    path('docs/addSong.html', views.addSong, name='addSong'),    # added
     # path('docs/songs/1970.html', views.p1970, name='p1970'),    # added
 	path('docs/songs/1970.html', views.p0, name='1970'),
 	path('docs/songs/1_Signální.html', views.p1, name='1_Signální'),

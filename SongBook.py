@@ -94,7 +94,7 @@ class SongBook:
         os.system('pdflatex --shell-escape %s.tex > log'%self.songBookTex)
         print('end of not important stuff\n')
 
-    def addSong(self):
+    def addSong(self, runFromWeb = False, pageStrW=""):
         '''function to add song into the songbook'''
 
         # default parameters
@@ -107,7 +107,8 @@ class SongBook:
         listOfPosibilities = ['Outro','Intro','Bridge','Chorus','Verse']
 
         # prepare page to load
-        pageStrW = input('Link for song: ')
+        if pageStrW == "":
+            pageStrW = input('Link for song: ')
         # page = urllib.request.urlopen(pageStrW)
 
         req = urllib.request.Request(
@@ -323,20 +324,61 @@ class SongBook:
             # artist = artist.replace('\\u00ed','í').replace('\\u00e1','á').replace('\\u00fa','ů').replace('\\u0159','ř').replace('\\u0161','š')
             # name = name.replace('\\u00ed','í').replace('\\u00e1','á').replace('\\u00fa','ů').replace('\\u0159','ř').replace('\\u0161','š')
             # nameF = name.replace('\\u00ed','i').replace('\\u00e1','a').replace('\\u00fa','u').replace('\\u0159','r').replace('\\u0161','s')
-
+            
             print('\nI have prepared song %s by %s, capo %s'%(name,artist,capo))
             print('First line = %s\nPre-Last line = %s\nLast line = %s\nowner = %s'%(finLst[0],finLst[-2],finLst[-1],owner))
             
-            wTD = input('Do you want to change:'  
-                            + '\n\t["1"]. word' 
-                            + '\n\t["l"]. (last) word' 
-                            + '\n\t["s"] name of the song' 
-                            + '\n\t["i"] name of the author/interpret' 
-                            + '\n\t["c"] capo'
-                            + '\n\t["t"] transpose'
-                            + '\n\t["o"] owner'
-                            + '\nor ["n"] nothing?')
-            if wTD == 'n':
+            if not runFromWeb:
+                wTD = input('Do you want to change:'  
+                                + '\n\t["1"]. word' 
+                                + '\n\t["l"]. (last) word' 
+                                + '\n\t["s"] name of the song' 
+                                + '\n\t["i"] name of the author/interpret' 
+                                + '\n\t["c"] capo'
+                                + '\n\t["t"] transpose'
+                                + '\n\t["o"] owner'
+                                + '\nor ["n"] nothing?')
+                if wTD == 'n':
+                    with open(Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex"),'w') as fl:
+                        fl.writelines('\\sclearpage')
+                        fl.writelines('\\beginsong{%s}[by={%s}]\n'%(name,artist))
+                        if playingNow == False:
+                            fl.writelines('\\beginverse')
+                            playingNow = 'verse'
+                        if not capo == '':
+                            fl.writelines('\\capo{%s}\n'%capo)
+                        if not transpose == 0:
+                            fl.writelines('\\transpose{%d}\n'%transpose)
+                        for i in range(len(finLst)):
+                            fl.writelines(finLst[i]+'\n')
+                        if playingNow == 'verse' or playingNow == 'chorus':
+                            fl.writelines('\\end%s'%playingNow)
+                        else:
+                            fl.writelines('}\\endverse')
+                        fl.writelines('\\endsong')
+                    songAdded = True
+                else:
+                    if '1' in wTD:
+                        firstWord = input('Write the first word: ')
+                    if 'l' in wTD:
+                        lastWord = input('Write the last word: ')
+                    if 's' in wTD:
+                        name = input('Write name of the song: ')
+                    if 'i' in wTD:
+                        artist = input('Write interpret/author of the song: ')
+                    if 'c' in wTD:
+                        capo = input('Write capo: ')
+                    if 't' in wTD:
+                        transpose = int(input('Write transposition: '))
+                    if 'o' in wTD:
+                        ownS = (input('Write owner ("H"onzik, "D"omca or "L"ucka): '))
+                        if 'H' in ownS:
+                            owner = 'ŽŽ_HonzikSongs/' 
+                        elif 'D' in ownS:
+                            owner = 'ŽŽ_DomcaSongs/' 
+                        elif 'L' in ownS:
+                            owner = 'ŽŽ_LuckaSongs/'
+            else:
                 with open(Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex"),'w') as fl:
                     fl.writelines('\\sclearpage')
                     fl.writelines('\\beginsong{%s}[by={%s}]\n'%(name,artist))
@@ -355,27 +397,7 @@ class SongBook:
                         fl.writelines('}\\endverse')
                     fl.writelines('\\endsong')
                 songAdded = True
-            else:
-                if '1' in wTD:
-                    firstWord = input('Write the first word: ')
-                if 'l' in wTD:
-                    lastWord = input('Write the last word: ')
-                if 's' in wTD:
-                    name = input('Write name of the song: ')
-                if 'i' in wTD:
-                    artist = input('Write interpret/author of the song: ')
-                if 'c' in wTD:
-                    capo = input('Write capo: ')
-                if 't' in wTD:
-                    transpose = int(input('Write transposition: '))
-                if 'o' in wTD:
-                    ownS = (input('Write owner ("H"onzik, "D"omca or "L"ucka): '))
-                    if 'H' in ownS:
-                        owner = 'ŽŽ_HonzikSongs/' 
-                    elif 'D' in ownS:
-                        owner = 'ŽŽ_DomcaSongs/' 
-                    elif 'L' in ownS:
-                        owner = 'ŽŽ_LuckaSongs/' 
+
 
     def createHTML(self,htmlDir):
         # prepare headers
@@ -535,6 +557,7 @@ class SongBook:
                 <body>
                 <h2 style="text-align:center">Tomíkův zpěvník</h3>
                 <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
+                <a href="./addSong.html" owner=""><div class="song_ref">Add song<span class="owner"></span></div></a>
                 <div class="list_container">
                 <div class="song_list">
                 '''
