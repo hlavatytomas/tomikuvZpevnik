@@ -420,12 +420,29 @@ class SongBook:
             index.write('''<!DOCTYPE html>
                 <html lang="en">
                 <head>
+                <script src="./songList.js"></script>
                 <link rel="stylesheet" href="./style.css">
+                <link rel="stylesheet" href="./dropdown.css">
                 <title>Tomíkův zpěvník</title>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 </head>
                 <body>
+                <div id="control">
+                <div>
+                    <a href="https://github.com/hlavatytomas/tomikuvZpevnik/raw/master/Songbook.pdf">
+                    <div class="control_button pdf_button">
+                        PDF
+                    </div>
+                    </a>
+                </div>
+                <div id="list1" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Select Owners</span>
+                    <ul class="items">
+                    <li><input type="checkbox" checked/>All </li>
+                    </ul>
+                </div>
+                </div>
                 <h2 style="text-align:center">Tomíkův zpěvník</h3>
                 <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
                 <div class="list_container">
@@ -472,7 +489,7 @@ class SongBook:
                     with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
 
-                    index.write(f'<div><a href="./songs/{songName}.html" owner="{songOwner}"><div class="song_ref">{re.sub("_"," ",songName)}<span class="owner">{songOwner}</span></div></a></div>\n')
+                    index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 
                     songCount +=1
                 except FileNotFoundError:
@@ -533,6 +550,13 @@ class SongBook:
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 </head>
                 <body>
+                <div id="control">
+                <div id="list1" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Select Fruits</span>
+                    <ul class="owners_selection">
+                    </ul>
+                </div>
+                </div>
                 <h2 style="text-align:center">Tomíkův zpěvník</h3>
                 <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
                 <div class="list_container">

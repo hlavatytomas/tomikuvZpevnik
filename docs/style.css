@@ -119,6 +119,8 @@ a {
     text-align: left;
     transition: 0.5s;
     border-bottom: 2px solid #f6f6f6;
+    display: flex;
+    justify-content: space-between;
 }
 
 .song_ref:hover {
@@ -141,10 +143,8 @@ a {
     margin:auto;
 }
 
-.owner {
+.song_ref .owner {
     font-family: 'Comic Sans MS';
-    text-align: right;
-    float: right;
     color: #a6a6a6;
 }
 
