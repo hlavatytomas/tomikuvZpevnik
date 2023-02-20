@@ -639,7 +639,7 @@ if __name__ == "__main__":
     
     songBook.createHTML("docs")
     songBook.createHTMLForDjango("django/docs")
-    with open('songbook.pkl', 'wb') as f:
-        pickle.dump(songBook, f)
+    # with open('songbook.pkl', 'wb') as f:
+    #     pickle.dump(songBook, f)
     # songBook.createSongBook()
     # songBook.addSong()
