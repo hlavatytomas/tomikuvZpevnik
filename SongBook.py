@@ -397,6 +397,32 @@ class SongBook:
                         fl.writelines('}\\endverse')
                     fl.writelines('\\endsong')
                 songAdded = True
+                return nameF.replace(' ','_')
+    
+    def infoAboutSong(self, name):
+        for i in range(len(self.songsLst)):
+            if name == self.songsLst[i][0]:
+                songInd = i
+                with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'r') as f:
+                    content = f.read()
+                return self.songsLst[i][0], re.findall(r'by={([^}]*)}',content)
+
+    def changeInSong(self, name, replaces):
+        # print(name, replaces)
+        with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'r') as f:
+            content = f.read()
+        for replace in replaces:
+            chType, nVal = replace
+            if chType == 'author':
+                author = re.findall(r'by={([^}]*)}',content)[0]
+                content = content.replace(author,nVal)
+            if chType == 'songName':
+                namePrev = re.findall(r'\\beginsong{([^}]*)}',content)[0]
+                content = content.replace(namePrev, nVal)
+                os.remove('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')))
+                name = nVal
+        with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'w') as f:
+            f.write(content)
 
 
     def createHTML(self,htmlDir):
@@ -544,7 +570,7 @@ class SongBook:
             </div>
             <div id="trans_control">
             <div>
-            <a href="../editSong.html#PISNICKA" id ="change"><span>Upravit</span></a>
+            <a href="../editSong.html?song=PISNICKA" id ="change"><span>Upravit</span></a>
             </div>
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>

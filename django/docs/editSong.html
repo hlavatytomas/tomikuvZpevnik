@@ -10,6 +10,11 @@
     <body>
         <h2 style="text-align:center">Tomíkův zpěvník</h3>
         <h3 style="text-align:center">&#127925; Edituj písničku &#127925;</h3>
-        <a href="./index.html" owner=""><div class="song_ref">Zpět na index<span class="owner"></span></div>        
+        <form action="handleEdit.html" method="get">
+            {% csrf_token %}
+            {{ songForm }}
+        <input type="submit" value="Submit">
+        </form>
+        <a href="./index.html" owner=""><div class="song_ref">Zpět na index<span class="owner"></span></div>           
     </body>
 </html>
