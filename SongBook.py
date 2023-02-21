@@ -544,6 +544,9 @@ class SongBook:
             </div>
             <div id="trans_control">
             <div>
+            <a href="../editSong.html#PISNICKA" id ="change"><span>Upravit</span></a>
+            </div>
+            <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
             <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
@@ -579,10 +582,10 @@ class SongBook:
                     <ul class="owners_selection">
                     </ul>
                 </div>
+                <a href="./addSong.html" owner="">Přidej písničku<span class="owner"></span></a>
                 </div>
                 <h2 style="text-align:center">Tomíkův zpěvník</h3>
                 <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
-                <a href="./addSong.html" owner=""><div class="song_ref">Add song<span class="owner"></span></div></a>
                 <div class="list_container">
                 <div class="song_list">
                 '''
@@ -605,7 +608,7 @@ class SongBook:
                         capo = '<div id="capo">CAPO'+capo.group(1)+'</div>'
                     content = re.sub(r'\\capo{([^}]*)}', r'', content)
 
-                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">'+capo, content,1)
+                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead.replace('PISNICKA',songName)+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">'+capo, content,1)
 
                     transpose = re.search(r'\\transpose{([^}]*)}',content)
                     if transpose is None:

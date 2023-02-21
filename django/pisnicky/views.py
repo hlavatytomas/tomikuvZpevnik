@@ -10,6 +10,9 @@ from SongBook import SongBook
 def home(request):
     return render(request, 'index.html')
 
+def editSong(request):
+    return render(request, 'editSong.html')
+
 def addSong(request):
 	# if this is a POST request we need to process the form data
 	if request.method == 'POST':
@@ -41,7 +44,7 @@ def p0(request):
 	return render(request, '1970.html')
 
 def p1(request):
-	return render(request, '1_Signální.html')
+	return render(request, '1_SignÃ¡lnÃ­.html')
 
 def p2(request):
 	return render(request, 'Accidentally_In_Love.html')
@@ -50,13 +53,13 @@ def p3(request):
 	return render(request, 'Africa.html')
 
 def p4(request):
-	return render(request, 'Andìl.html')
+	return render(request, 'AndÄ›l.html')
 
 def p5(request):
-	return render(request, 'Ani_K_Stáru.html')
+	return render(request, 'Ani_K_StÃ¡ru.html')
 
 def p6(request):
-	return render(request, 'A_Mi_Bude_Pìtašedesát.html')
+	return render(request, 'AÅ¾_Mi_Bude_PÄ›taÅ¡edesÃ¡t.html')
 
 def p7(request):
 	return render(request, 'Bad_Bad_Leroy_Brown.html')
@@ -68,25 +71,25 @@ def p9(request):
 	return render(request, 'Batalion.html')
 
 def p10(request):
-	return render(request, 'Bára.html')
+	return render(request, 'BÃ¡ra.html')
 
 def p11(request):
 	return render(request, 'Behind_Blue_Eyes.html')
 
 def p12(request):
-	return render(request, 'Bláznova_Ukolébavka.html')
+	return render(request, 'BlÃ¡znova_UkolÃ©bavka.html')
 
 def p13(request):
-	return render(request, 'Blíenci.html')
+	return render(request, 'BlÃ­Å¾enci.html')
 
 def p14(request):
-	return render(request, 'Boli_Sme_Raz_Milovaní.html')
+	return render(request, 'Boli_Sme_Raz_MilovanÃ­.html')
 
 def p15(request):
 	return render(request, 'Boulevard_Of_Broken_Dreams.html')
 
 def p16(request):
-	return render(request, 'Budu_Všechno_Co_Si_Budeš_Pøát.html')
+	return render(request, 'Budu_VÅ¡echno_Co_Si_BudeÅ¡_PÅ™Ã¡t.html')
 
 def p17(request):
 	return render(request, 'Cant_Help_Falling_In_Love.html')
@@ -95,34 +98,34 @@ def p18(request):
 	return render(request, 'Cesta.html')
 
 def p19(request):
-	return render(request, 'Cesta_Z_Mìsta.html')
+	return render(request, 'Cesta_Z_MÄ›sta.html')
 
 def p20(request):
-	return render(request, 'Chci_Zas_V_Tobì_Spát.html')
+	return render(request, 'Chci_Zas_V_TobÄ›_SpÃ¡t.html')
 
 def p21(request):
 	return render(request, 'Co_Z_Tebe_Bude.html')
 
 def p22(request):
-	return render(request, 'Èarodìjnice_Z_Amesbury.html')
+	return render(request, 'ÄŒarodÄ›jnice_Z_Amesbury.html')
 
 def p23(request):
-	return render(request, 'Èerní_andìlé.html')
+	return render(request, 'ÄŒernÃ­_andÄ›lÃ©.html')
 
 def p24(request):
 	return render(request, 'Darmodej.html')
 
 def p25(request):
-	return render(request, 'Dej_Mi_Víc_Své_Lásky.html')
+	return render(request, 'Dej_Mi_VÃ­c_SvÃ©_LÃ¡sky.html')
 
 def p26(request):
 	return render(request, 'Demons.html')
 
 def p27(request):
-	return render(request, 'Dlouhej_Kouø.html')
+	return render(request, 'Dlouhej_KouÅ™.html')
 
 def p28(request):
-	return render(request, 'Dobrák_Od_Kosti.html')
+	return render(request, 'DobrÃ¡k_Od_Kosti.html')
 
 def p29(request):
 	return render(request, 'Dont_Look_Back_In_Anger.html')
@@ -134,10 +137,10 @@ def p31(request):
 	return render(request, 'Drive_By.html')
 
 def p32(request):
-	return render(request, 'Drobná_Paralela.html')
+	return render(request, 'DrobnÃ¡_Paralela.html')
 
 def p33(request):
-	return render(request, 'Duše_Z_Gumy.html')
+	return render(request, 'DuÅ¡e_Z_Gumy.html')
 
 def p34(request):
 	return render(request, 'Fair_Play.html')
@@ -149,7 +152,7 @@ def p36(request):
 	return render(request, 'Good_Riddance_Time_Of_Your_Life.html')
 
 def p37(request):
-	return render(request, 'Grónská_písnièka.html')
+	return render(request, 'GrÃ³nskÃ¡_pÃ­sniÄka.html')
 
 def p38(request):
 	return render(request, 'Hallelujah.html')
@@ -164,13 +167,13 @@ def p41(request):
 	return render(request, 'Hey_There_Delilah.html')
 
 def p42(request):
-	return render(request, 'Hlídaè_Krav.html')
+	return render(request, 'HlÃ­daÄ_Krav.html')
 
 def p43(request):
-	return render(request, 'Hlupák_Váhá.html')
+	return render(request, 'HlupÃ¡k_VÃ¡hÃ¡.html')
 
 def p44(request):
-	return render(request, 'Holky_To_Objektivnì_Lehèí_Maj.html')
+	return render(request, 'Holky_To_ObjektivnÄ›_LehÄÃ­_Maj.html')
 
 def p45(request):
 	return render(request, 'Hollywood_Hills.html')
@@ -185,7 +188,7 @@ def p48(request):
 	return render(request, 'Hrobar.html')
 
 def p49(request):
-	return render(request, 'Hruška.html')
+	return render(request, 'HruÅ¡ka.html')
 
 def p50(request):
 	return render(request, 'Im_A_Believer.html')
@@ -194,34 +197,34 @@ def p51(request):
 	return render(request, 'Im_Yours.html')
 
 def p52(request):
-	return render(request, 'Jarní_Tání.html')
+	return render(request, 'JarnÃ­_TÃ¡nÃ­.html')
 
 def p53(request):
-	return render(request, 'Jasná_Zpráva.html')
+	return render(request, 'JasnÃ¡_ZprÃ¡va.html')
 
 def p54(request):
-	return render(request, 'Jdou_Po_Mnì_Jdou.html')
+	return render(request, 'Jdou_Po_MnÄ›_Jdou.html')
 
 def p55(request):
-	return render(request, 'Join_Z_Bain.html')
+	return render(request, 'JoÅ¾in_Z_BaÅ¾in.html')
 
 def p56(request):
-	return render(request, 'Kadı_Ráno.html')
+	return render(request, 'KaÅ¾dÃ½_RÃ¡no.html')
 
 def p57(request):
-	return render(request, 'Kdo_Vchází_Do_Tvıch_Snù_Má_Lásko.html')
+	return render(request, 'Kdo_VchÃ¡zÃ­_Do_TvÃ½ch_SnÅ¯_MÃ¡_LÃ¡sko.html')
 
 def p58(request):
-	return render(request, 'Kdy_Nemùeš_Tak_Pøidej.html')
+	return render(request, 'KdyÅ¾_NemÅ¯Å¾eÅ¡_Tak_PÅ™idej.html')
 
 def p59(request):
-	return render(request, 'Krátke_Lásky.html')
+	return render(request, 'KrÃ¡tke_LÃ¡sky.html')
 
 def p60(request):
-	return render(request, 'Køídla_Z_Mıdla.html')
+	return render(request, 'KÅ™Ã­dla_Z_MÃ½dla.html')
 
 def p61(request):
-	return render(request, 'Kupte_Si_Høebeny.html')
+	return render(request, 'Kupte_Si_HÅ™ebeny.html')
 
 def p62(request):
 	return render(request, 'Kutil.html')
@@ -230,7 +233,7 @@ def p63(request):
 	return render(request, 'Lachtani.html')
 
 def p64(request):
-	return render(request, 'Láska_Na_Vsi.html')
+	return render(request, 'LÃ¡ska_Na_Vsi.html')
 
 def p65(request):
 	return render(request, 'Leaving_On_A_Jet_Plane.html')
@@ -251,10 +254,10 @@ def p70(request):
 	return render(request, 'Magdalena.html')
 
 def p71(request):
-	return render(request, 'Malá_Dáma.html')
+	return render(request, 'MalÃ¡_DÃ¡ma.html')
 
 def p72(request):
-	return render(request, 'Malování.html')
+	return render(request, 'MalovÃ¡nÃ­.html')
 
 def p73(request):
 	return render(request, 'Mamma_Mia.html')
@@ -263,19 +266,19 @@ def p74(request):
 	return render(request, 'Marie.html')
 
 def p75(request):
-	return render(request, 'Matfyzák_Na_Discu.html')
+	return render(request, 'MatfyzÃ¡k_Na_Discu.html')
 
 def p76(request):
-	return render(request, 'Mám_Doma_Koèku.html')
+	return render(request, 'MÃ¡m_Doma_KoÄku.html')
 
 def p77(request):
-	return render(request, 'Mám_Jizvu_Na_Rtu.html')
+	return render(request, 'MÃ¡m_Jizvu_Na_Rtu.html')
 
 def p78(request):
 	return render(request, 'Mikymauz.html')
 
 def p79(request):
-	return render(request, 'Milenci_V_Texaskách.html')
+	return render(request, 'Milenci_V_TexaskÃ¡ch.html')
 
 def p80(request):
 	return render(request, 'Million_Reasons.html')
@@ -290,31 +293,31 @@ def p83(request):
 	return render(request, 'Mrs_Robinson.html')
 
 def p84(request):
-	return render(request, 'Mùj_Svìt.html')
+	return render(request, 'MÅ¯j_SvÄ›t.html')
 
 def p85(request):
-	return render(request, 'Nagasaki_Hirošima.html')
+	return render(request, 'Nagasaki_HiroÅ¡ima.html')
 
 def p86(request):
-	return render(request, 'Nechte_Zvony_Znít.html')
+	return render(request, 'Nechte_Zvony_ZnÃ­t.html')
 
 def p87(request):
-	return render(request, 'Netušim.html')
+	return render(request, 'NetuÅ¡im.html')
 
 def p88(request):
-	return render(request, 'Okno_Mé_Lásky.html')
+	return render(request, 'Okno_MÃ©_LÃ¡sky.html')
 
 def p89(request):
 	return render(request, 'On_Top_Of_The_World.html')
 
 def p90(request):
-	return render(request, 'Osmı_Den.html')
+	return render(request, 'OsmÃ½_Den.html')
 
 def p91(request):
 	return render(request, 'Panic.html')
 
 def p92(request):
-	return render(request, 'Paitka.html')
+	return render(request, 'PaÅ¾itka.html')
 
 def p93(request):
 	return render(request, 'Perfect.html')
@@ -332,13 +335,13 @@ def p97(request):
 	return render(request, 'Pompeii.html')
 
 def p98(request):
-	return render(request, 'Proklínám.html')
+	return render(request, 'ProklÃ­nÃ¡m.html')
 
 def p99(request):
-	return render(request, 'Promìny.html')
+	return render(request, 'PromÄ›ny.html')
 
 def p100(request):
-	return render(request, 'Ráda_Se_Miluje.html')
+	return render(request, 'RÃ¡da_Se_Miluje.html')
 
 def p101(request):
 	return render(request, 'Ring-O-Ding.html')
@@ -350,37 +353,37 @@ def p103(request):
 	return render(request, 'Runaway_Train.html')
 
 def p104(request):
-	return render(request, 'Sáro.html')
+	return render(request, 'SÃ¡ro.html')
 
 def p105(request):
-	return render(request, 'Sbírka_Zvadlejch_Rùí.html')
+	return render(request, 'SbÃ­rka_Zvadlejch_RÅ¯Å¾Ã­.html')
 
 def p106(request):
-	return render(request, 'Sbohem_Galáneèko.html')
+	return render(request, 'Sbohem_GalÃ¡neÄko.html')
 
 def p107(request):
-	return render(request, 'Slzy_Tvı_Mámy.html')
+	return render(request, 'Slzy_TvÃ½_MÃ¡my.html')
 
 def p108(request):
 	return render(request, 'Srdce_Jako_Knize_Rohan.html')
 
 def p109(request):
-	return render(request, 'Starı_Mu.html')
+	return render(request, 'StarÃ½_MuÅ¾.html')
 
 def p110(request):
 	return render(request, 'Stitches.html')
 
 def p111(request):
-	return render(request, 'Svaz_Èeskıch_Bohémù.html')
+	return render(request, 'Svaz_ÄŒeskÃ½ch_BohÃ©mÅ¯.html')
 
 def p112(request):
-	return render(request, 'Šaman.html')
+	return render(request, 'Å aman.html')
 
 def p113(request):
-	return render(request, 'Šrouby_A_Matice.html')
+	return render(request, 'Å rouby_A_Matice.html')
 
 def p114(request):
-	return render(request, 'Tìšínská.html')
+	return render(request, 'TÄ›Å¡Ã­nskÃ¡.html')
 
 def p115(request):
 	return render(request, 'Thinking_Out_Loud.html')
@@ -395,7 +398,7 @@ def p118(request):
 	return render(request, 'Toulavej.html')
 
 def p119(request):
-	return render(request, 'Tøi_Køíe.html')
+	return render(request, 'TÅ™i_KÅ™Ã­Å¾e.html')
 
 def p120(request):
 	return render(request, 'Ulica.html')
@@ -407,19 +410,19 @@ def p122(request):
 	return render(request, 'Untitled.html')
 
 def p123(request):
-	return render(request, 'Vèelín.html')
+	return render(request, 'VÄelÃ­n.html')
 
 def p124(request):
-	return render(request, 'Veï_mì_dál,_cesto_má.html')
+	return render(request, 'VeÄ_mÄ›_dÃ¡l,_cesto_mÃ¡.html')
 
 def p125(request):
 	return render(request, 'Viva_La_Vida.html')
 
 def p126(request):
-	return render(request, 'Vymlácenı_Entry.html')
+	return render(request, 'VymlÃ¡cenÃ½_Entry.html')
 
 def p127(request):
-	return render(request, 'Vymyslená.html')
+	return render(request, 'VymyslenÃ¡.html')
 
 def p128(request):
 	return render(request, 'V_7_25.html')
@@ -443,10 +446,10 @@ def p134(request):
 	return render(request, 'Wonderwall.html')
 
 def p135(request):
-	return render(request, 'Zalùbení.html')
+	return render(request, 'ZalÅ¯benÃ­.html')
 
 def p136(request):
-	return render(request, 'Zanedbanı_Sex.html')
+	return render(request, 'ZanedbanÃ½_Sex.html')
 
 def p137(request):
 	return render(request, 'Zombie.html')
@@ -485,7 +488,7 @@ def p148(request):
 	return render(request, 'Love_Again.html')
 
 def p149(request):
-	return render(request, 'Matfyzák_Na_Discu.html')
+	return render(request, 'MatfyzÃ¡k_Na_Discu.html')
 
 def p150(request):
 	return render(request, 'Sweater_Weather.html')
@@ -497,13 +500,16 @@ def p152(request):
 	return render(request, 'The_Saga_Begins.html')
 
 def p153(request):
-	return render(request, 'Breakfast_At_Tiffanys.html')
+	return render(request, 'Ayo_Technology.html')
 
 def p154(request):
-	return render(request, 'Dont_Go_Breaking_My_Heart.html')
+	return render(request, 'Breakfast_At_Tiffanys.html')
 
 def p155(request):
-	return render(request, 'Jdevozem.html')
+	return render(request, 'Dont_Go_Breaking_My_Heart.html')
 
 def p156(request):
+	return render(request, 'Jdevozem.html')
+
+def p157(request):
 	return render(request, 'Not_Fair.html')

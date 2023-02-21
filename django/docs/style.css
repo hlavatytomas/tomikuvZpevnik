@@ -47,6 +47,20 @@
     justify-content: flex-end;
 }
 
+#change {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    border: 2px solid #d6d6d6;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    width: 80px;
+    cursor: pointer;
+    height:60px;
+    margin-left: 10px;
+  }
+
 
 #return {
     text-decoration: none;

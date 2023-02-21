@@ -10,6 +10,9 @@ from SongBook import SongBook
 def home(request):
     return render(request, 'index.html')
 
+def editSong(request):
+    return render(request, 'editSong.html')
+
 def addSong(request):
 	# if this is a POST request we need to process the form data
 	if request.method == 'POST':
