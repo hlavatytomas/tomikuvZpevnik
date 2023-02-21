@@ -596,6 +596,8 @@ class SongBook:
                 <html lang="en">
                 <head>
                 {% load static %}   
+                <script src="{% static './songList.js' %}"></script>
+                <link rel="stylesheet" href="{% static './dropdown.css' %}">
                 <link rel="stylesheet" href=" {% static './style.css' %}">
                 <title>Tomíkův zpěvník</title>
                 <meta charset="UTF-8">
@@ -603,12 +605,20 @@ class SongBook:
                 </head>
                 <body>
                 <div id="control">
-                <div id="list1" class="dropdown-check-list" tabindex="100">
-                    <span class="anchor">Select Fruits</span>
-                    <ul class="owners_selection">
-                    </ul>
+                <div>
+                    <a href="https://github.com/hlavatytomas/tomikuvZpevnik/raw/master/Songbook.pdf">
+                    <div class="control_button pdf_button">
+                        PDF
+                    </div>
+                    </a>
                 </div>
                 <a href="./addSong.html" owner="">Přidej písničku<span class="owner"></span></a>
+                <div id="list1" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Select Owners</span>
+                    <ul class="items">
+                    <li><input type="checkbox" checked/>All </li>
+                    </ul>
+                </div>
                 </div>
                 <h2 style="text-align:center">Tomíkův zpěvník</h3>
                 <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
