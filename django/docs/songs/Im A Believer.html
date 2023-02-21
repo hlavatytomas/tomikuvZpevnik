@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Im A Believer</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src=" {% static './transpose.js' %}"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <a href="../editSong.html?song=Im A Believer" id ="change"><span>Upravit</span></a>
+            </div>
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Im A Believer</h1>
+<h3 id="author">The Monkees</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I thought love was <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>only true in <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>fairy tales<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Meant for someone <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>else but not for <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>me.<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Love was out to <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>get me<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>That's the way it <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>seemed.<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Disappointment <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>haunted all my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>dreams.<br>
+</p>
+<p class="chorus"><br>
+Then I saw her <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>face<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>,  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+now <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Not a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>trace <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+of <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>doubt in my <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>mind.<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm in <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>love, (ooooh, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ah yeah)<br>
+I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever! I couldn't <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>leave her if I <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tried.<br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>I thought love was <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>more or less a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>given thing,<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Seems the more I <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>gave the less I <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>got.<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>What's the use in <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tryin'?<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>All you get is <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>pain.<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>When I needed <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>sunshine I got <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>rain.<br>
+</p>
+<p class="chorus"><br>
+Then I saw her <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>face<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>,  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+now <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>.  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Not a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>trace <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+of <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>doubt in my <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>mind.<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm in <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>love, (ooooh, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ah yeah)<br>
+I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever! I couldn't <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>leave her if I <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tried.<br>
+  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>     <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>     <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Love was out to <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>get me.<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>That's the way it <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>seemed.<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Disappointment <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>haunted all my <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>dreams.<br>
+</p>
+<p class="chorus"><br>
+Then I saw her <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>face<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>,  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+now <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>.  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Not a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>trace <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+of <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>doubt in my <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>mind.<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm in <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>love, (ooooh, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ah yeah)<br>
+I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever! I couldn't <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>leave her if I <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>tried.<br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+Yes, I saw her <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>face<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>,  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+now <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Not a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>trace <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+of <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>doubt in my <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>mind.<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+Said <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a bel<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>iever<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+Said <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever (<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever)<br>
+Said <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever (<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>I'm a be<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>liever)<br>
+</span></p>
+<p class="verse"><br>
+</p>
+<p class="verse"><br>
+</p></div></div></div></body></html>

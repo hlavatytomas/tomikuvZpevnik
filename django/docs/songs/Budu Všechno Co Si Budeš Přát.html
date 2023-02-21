@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Budu Všechno Co Si Budeš Přát</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src=" {% static './transpose.js' %}"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <a href="../editSong.html?song=Budu Všechno Co Si Budeš Přát" id ="change"><span>Upravit</span></a>
+            </div>
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Budu Všechno Co Si Budeš Přát</h1>
+<h3 id="author">Janek Ledecký</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Záplavo<span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>u  <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>uprostřed po<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>uště všedních dní<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>,<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>houslisto<span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>u, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>co tvoje stru<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ny rozezní<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span><br>
+můžu b<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ýt, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>když si to budeš přá<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>t.<br>
+</p>
+<p class="verse"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Požáre<span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>m, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>co rozpá<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>lí tě doběla<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>,<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>zloděj<span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>em, <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>co státní <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>banku uděl<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>á<br>
+můžu b<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ýt, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>když si to budeš přá<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>t.<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Bláznem, co staví na poušti mo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>st<br>
+a v dešti ta<span class="chord" tone="D" type="7"><span class="innerchord">D7</span></span>nčí <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>pro rado<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>st,<br>
+budu vš<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>echno, co si budeš př<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>át.<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Slunečním světlem a půlnoční tm<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ou,<br>
+tvou stopou v<span class="chord" tone="D" type="7"><span class="innerchord">D7</span></span> písk<span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>u ztrac<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>enou,<br>
+budu všec<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>hno, co si budeš př<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>át<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>a ještě k tomu rád<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>.<br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Šachist<span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>ou,<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> co pátým ta<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>hem dává m<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>at,<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>svítán<span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>ím,<span class="chord" tone="C" type=""><span class="innerchord">C</span></span> teď někde za<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>čala ses b<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>át,<br>
+můž<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>u být<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>, k<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>dyž si to budeš p<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>řát.<br>
+</p>
+<p class="chorus"><br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Bláznem, co staví na poušti mo<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>st<br>
+a v dešti ta<span class="chord" tone="D" type="7"><span class="innerchord">D7</span></span>nčí <span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>pro rado<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>st,<br>
+budu vš<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>echno, co si budeš př<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>át.<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Slunečním světlem a půlnoční tm<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ou,<br>
+tvou stopou v<span class="chord" tone="D" type="7"><span class="innerchord">D7</span></span> písk<span class="chord" tone="H" type="7"><span class="innerchord">H7</span></span>u ztrac<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>enou,<br>
+budu všec<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>hno, co si budeš př<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>át<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>a ještě k tomu  A <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>D G B <br>
+</p class ="chorus"></div></div></div></body></html>

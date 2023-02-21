@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>Take It Easy</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src=" {% static './transpose.js' %}"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <a href="../editSong.html?song=Take It Easy" id ="change"><span>Upravit</span></a>
+            </div>
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">Take It Easy</h1>
+<h3 id="author">Eagles</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>
+Well, I'm a-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>runnin' down the road tryin' to loosen my load<br>
+I got seven women <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>on my <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>mind<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Four that wanna own me, <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>two that wanna stone me<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>One says she's a friend of mine<br>
+</p>
+<p class="chorus"><br>
+Take it e<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>asy, take it e<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>as<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>y<br>
+Don't let the <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>sound of your own <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>wheels drive you c<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>razy<br>
+Lighten u<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>p while you still <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>can<br>
+Don't even <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>try to underst<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>and<br>
+Just find a <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>place to make your s<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>tand, and take it e<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>asy<br>
+</p class ="chorus">
+<p class="verse"><br>
+Well, I'm a-s<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tandin' on a corner in Winslow, Arizona<br>
+Such a fine <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>sight to <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>see<br>
+It's a <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>girl, my Lord, in a <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>flat-bed Ford<br>
+Slowin' <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>down to take a look at m<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>e<br>
+</p>
+<p class="chorus"><br>
+Come on, <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>ba-<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>by, don't say <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>may<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>be<br>
+I gotta <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>know if your sweet <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>love is gonna s<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>ave me<br>
+We may <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>lose and we may <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>win, though we may <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>never be here <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>again<br>
+So open <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>up, I'm climbin' <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>in, so take it e<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>asy<br>
+  <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>     <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>     <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>     <span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>  <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+Well, I'm a-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>runnin' down the road tryin' to loosen my load<br>
+Got a world of trouble <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>on my <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>mind<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Lookin' for a lover who <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>won't blow my cover, she's <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>so hard to f<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ind<br>
+</p>
+<p class="chorus"><br>
+Take it e<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>asy, take it e<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>as<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>y<br>
+Don't let the <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>sound of your own <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>wheels make you c<span class="chord" tone="E" type="m"><span class="innerchord">Em</span></span>razy<br>
+Come on <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ba<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>by, don't say <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>may<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>be<br>
+I gotta <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>know if your sweet <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>love is gonna <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>save me<br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Oh oh oh, oh oh oh<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Oh oh oh, oh oh oh<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Oh oh oh, oh oh oh<br>
+<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>Oh oh oh, oh oh oh<br>
+<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Oh oh oh, oh oh oh<br>
+Oh, we got it <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>e - <span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>e - a<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>sy<br>
+
+</span></p></div></div></div></body></html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+            <title>With Or Without You</title>
+            <meta charset="UTF-8">
+            {% load static %}   
+            <link rel="stylesheet" href=" {% static './style.css' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src=" {% static './transpose.js' %}"></script>
+            </head>
+            <body>
+            <div class="song">
+            <div id="control">
+            <div >
+            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            </div>
+            <div id="trans_control">
+            <div>
+            <a href="../editSong.html?song=With Or Without You" id ="change"><span>Upravit</span></a>
+            </div>
+            <div>
+            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
+            <div class="trans" id="trans" style="text-align:center">0</div><br>
+            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            </div>
+            <div>
+            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
+            </div>
+            </div>
+            </div>
+
+            <h1 id="song_name">With Or Without You</h1>
+<h3 id="author">U2</h3><div class="songtext"><div class="song_container">
+<p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+</span></p>
+<p class="verse"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>See the ston<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>e set in your eye<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>s<br>
+See the th<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>orn twist in your s<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ide<br>
+I w<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ait for y<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ou   <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Sleight of han<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>d and twist of fa<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>te<br>
+On a bed of na<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ils she makes me w<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ait<br>
+And I w<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ait, with<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>out you  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+</p>
+<p class="chorus"><br>
+With or with<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>out you      <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
+With or with<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>out you      <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Through the stor<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>m we reach the sho<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>re<br>
+You give it <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>all but I want m<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ore<br>
+And Irsqu<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>o;m wai<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ting for y<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ou<br>
+</p>
+<p class="chorus"><br>
+With or with<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>out you   <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
+With or wit<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>hout you aha<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>h<br>
+I canrsqu<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o;t li<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ve <br>
+With or with<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>out you  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span> <span class="chord" tone="A" type=""><span class="innerchord">A</span></span> <span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
+And you g<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ive yourself a<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>way<br>
+And you g<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ive yourself a<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>way<br>
+And you g<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ive<br>
+And you g<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ive<br>
+And you g<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ive yourself a<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>way<br>
+</span></p>
+<p class="verse"><br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>My hands are tie<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>d<br>
+<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>My body bru<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ised, she got me wi<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>th<br>
+Nothing to w<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>in and<br>
+<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>Nothing left to l<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ose<br>
+</p>
+<p class="verse"><br>*<span class="nolyrics"> [Bridge]: 
+And you g<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ive yourself a<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>way<br>
+And you g<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ive yourself a<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>way<br>
+And you g<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>ive<br>
+And you g<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ive<br>
+And you g<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ive yourself a<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>way<br>
+</span></p>
+<p class="chorus"><br>
+With or with<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>out you   <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
+With or w<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ithout you oh-o<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>h<br>
+I canrsqu<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o;t li<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ve <br>
+With or with<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>out you  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Oh-oh-oh-<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>oh<br>
+<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>Oh-oh-oh-<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>oh-oh<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Oh-oh-oh-<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>oh<br>
+Oh-o<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>h-oh    <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+</p class ="chorus">
+<p class="chorus"><br>
+With or with<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>out you   <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>         <br>
+With or wit<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>hout you aha<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>h<br>
+I canrsqu<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>o;t li<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ve <br>
+With or with<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>out you  <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>         <br>
+With or with<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>out you<br>
+</p class ="chorus">
+<p class="verse"><br>*<span class="nolyrics"> [Outro]: 
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Ooh  -  ooh-ooh-ooh-ooh<br>
+<span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Ooh  -  ooh-ooh-ooh-ooh<br>
+</span></p></div></div></div></body></html>

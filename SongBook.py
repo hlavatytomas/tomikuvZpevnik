@@ -6,9 +6,9 @@ from calendar import c
 import urllib.request
 import os
 import re
-from pathlib import Path
-import pickle
+from pathlib import Path,PurePosixPath
 import locale
+import pandas as pd
 
 
 class SongBook:
@@ -17,21 +17,20 @@ class SongBook:
 
         self.songsDir = songsDir
         self.songBookTex = songBookTex
+        self.dbPath = Path(self.songsDir).joinpath("00_songdb.csv")
         self.loadSongs()
         # self.info()
 
     def comparator(song):
         czech_alphabet = '0123456789 aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž'
-        return [song[2]] + [(czech_alphabet.index(c) if c in czech_alphabet else 50) for c in song[0].lower()]
+        return [(czech_alphabet.index(c) if c in czech_alphabet else 50) for c in song[0].lower()]
 
-    
-    def loadSongs(self):
-        '''load songs function -- update songs list and number of songs'''
 
-        self.songs = []
-        songsLst = Path(self.songsDir).rglob("*.tex")
-        self.songsLst = []
-        for path in songsLst:
+    def generateDB(self):
+        print("Generating database from song files...")
+        songPaths = Path(self.songsDir).rglob("*.tex")
+        songLst=[]
+        for path in songPaths:
             nazev = path.name.split('.')[0]
             if nazev in ['index','00-title','ZZ-endsongs','ŽŽŽ-endsongs','AA_intro']:
                 pass
@@ -40,9 +39,43 @@ class SongBook:
                     owner = path.parents[0].name[3]
                 else:
                     owner = ""
-                self.songsLst.append((nazev,path,owner))
-        self.songsLst = sorted(self.songsLst,key=SongBook.comparator)
+                
+                with open(path,"r", encoding='utf-8') as f:
+                    content=f.read()
+                info=re.match(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]',content)
+                if info is None:
+                    songLst.append([nazev,str(PurePosixPath(path)),owner,"","",nazev])
+                else:
+                    songLst.append([nazev,str(PurePosixPath(path)),owner,info.group(2),info.group(1)])
+
+        #self.songsLst = pd.DataFrame(sorted(songLst,key=SongBook.comparator),columns=["name","path","owner","author","hname"])
+        self.songsLst = pd.DataFrame(songLst,columns=["name","path","owner","author","hname"])
+        
+        #sorted(self.songsLst,key=SongBook.comparator)
         self.nSongs = len(self.songsLst)
+        self.saveDB()
+
+    def saveDB(self):
+        lst = zip(list(self.songsLst["name"]),self.songsLst.index)
+        lst = sorted(lst,key=SongBook.comparator)
+        self.songsLst = self.songsLst.reindex([element[1] for element in lst])
+        self.songsLst.reset_index(inplace=True,drop=True)
+        self.songsLst["temp_index"]=self.songsLst.index
+        self.songsLst = self.songsLst.sort_values(["owner","temp_index"])
+        self.songsLst = self.songsLst.drop("temp_index",axis=1)
+        self.songsLst.reset_index(inplace=True,drop=True)
+        self.songsLst.to_csv(self.dbPath,encoding="utf-8",index=False)
+
+    def loadSongs(self):
+        '''load songs function -- update songs list and number of songs'''
+
+        if not self.dbPath.exists():
+            self.generateDB()
+        else:
+            self.songsLst = pd.read_csv(self.dbPath,encoding="utf-8") 
+            self.nSongs = len(self.songsLst)
+        
+            
     
     def info(self):
         '''give info about songbook'''
@@ -339,7 +372,8 @@ class SongBook:
                                 + '\n\t["o"] owner'
                                 + '\nor ["n"] nothing?')
                 if wTD == 'n':
-                    with open(Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex"),'w') as fl:
+                    songPath = Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex")
+                    with open(songPath,'w') as fl:
                         fl.writelines('\\sclearpage')
                         fl.writelines('\\beginsong{%s}[by={%s}]\n'%(name,artist))
                         if playingNow == False:
@@ -356,6 +390,12 @@ class SongBook:
                         else:
                             fl.writelines('}\\endverse')
                         fl.writelines('\\endsong')
+
+                        songInfo = pd.DataFrame({"name":name,"path":songPath,"owner":owner,"author":artist})
+                        self.songsLst=pd.concat([self.songsLst,songInfo],ignore_index = True)
+                        self.saveDB()
+
+
                     songAdded = True
                 else:
                     if '1' in wTD:
@@ -397,6 +437,12 @@ class SongBook:
                         fl.writelines('}\\endverse')
                     fl.writelines('\\endsong')
                 songAdded = True
+                
+                songInfo = pd.DataFrame({"name":name,"path":songPath,"owner":owner,"author":artist})
+                self.songsLst=pd.concat([self.songsLst,songInfo],ignore_index = True)
+                self.saveDB()
+
+                
                 return nameF.replace(' ','_')
     
     def infoAboutSong(self, name):
@@ -517,7 +563,10 @@ class SongBook:
             #Convert all songs to html 
             songCount = 0
             print("Converting songs...")
-            for songName,songPath,songOwner in self.songsLst:
+            for _,row in self.songsLst.iterrows():
+                songName = row["name"]
+                songPath = Path(row["path"])
+                songOwner = row["owner"]
                 try:
                     with open(songPath,"r", encoding='utf-8') as tex:
                         content=tex.read()
@@ -645,7 +694,10 @@ class SongBook:
             #Convert all songs to html 
             songCount = 0
             print("Converting songs...")
-            for songName,songPath,songOwner in self.songsLst:
+            for _,row in self.songsLst.iterrows():
+                songName = row["name"]
+                songPath = Path(row["path"])
+                songOwner = row["owner"]
                 try:
                     with open(songPath,"r", encoding='utf-8') as tex:
                         content=tex.read()
@@ -701,8 +753,7 @@ class SongBook:
                     uz = True
                 elif "]" in urlsLns[i] and uz:
                     uz = False
-                    for songInd in range(len(self.songsLst)):
-                        song = self.songsLst[songInd][0]
+                    for songInd,song in self.songsLst["name"].items():
                         newUrlLns.append("\tpath('docs/songs/%s.html', views.p%d, name='%s'),\n" % (song, songInd, song))
                 newUrlLns.append(urlsLns[i])
             with open(htmlDir.joinpath('../project/urls.py'), 'w') as urls:
@@ -710,8 +761,7 @@ class SongBook:
             
             with open(htmlDir.joinpath('../pisnicky/viewsTmpl.py'), 'r') as views:
                 viewsLst = views.readlines()
-            for songInd in range(len(self.songsLst)):
-                song = self.songsLst[songInd][0]
+            for songInd,song in self.songsLst["name"].items():
                 viewsLst.append("\ndef p%d(request):\n\treturn render(request, '%s.html')\n" % (songInd, song))
             with open(htmlDir.joinpath('../pisnicky/views.py'), 'w') as views:
                 views.writelines(viewsLst)
