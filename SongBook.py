@@ -400,12 +400,24 @@ class SongBook:
                 return nameF.replace(' ','_')
     
     def infoAboutSong(self, name):
-        for i in range(len(self.songsLst)):
-            if name == self.songsLst[i][0]:
-                songInd = i
+        for sngI in range(len(self.songsLst)):
+            if name == self.songsLst[sngI][0]:
+                s, i, c, t, o = self.songsLst[sngI][0], '', '', '', self.songsLst[sngI][2]
                 with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'r') as f:
                     content = f.read()
-                return self.songsLst[i][0], re.findall(r'by={([^}]*)}',content)
+                try:
+                    i = re.findall(r'by={([^}]*)}',content)[0]
+                except:
+                    i = 'Not found'
+                try:
+                    c = re.search(r'\\capo{([^}]*)}',content).group(1)
+                except:
+                    c = ''
+                try:
+                    t = re.search(r'\\transpose={([^}]*)}',content).group(1)
+                except:
+                    t = ''
+                return s, i, c, t, o
 
     def changeInSong(self, name, replaces):
         # print(name, replaces)
@@ -413,14 +425,18 @@ class SongBook:
             content = f.read()
         for replace in replaces:
             chType, nVal = replace
-            if chType == 'author':
-                author = re.findall(r'by={([^}]*)}',content)[0]
-                content = content.replace(author,nVal)
             if chType == 'songName':
-                namePrev = re.findall(r'\\beginsong{([^}]*)}',content)[0]
-                content = content.replace(namePrev, nVal)
+                content = re.sub(r'\\beginsong{([^}]*)}', r'\\beginsong{%s}'%nVal, content,1)
                 os.remove('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')))
                 name = nVal
+            if chType == 'author':
+                content = re.sub(r'by={([^}]*)}', r'by={%s}'%nVal, content,1)
+            if chType == 'capo':
+                content = re.sub(r'\\capo{([^}]*)}', r'\\capo{%s}'%nVal, content,1)
+            if chType == 'transpose':
+                content = re.sub(r'\\transpose{([^}]*)}', r'\\transpose{%s}'%nVal, content,1)
+
+            
         with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'w') as f:
             f.write(content)
 
@@ -597,8 +613,8 @@ class SongBook:
                 <head>
                 {% load static %}   
                 <script src="{% static './songList.js' %}"></script>
-                <link rel="stylesheet" href="{% static './dropdown.css' %}">
                 <link rel="stylesheet" href=" {% static './style.css' %}">
+                <link rel="stylesheet" href="{% static './dropdown.css' %}">
                 <title>Tomíkův zpěvník</title>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">

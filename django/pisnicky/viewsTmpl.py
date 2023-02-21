@@ -15,12 +15,14 @@ def handleEdit(request):
 	if request.method == 'GET':
 		form = SongNameForm(request.GET)
 		if not (len(form.data)) == 0:
-			atributes = ['songName','author']
+			atributes = ['songName','author', 'capo', 'transpose','owner']
 			songsDir = '../songs/'
 			songBookTex = 'Songbook'
 			songBook = SongBook(songsDir,songBookTex)
 
 			initials = request.session.get('initials')
+
+			request.session['name'] = form.data['songName']
 
 			replaces = []
 			for i in range(len(atributes)):
@@ -35,7 +37,7 @@ def handleEdit(request):
 			form.full_clean()
 			return HttpResponseRedirect('./handleEdit.html')
 		else:
-			return HttpResponseRedirect('./index.html')
+			return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
 
 	# return render(request, 'addSong.html', {'form': form})
 
@@ -47,12 +49,15 @@ def editSong(request):
 		songsDir = '../songs/'
 		songBookTex = 'Songbook'
 		songBook = SongBook(songsDir,songBookTex)
-		song = songBook.infoAboutSong(name)
+		s, i, c, t, o = songBook.infoAboutSong(name)
 		songForm = SongNameForm(initial={	
-									'songName': song[0].replace('_',' '), 
-									'author': song[1][0],
+									'songName': s, 
+									'author': i,
+									'capo': c,
+									'transpose': t,
+									'owner': o,
 								})
-		request.session['initials'] = [song[0].replace('_',' '), song[1][0]]
+		request.session['initials'] = [s, i, c, t, o]
 	else:
 		songForm = SongNameForm()
 
