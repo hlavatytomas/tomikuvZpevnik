@@ -32,7 +32,7 @@
 }
 
 .pdf_button::after{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Helvetica, sans-serif,Arial;
     content: "🗏";
 }
 
@@ -55,6 +55,12 @@
     text-align: center;
     display: flex;
     justify-content: flex-end;
+}
+
+.trans_control {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 .back_span{
