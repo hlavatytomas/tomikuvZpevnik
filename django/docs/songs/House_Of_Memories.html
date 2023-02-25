@@ -1,24 +1,20 @@
 <!DOCTYPE html>
             <html lang="en">
-
             <head>
-            <title>House Of Memories</title>
+            <title>House_Of_Memories</title>
             <meta charset="UTF-8">
-            {% load static %}   
-            <link rel="stylesheet" href=" {% static './style.css' %}">
+            {% load static %} 
+            <link rel="stylesheet" href="{% static '../style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src=" {% static './transpose.js' %}"></script>
+            <script src="{% static '../transpose.js' %}"></script>
             </head>
             <body>
             <div class="song">
             <div id="control">
             <div >
-            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
-            <div>
-            <a href="../editSong.html?song=House_Of_Memories" id ="change"><span>Upravit</span></a>
-            </div>
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
@@ -29,9 +25,12 @@
             </div>
             </div>
             </div>
-
             <h1 id="song_name">House Of Memories</h1>
-<h3 id="author">Panic! At the Disco</h3><div class="songtext"><div class="song_container">
+            <h3 id="author">Panic! At the Disco</h3>
+            <div class="songtext">
+            <div class="song_container">
+            
+            
 <p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>Ohhh Woooo<span class="chord" tone="B" type="m"><span class="innerchord">Bm</span></span>ohhh Woooo<span class="chord" tone="E" type=""><span class="innerchord">E</span></span>ohhh Woooo<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ohhh Woooo<span class="chord" tone="F#" type="m"><span class="innerchord">F#m</span></span>ohhh<br>
 </span></p>
 <p class="verse"><br>

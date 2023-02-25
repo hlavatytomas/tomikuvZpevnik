@@ -1,24 +1,20 @@
 <!DOCTYPE html>
             <html lang="en">
-
             <head>
             <title>Ulica</title>
             <meta charset="UTF-8">
-            {% load static %}   
-            <link rel="stylesheet" href=" {% static './style.css' %}">
+            {% load static %} 
+            <link rel="stylesheet" href="{% static '../style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src=" {% static './transpose.js' %}"></script>
+            <script src="{% static '../transpose.js' %}"></script>
             </head>
             <body>
             <div class="song">
             <div id="control">
             <div >
-            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
-            <div>
-            <a href="../editSong.html?song=Ulica" id ="change"><span>Upravit</span></a>
-            </div>
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
@@ -29,9 +25,12 @@
             </div>
             </div>
             </div>
-
             <h1 id="song_name">Ulica</h1>
-<h3 id="author">Elán (Slovakia</h3><div class="songtext"><div class="song_container">
+            <h3 id="author">Elán (Slovakia</h3>
+            <div class="songtext">
+            <div class="song_container">
+            
+            
 <p class="verse"><br>
 <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Ulica je krásny <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>dom <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>vstúpme <span class="chord" tone="F" type=""><span class="innerchord">F</span></span>doň<br>
 Už ti p<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>ískam pod okn<span class="chord" tone="D" type="m"><span class="innerchord">Dm</span></span>om<br>

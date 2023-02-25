@@ -1,24 +1,20 @@
 <!DOCTYPE html>
             <html lang="en">
-
             <head>
-            <title>Dobrák Od Kosti</title>
+            <title>Dobrák_Od_Kosti</title>
             <meta charset="UTF-8">
-            {% load static %}   
-            <link rel="stylesheet" href=" {% static './style.css' %}">
+            {% load static %} 
+            <link rel="stylesheet" href="{% static '../style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src=" {% static './transpose.js' %}"></script>
+            <script src="{% static '../transpose.js' %}"></script>
             </head>
             <body>
             <div class="song">
             <div id="control">
             <div >
-            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
-            <div>
-            <a href="../editSong.html?song=Dobrák_Od_Kosti" id ="change"><span>Upravit</span></a>
-            </div>
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
@@ -29,9 +25,12 @@
             </div>
             </div>
             </div>
-
             <h1 id="song_name">Dobrák Od Kosti</h1>
-<h3 id="author">Chinaski</h3><div class="songtext"><div class="song_container">
+            <h3 id="author">Chinaski</h3>
+            <div class="songtext">
+            <div class="song_container">
+            
+            
 <p class="verse"><br><span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Má milá <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>jak ti je, tak j<span class="chord" tone="G" type=""><span class="innerchord">G</span></span>ak ti je? <br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Jsem ten, kdo j<span class="chord" tone="A" type=""><span class="innerchord">A</span></span>ednou tvý <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>tělo zakryje. <br>
 <span class="chord" tone="D" type=""><span class="innerchord">D</span></span>Jsem ten, kdo <span class="chord" tone="A" type=""><span class="innerchord">A</span></span>tě jednou <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>oddělá. <br>

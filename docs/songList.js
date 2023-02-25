@@ -24,6 +24,7 @@ function fillDropdown() {
         else
             checkList.classList.add('visible');
     }
+
 }
 
 

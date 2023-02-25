@@ -6,8 +6,13 @@
     position: relative;
     cursor: pointer;
     display: inline-block;
-    padding: 5px 50px 5px 10px;
-    border: 1px solid #ccc;
+    background-color: white;
+  color: #363636;
+  border-radius: 2px;
+  border: 2px solid #d6d6d6; /* Green */
+  width:134px;
+  padding: 5px;
+    
 }
   
  .dropdown-check-list .anchor:after {
@@ -31,13 +36,14 @@
 }
   
 .dropdown-check-list ul.items {
+  background-color: white;
   padding: 2px;
   display: none;
   margin: 0;
   border: 1px solid #ccc;
   border-top: none;
   position: absolute;
-  width: 148px;
+  width: 140px;
   font-family: 'Comic Sans MS';
 }
 

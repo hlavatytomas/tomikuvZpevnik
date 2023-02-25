@@ -1,24 +1,20 @@
 <!DOCTYPE html>
             <html lang="en">
-
             <head>
-            <title>Láska Na Vsi</title>
+            <title>Láska_Na_Vsi</title>
             <meta charset="UTF-8">
-            {% load static %}   
-            <link rel="stylesheet" href=" {% static './style.css' %}">
+            {% load static %} 
+            <link rel="stylesheet" href="{% static '../style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src=" {% static './transpose.js' %}"></script>
+            <script src="{% static '../transpose.js' %}"></script>
             </head>
             <body>
             <div class="song">
             <div id="control">
             <div >
-            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
-            <div>
-            <a href="../editSong.html?song=Láska_Na_Vsi" id ="change"><span>Upravit</span></a>
-            </div>
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
@@ -29,9 +25,12 @@
             </div>
             </div>
             </div>
-
             <h1 id="song_name">Láska Na Vsi</h1>
-<h3 id="author">Pokáč</h3><div class="songtext"><div class="song_container">
+            <h3 id="author">Pokáč</h3>
+            <div class="songtext">
+            <div class="song_container">
+            
+            
 <p class="verse"><br>*<span class="nolyrics"> Intro: <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>   <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>    <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>    <span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>   <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>         <br><span class="chord" tone="C" type=""><span class="innerchord">C</span></span>Vzpomínáš, jak poznali jsme se <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>na hasičským plese,<br> Já <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>rámě nabídnul ti, když <span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>hráli Kata<span class="chord" tone="C" type=""><span class="innerchord">C</span></span>pulti.<br> Já <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>nebrala tě vážně a <span class="chord" tone="A" type="m"><span class="innerchord">Am</span></span>myslela dál na žně,<br> Pak <span class="chord" tone="G" type=""><span class="innerchord">G</span></span>vypil jsi pár rumů a <span class="chord" tone="G" type="7"><span class="innerchord">G7</span></span>já tě vlekla <span class="chord" tone="C" type=""><span class="innerchord">C</span></span>domů.<br>
 </span></p>
 <p class="chorus"><br>

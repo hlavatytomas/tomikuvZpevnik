@@ -38,32 +38,41 @@ class SongBook:
                 if path.parents[0].name[:2]=="ŽŽ":
                     owner = path.parents[0].name[3]
                 else:
-                    owner = ""
+                    owner = "T"
                 
                 with open(path,"r", encoding='utf-8') as f:
                     content=f.read()
+                capo = re.search(r'\\capo{([0-9]*)}',content)
+                if capo is None:
+                    capo=0
+                else:
+                    capo = int(capo.group(1))
                 info=re.match(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]',content)
                 if info is None:
-                    songLst.append([nazev,str(PurePosixPath(path)),owner,"","",nazev])
+                    songLst.append([nazev,str(PurePosixPath(path)),owner,"","",nazev,capo])
                 else:
-                    songLst.append([nazev,str(PurePosixPath(path)),owner,info.group(2),info.group(1)])
+                    songLst.append([nazev,str(PurePosixPath(path)),owner,info.group(2),info.group(1),capo])
 
         #self.songsLst = pd.DataFrame(sorted(songLst,key=SongBook.comparator),columns=["name","path","owner","author","hname"])
-        self.songsLst = pd.DataFrame(songLst,columns=["name","path","owner","author","hname"])
+        self.songsLst = pd.DataFrame(songLst,columns=["name","path","owner","author","hname","capo"])
         
         #sorted(self.songsLst,key=SongBook.comparator)
         self.nSongs = len(self.songsLst)
         self.saveDB()
 
     def saveDB(self):
+        # sort by name and owner
         lst = zip(list(self.songsLst["name"]),self.songsLst.index)
         lst = sorted(lst,key=SongBook.comparator)
         self.songsLst = self.songsLst.reindex([element[1] for element in lst])
         self.songsLst.reset_index(inplace=True,drop=True)
         self.songsLst["temp_index"]=self.songsLst.index
-        self.songsLst = self.songsLst.sort_values(["owner","temp_index"])
-        self.songsLst = self.songsLst.drop("temp_index",axis=1)
+        ownerOrder = pd.DataFrame(data=[["T",0],["D",1],["H",2],["L",3]],columns=["owner","owner_index"])
+        self.songsLst = self.songsLst.merge(ownerOrder,how='left',on="owner")
+        self.songsLst = self.songsLst.sort_values(["owner_index","temp_index"])
+        self.songsLst = self.songsLst.drop(["temp_index","owner_index"],axis=1)
         self.songsLst.reset_index(inplace=True,drop=True)
+
         self.songsLst.to_csv(self.dbPath,encoding="utf-8",index=False)
 
     def loadSongs(self):
@@ -486,25 +495,31 @@ class SongBook:
         with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'w') as f:
             f.write(content)
 
+    def getSongHeader(songName,author,capo,django=False):
+        if django:
+            style1 = "{% static '../style.css' %}"
+            headerLine = "{% load static %} "
+            transpose = "{% static '../transpose.js' %}"
+        else:
+            style1="../style.css"
+            headerLine=""
+            transpose = "../transpose.js"
 
-    def createHTML(self,htmlDir):
-        # prepare headers
-        # my be eventually moved to a file
-        htmlHead = r'''<!DOCTYPE html>
+        htmlHead = f'''<!DOCTYPE html>
             <html lang="en">
-
             <head>
-            <title>\1</title>
+            <title>{songName}</title>
             <meta charset="UTF-8">
-            <link rel="stylesheet" href="../style.css">
+            {headerLine}
+            <link rel="stylesheet" href="{style1}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src="../transpose.js"></script>
+            <script src="{transpose}"></script>
             </head>
             <body>
             <div class="song">
             <div id="control">
             <div >
-            <a href="../index.html" id ="return"><span>&#11148;</span></a>
+            <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
             <div>
@@ -517,9 +532,88 @@ class SongBook:
             </div>
             </div>
             </div>
-
+            <h1 id="song_name">{songName.replace("_"," ")}</h1>
+            <h3 id="author">{author}</h3>
+            <div class="songtext">
+            <div class="song_container">
+            {'' if capo == 0 else '<div id="capo">CAPO ' + str(capo)+'</div>'}
             '''
+        return htmlHead
 
+    def getIndexHeader(django = False):
+        if django:
+            style1 = "{% static './style.css' %}"
+            style2 = "{% static './dropdown.css' %}"
+            headerLine = "{% load static %} "
+            songList = "{% static './songList.js' %}"
+        else:
+            style1="./style.css"
+            style2="./dropdown.css"
+            headerLine=""
+            songList = "./songList.js"
+
+        htmlHead=f'''<!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <script src="{songList}"></script>
+            {headerLine}
+            <link rel="stylesheet" href="{style1}">
+            <link rel="stylesheet" href="{style2}">
+            <title>Tomíkův zpěvník</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            </head>
+            <body>
+            <div id="control">
+            <div>
+                <a href="https://github.com/hlavatytomas/tomikuvZpevnik/raw/master/Songbook.pdf">
+                <div class="control_button pdf_button">
+                    PDF
+                </div>
+                </a>
+            </div>
+            <div id="list1" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Select Owners</span>
+                <ul class="items">
+                <li><input type="checkbox" checked/>All </li>
+                </ul>
+            </div>
+            </div>
+            <h2 style="text-align:center">Tomíkův zpěvník</h3>
+            <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
+            <div class="list_container">
+            <div class="song_list">
+            '''
+        return htmlHead
+    
+    def songToHtml(content):
+        #converts .tex documents to html syntax
+        content = re.sub(r'\\beginverse', '<p class="verse"><br>', content)
+        content = re.sub(r'\\endverse', '</p>', content)
+        
+        content = re.sub(r'\\capo{([^}]*)}', r'', content)
+
+        content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]',"", content,1)
+
+        transpose = re.search(r'\\transpose{([^}]*)}',content)
+        if transpose is None:
+            transpose=0
+        else:
+            transpose = int(transpose.group(1))
+        content = re.sub(r'\\transpose{([^}]*)}', r'', content)
+        
+        transposer = SongBook.__getTransposer(transpose)
+        content = re.sub(r'\\\[(.#*)([^\]]*)\]',lambda x: f'<span class="chord" tone="{transposer(x.group(1))}" type="{x.group(2)}"><span class="innerchord">{transposer(x.group(1))}{x.group(2)}</span></span>',content)
+
+        content = re.sub(r'\\brk',r'<br>',content)
+        content += "</div></div></div></body></html>"
+        content = re.sub(r'\\beginchorus', '<p class="chorus"><br>', content)
+        content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
+        content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
+        content = re.sub(r'\\endsong', '', content)
+        return content
+
+    def createHTML(self,htmlDir):
         htmlDir = Path(htmlDir)
         print(htmlDir.absolute)
 
@@ -528,38 +622,7 @@ class SongBook:
             os.makedirs(htmlDir.joinpath("songs"),exist_ok=True)
 
         with open(htmlDir.joinpath("index.html"),"w", encoding='utf-8') as index:
-            index.write('''<!DOCTYPE html>
-                <html lang="en">
-                <head>
-                <script src="./songList.js"></script>
-                <link rel="stylesheet" href="./style.css">
-                <link rel="stylesheet" href="./dropdown.css">
-                <title>Tomíkův zpěvník</title>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                </head>
-                <body>
-                <div id="control">
-                <div>
-                    <a href="https://github.com/hlavatytomas/tomikuvZpevnik/raw/master/Songbook.pdf">
-                    <div class="control_button pdf_button">
-                        PDF
-                    </div>
-                    </a>
-                </div>
-                <div id="list1" class="dropdown-check-list" tabindex="100">
-                    <span class="anchor">Select Owners</span>
-                    <ul class="items">
-                    <li><input type="checkbox" checked/>All </li>
-                    </ul>
-                </div>
-                </div>
-                <h2 style="text-align:center">Tomíkův zpěvník</h3>
-                <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
-                <div class="list_container">
-                <div class="song_list">
-                '''
-            )
+            index.write(SongBook.getIndexHeader())
             #Convert all songs to html 
             songCount = 0
             print("Converting songs...")
@@ -567,38 +630,13 @@ class SongBook:
                 songName = row["name"]
                 songPath = Path(row["path"])
                 songOwner = row["owner"]
+                songAuthor = row["author"]
+                songCapo = row["capo"]
                 try:
                     with open(songPath,"r", encoding='utf-8') as tex:
                         content=tex.read()
 
-                    content = re.sub(r'\\beginverse', '<p class="verse"><br>', content)
-                    content = re.sub(r'\\endverse', '</p>', content)
-
-                    capo = re.search(r'\\capo{([^}]*)}',content)
-                    if capo is None:
-                        capo=""
-                    else:
-                        capo = '<div id="capo">CAPO'+capo.group(1)+'</div>'
-                    content = re.sub(r'\\capo{([^}]*)}', r'', content)
-
-                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">'+capo, content,1)
-
-                    transpose = re.search(r'\\transpose{([^}]*)}',content)
-                    if transpose is None:
-                        transpose=0
-                    else:
-                        transpose = int(transpose.group(1))
-                    content = re.sub(r'\\transpose{([^}]*)}', r'', content)
-                    
-                    transposer = SongBook.__getTransposer(transpose)
-                    content = re.sub(r'\\\[(.#*)([^\]]*)\]',lambda x: f'<span class="chord" tone="{transposer(x.group(1))}" type="{x.group(2)}"><span class="innerchord">{transposer(x.group(1))}{x.group(2)}</span></span>',content)
-
-                    content = re.sub(r'\\brk',r'<br>',content)
-                    content += "</div></div></div></body></html>"
-                    content = re.sub(r'\\beginchorus', '<p class="chorus"><br>', content)
-                    content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
-                    content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
-                    content = re.sub(r'\\endsong', '', content)
+                    content = SongBook.getSongHeader(songName,songAuthor,songCapo)+SongBook.songToHtml(content)
 
                     with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
@@ -614,42 +652,6 @@ class SongBook:
             print(f"{songCount} songs converted to html")
     
     def createHTMLForDjango(self,htmlDir):
-        # prepare headers
-        # my be eventually moved to a file
-        htmlHead = r'''<!DOCTYPE html>
-            <html lang="en">
-
-            <head>
-            <title>\1</title>
-            <meta charset="UTF-8">
-            {% load static %}   
-            <link rel="stylesheet" href=" {% static './style.css' %}">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src=" {% static './transpose.js' %}"></script>
-            </head>
-            <body>
-            <div class="song">
-            <div id="control">
-            <div >
-            <a href="../index.html" id ="return"><span>&#11148;</span></a>
-            </div>
-            <div id="trans_control">
-            <div>
-            <a href="../editSong.html?song=PISNICKA" id ="change"><span>Upravit</span></a>
-            </div>
-            <div>
-            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
-            <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
-            </div>
-            <div>
-            <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>
-            </div>
-            </div>
-            </div>
-
-            '''
-
         htmlDir = Path(htmlDir)
 
         if not htmlDir.joinpath("songs").exists():
@@ -657,40 +659,7 @@ class SongBook:
             os.makedirs(htmlDir.joinpath("songs"),exist_ok=True)
 
         with open(htmlDir.joinpath("index.html"),"w", encoding='utf-8') as index:
-            index.write('''<!DOCTYPE html>
-                <html lang="en">
-                <head>
-                {% load static %}   
-                <script src="{% static './songList.js' %}"></script>
-                <link rel="stylesheet" href=" {% static './style.css' %}">
-                <link rel="stylesheet" href="{% static './dropdown.css' %}">
-                <title>Tomíkův zpěvník</title>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                </head>
-                <body>
-                <div id="control">
-                <div>
-                    <a href="https://github.com/hlavatytomas/tomikuvZpevnik/raw/master/Songbook.pdf">
-                    <div class="control_button pdf_button">
-                        PDF
-                    </div>
-                    </a>
-                </div>
-                <a href="./addSong.html" owner="">Přidej písničku<span class="owner"></span></a>
-                <div id="list1" class="dropdown-check-list" tabindex="100">
-                    <span class="anchor">Select Owners</span>
-                    <ul class="items">
-                    <li><input type="checkbox" checked/>All </li>
-                    </ul>
-                </div>
-                </div>
-                <h2 style="text-align:center">Tomíkův zpěvník</h3>
-                <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
-                <div class="list_container">
-                <div class="song_list">
-                '''
-            )
+            index.write(SongBook.getIndexHeader(django=True))
             #Convert all songs to html 
             songCount = 0
             print("Converting songs...")
@@ -698,38 +667,13 @@ class SongBook:
                 songName = row["name"]
                 songPath = Path(row["path"])
                 songOwner = row["owner"]
+                songAuthor = row["author"]
+                songCapo = row["capo"]
                 try:
                     with open(songPath,"r", encoding='utf-8') as tex:
                         content=tex.read()
 
-                    content = re.sub(r'\\beginverse', '<p class="verse"><br>', content)
-                    content = re.sub(r'\\endverse', '</p>', content)
-
-                    capo = re.search(r'\\capo{([^}]*)}',content)
-                    if capo is None:
-                        capo=""
-                    else:
-                        capo = '<div id="capo">CAPO'+capo.group(1)+'</div>'
-                    content = re.sub(r'\\capo{([^}]*)}', r'', content)
-
-                    content = re.sub(r'\\sclearpage\\beginsong{(.*)}\[by={(.*)}\]', htmlHead.replace('PISNICKA',songName)+r'<h1 id="song_name">\1</h1>\n<h3 id="author">\2</h3><div class="songtext"><div class="song_container">'+capo, content,1)
-
-                    transpose = re.search(r'\\transpose{([^}]*)}',content)
-                    if transpose is None:
-                        transpose=0
-                    else:
-                        transpose = int(transpose.group(1))
-                    content = re.sub(r'\\transpose{([^}]*)}', r'', content)
-                    
-                    transposer = SongBook.__getTransposer(transpose)
-                    content = re.sub(r'\\\[(.#*)([^\]]*)\]',lambda x: f'<span class="chord" tone="{transposer(x.group(1))}" type="{x.group(2)}"><span class="innerchord">{transposer(x.group(1))}{x.group(2)}</span></span>',content)
-
-                    content = re.sub(r'\\brk',r'<br>',content)
-                    content += "</div></div></div></body></html>"
-                    content = re.sub(r'\\beginchorus', '<p class="chorus"><br>', content)
-                    content = re.sub(r'\\endchorus', '</p class ="chorus">', content)
-                    content = re.sub(r'{\\nolyrics([^}]*)}', r'<span class="nolyrics">\1</span>', content)
-                    content = re.sub(r'\\endsong', '', content)
+                    content = SongBook.getSongHeader(songName,songAuthor,songCapo,django=True)+SongBook.songToHtml(content)
 
                     with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
@@ -744,6 +688,7 @@ class SongBook:
 
             print(f"{songCount} songs converted to html")
 
+            print("Creating django files...")
             with open(htmlDir.joinpath('../project/urlsTmpl.py'), 'r') as urls:
                 urlsLns = urls.readlines()
             newUrlLns = []
