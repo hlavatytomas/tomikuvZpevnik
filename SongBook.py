@@ -630,20 +630,20 @@ class SongBook:
                 songOwner = row["owner"]
                 songAuthor = row["author"]
                 songCapo = row["capo"]
-                # try:
-                with open(Path(sngDir).joinpath(songPath),"r", encoding='utf-8') as tex:
-                    content=tex.read()
+                try:
+                    with open(Path(sngDir).joinpath(songPath),"r", encoding='utf-8') as tex:
+                        content=tex.read()
 
-                content = SongBook.getSongHeader(songName,songAuthor,songCapo,django=True)+SongBook.songToHtml(content)
+                    content = SongBook.getSongHeader(songName,songAuthor,songCapo,django=True)+SongBook.songToHtml(content)
 
-                with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
-                    html.write(content)
+                    with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
+                        html.write(content)
 
-                index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+                    index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 
-                songCount +=1
-                # except FileNotFoundError:
-                #     print(f"Song not found: {songName}")
+                    songCount +=1
+                except FileNotFoundError:
+                    print(f"Song not found: {songName}")
 
             index.write("</div></div></body></html>")
 
