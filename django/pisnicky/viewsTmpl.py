@@ -9,6 +9,7 @@ sys.path.append("..")
 from SongBook import SongBook
 from pathlib import Path,PurePosixPath
 import pandas as pd
+import os
 
 def home(request):
     return render(request, 'index.html')
@@ -28,26 +29,23 @@ def handleEdit(request):
 				songsDir = '../songs/'
 				songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
 				for chI in whtChanges:
-					songBookDb = songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]]
+					if chI == 0:
+						request.session['name'] = form.data[formsToEdit[chI]] 
+					songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]]
 			
-			songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
-
-			# initials = request.session.get('initials')
-
-			# request.session['name'] = form.data['songName']
-
-			# replaces = []
-			# for i in range(len(atributes)):
-			# 	if initials[i] != form.data[atributes[i]]:
-			# 		# print(atributes[i], form.data[atributes[i]])
-			# 		replaces.append([atributes[i], form.data[atributes[i]]])
-
-			# songBook.changeInSong(initials[0], replaces)
-			# songBook.loadSongs()
-			# songBook.createHTML('../docs')
-			# songBook.createHTMLForDjango('./docs')
+				songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
+			
+			songsDir = '../songs/'
+			songBookTex = 'Songbook'
+			songBook = SongBook(songsDir,songBookTex)
+			songBook.loadSongs()
+			songBook.createHTML('../docs')
+			songBook.createHTMLForDjango('./docs',sngDir='../')
 			form.full_clean()
-			return HttpResponseRedirect('./handleEdit.html')
+			if 0 in whtChanges:
+				return HttpResponseRedirect('./index.html')
+			else:
+				return HttpResponseRedirect('./handleEdit.html')
 		else:
 			return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
 
@@ -61,7 +59,7 @@ def editSong(request):
 		songsDir = '../songs/'
 		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
 		infoSong = (songBookDb.query("name == @name").iloc[0])
-		formsToEdit = ['songName', 'author', 'capo', 'owner']
+		formsToEdit = ['name', 'author', 'capo', 'owner']
 		songForm = SongNameForm(initial={	
 									formsToEdit[0]: infoSong['name'], 
 									formsToEdit[1]: infoSong['author'],

@@ -67,6 +67,24 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#edit {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px;
+    border-radius: 4px;
+    border: 2px solid #d6d6d6;
+    color: black;
+    text-align: center;
+    width: 50px;
+    height: 26px;
+    transition: all 0.5s;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+  }
+
 
 #return {
     text-decoration: none;

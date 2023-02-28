@@ -8,13 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <div id="control">
+            <div >
+            <a href="../docs/index.html" id ="return"><span class="back_span">⮌</span></a>
+            </div>
+        </div>
         <h2 style="text-align:center">Tomíkův zpěvník</h3>
         <h3 style="text-align:center">&#127925; Edituj písničku &#127925;</h3>
         <form action="handleEdit.html" method="get">
             {% csrf_token %}
             {{ songForm }}
-        <input type="submit" value="Submit">
-        </form>
-        <a href="./index.html" owner=""><div class="song_ref">Zpět na index<span class="owner"></span></div>           
+        <br><br>
+        <input type="submit" class="control_button trans_button" value="Edituj!">
+        </form>          
     </body>
 </html>

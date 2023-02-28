@@ -84,8 +84,6 @@ class SongBook:
         else:
             self.songsLst = pd.read_csv(self.dbPath,encoding="utf-8") 
             self.nSongs = len(self.songsLst)
-        
-            
     
     def info(self):
         '''give info about songbook'''
@@ -455,33 +453,12 @@ class SongBook:
                 
                 return nameF.replace(' ','_')
 
-    def changeInSong(self, name, replaces):
-        # print(name, replaces)
-        with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'r') as f:
-            content = f.read()
-        for replace in replaces:
-            chType, nVal = replace
-            if chType == 'songName':
-                content = re.sub(r'\\beginsong{([^}]*)}', r'\\beginsong{%s}'%nVal, content,1)
-                os.remove('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')))
-                name = nVal
-            if chType == 'author':
-                content = re.sub(r'by={([^}]*)}', r'by={%s}'%nVal, content,1)
-            if chType == 'capo':
-                content = re.sub(r'\\capo{([^}]*)}', r'\\capo{%s}'%nVal, content,1)
-            if chType == 'transpose':
-                content = re.sub(r'\\transpose{([^}]*)}', r'\\transpose{%s}'%nVal, content,1)
-
-            
-        with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'w') as f:
-            f.write(content)
-
     def getSongHeader(songName,author,capo,django=False):
         if django:
             style1 = "{% static './style.css' %}"
             headerLine = "{% load static %} "
             transpose = "{% static './transpose.js' %}"
-            editSong = '<div ><a href="../editSong.html?song=%s" id ="return"><span class="back_span">⮌</span></a></div>' % songName
+            editSong = '<div id ="edit"><a href="../editSong.html?song=%s" ><span class="back_span">Edit</span></a></div>' % songName
         else:
             style1="../style.css"
             headerLine=""
@@ -635,7 +612,7 @@ class SongBook:
 
             print(f"{songCount} songs converted to html")
     
-    def createHTMLForDjango(self,htmlDir):
+    def createHTMLForDjango(self,htmlDir,sngDir=''):
         htmlDir = Path(htmlDir)
 
         if not htmlDir.joinpath("songs").exists():
@@ -653,20 +630,20 @@ class SongBook:
                 songOwner = row["owner"]
                 songAuthor = row["author"]
                 songCapo = row["capo"]
-                try:
-                    with open(songPath,"r", encoding='utf-8') as tex:
-                        content=tex.read()
+                # try:
+                with open(Path(sngDir).joinpath(songPath),"r", encoding='utf-8') as tex:
+                    content=tex.read()
 
-                    content = SongBook.getSongHeader(songName,songAuthor,songCapo,django=True)+SongBook.songToHtml(content)
+                content = SongBook.getSongHeader(songName,songAuthor,songCapo,django=True)+SongBook.songToHtml(content)
 
-                    with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
-                        html.write(content)
+                with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
+                    html.write(content)
 
-                    index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+                index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 
-                    songCount +=1
-                except FileNotFoundError:
-                    print(f"Song not found: {songName}")
+                songCount +=1
+                # except FileNotFoundError:
+                #     print(f"Song not found: {songName}")
 
             index.write("</div></div></body></html>")
 
