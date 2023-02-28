@@ -56,11 +56,11 @@ function chordsOverlap(el1, el2) {
     }
   }
   
-  window.onload = calibrateChords;
+window.onload = calibrateChords;
 
-  function scrollpage() {
-    window.scrollBy(0,1);
-    if ((window.innerHeight + window.scrollY) < document.body.offsetHeight) { //scrolling stops at the bottom
-      scrolldelay = setTimeout(scrollpage,70);
-    }
+function scrollpage() {
+  window.scrollBy(0,1);
+  if ((window.innerHeight + window.scrollY) < document.body.offsetHeight) { //scrolling stops at the bottom
+    scrolldelay = setTimeout(scrollpage,70);
   }
+}
