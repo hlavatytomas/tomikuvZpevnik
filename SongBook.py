@@ -399,7 +399,7 @@ class SongBook:
                             fl.writelines('}\\endverse')
                         fl.writelines('\\endsong')
 
-                        songInfo = pd.DataFrame({"name":name,"path":songPath,"owner":owner,"author":artist})
+                        songInfo = pd.DataFrame({"name":[name],"path":[songPath],"owner":[owner],"author":[artist]})
                         self.songsLst=pd.concat([self.songsLst,songInfo],ignore_index = True)
                         self.saveDB()
 
@@ -424,6 +424,8 @@ class SongBook:
                             owner = 'ŽŽ_HonzikSongs/' 
                         elif 'D' in ownS:
                             owner = 'ŽŽ_DomcaSongs/' 
+                        elif 'K' in ownS:
+                            owner = 'ŽŽ_KikiSongs/'
                         elif 'L' in ownS:
                             owner = 'ŽŽ_LuckaSongs/'
             else:
