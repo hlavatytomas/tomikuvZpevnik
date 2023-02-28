@@ -42,10 +42,7 @@ def handleEdit(request):
 			songBook.createHTML('../docs')
 			songBook.createHTMLForDjango('./docs',sngDir='../')
 			form.full_clean()
-			if 0 in whtChanges:
-				return HttpResponseRedirect('./index.html')
-			else:
-				return HttpResponseRedirect('./handleEdit.html')
+			return HttpResponseRedirect('./index.html')
 		else:
 			return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
 
