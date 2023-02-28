@@ -18,6 +18,7 @@ class SongBook:
         self.songsDir = songsDir
         self.songBookTex = songBookTex
         self.dbPath = Path(self.songsDir).joinpath("00_songdb.csv")
+        self.colOfDb = ["name","path","owner","author","hname","capo"]
         self.loadSongs()
         # self.info()
 
@@ -54,7 +55,7 @@ class SongBook:
                     songLst.append([nazev,str(PurePosixPath(path)),owner,info.group(2),info.group(1),capo])
 
         #self.songsLst = pd.DataFrame(sorted(songLst,key=SongBook.comparator),columns=["name","path","owner","author","hname"])
-        self.songsLst = pd.DataFrame(songLst,columns=["name","path","owner","author","hname","capo"])
+        self.songsLst = pd.DataFrame(songLst,columns=self.colOfDb)
         
         #sorted(self.songsLst,key=SongBook.comparator)
         self.nSongs = len(self.songsLst)
@@ -453,26 +454,6 @@ class SongBook:
 
                 
                 return nameF.replace(' ','_')
-    
-    def infoAboutSong(self, name):
-        for sngI in range(len(self.songsLst)):
-            if name == self.songsLst[sngI][0]:
-                s, i, c, t, o = self.songsLst[sngI][0], '', '', '', self.songsLst[sngI][2]
-                with open('%s/%s.tex' % ( self.songsDir, name.replace(' ','_')), 'r') as f:
-                    content = f.read()
-                try:
-                    i = re.findall(r'by={([^}]*)}',content)[0]
-                except:
-                    i = 'Not found'
-                try:
-                    c = re.search(r'\\capo{([^}]*)}',content).group(1)
-                except:
-                    c = ''
-                try:
-                    t = re.search(r'\\transpose={([^}]*)}',content).group(1)
-                except:
-                    t = ''
-                return s, i, c, t, o
 
     def changeInSong(self, name, replaces):
         # print(name, replaces)
@@ -497,13 +478,15 @@ class SongBook:
 
     def getSongHeader(songName,author,capo,django=False):
         if django:
-            style1 = "{% static '../style.css' %}"
+            style1 = "{% static './style.css' %}"
             headerLine = "{% load static %} "
-            transpose = "{% static '../transpose.js' %}"
+            transpose = "{% static './transpose.js' %}"
+            editSong = '<div ><a href="../editSong.html?song=%s" id ="return"><span class="back_span">⮌</span></a></div>' % songName
         else:
             style1="../style.css"
             headerLine=""
             transpose = "../transpose.js"
+            editSong = ''
 
         htmlHead = f'''<!DOCTYPE html>
             <html lang="en">
@@ -522,6 +505,7 @@ class SongBook:
             <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
+            {editSong}
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
@@ -555,8 +539,8 @@ class SongBook:
         htmlHead=f'''<!DOCTYPE html>
             <html lang="en">
             <head>
-            <script src="{songList}"></script>
             {headerLine}
+            <script src="{songList}"></script>
             <link rel="stylesheet" href="{style1}">
             <link rel="stylesheet" href="{style2}">
             <title>Tomíkův zpěvník</title>
@@ -678,7 +662,7 @@ class SongBook:
                     with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
                         html.write(content)
 
-                    index.write(f'<div><a href="./songs/{songName}.html" owner="{songOwner}"><div class="song_ref">{re.sub("_"," ",songName)}<span class="owner">{songOwner}</span></div></a></div>\n')
+                    index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 
                     songCount +=1
                 except FileNotFoundError:

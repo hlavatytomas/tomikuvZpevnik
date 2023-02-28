@@ -7,6 +7,8 @@ from .forms import *
 import sys
 sys.path.append("..")
 from SongBook import SongBook
+from pathlib import Path,PurePosixPath
+import pandas as pd
 
 def home(request):
     return render(request, 'index.html')
@@ -15,25 +17,35 @@ def handleEdit(request):
 	if request.method == 'GET':
 		form = SongNameForm(request.GET)
 		if not (len(form.data)) == 0:
-			atributes = ['songName','author', 'capo', 'transpose','owner']
-			songsDir = '../songs/'
-			songBookTex = 'Songbook'
-			songBook = SongBook(songsDir,songBookTex)
+			whtChanges = []
+			formsToEdit = request.session.get('formsToEdit')
+			for i in range(len(formsToEdit)):
+				if form.data[formsToEdit[i]] != request.session.get(formsToEdit[i]):
+					whtChanges.append(i)
+			
+			if len(whtChanges) > 0:
+				name = request.session.get('name')
+				songsDir = '../songs/'
+				songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
+				for chI in whtChanges:
+					songBookDb = songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]]
+			
+			songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
 
-			initials = request.session.get('initials')
+			# initials = request.session.get('initials')
 
-			request.session['name'] = form.data['songName']
+			# request.session['name'] = form.data['songName']
 
-			replaces = []
-			for i in range(len(atributes)):
-				if initials[i] != form.data[atributes[i]]:
-					# print(atributes[i], form.data[atributes[i]])
-					replaces.append([atributes[i], form.data[atributes[i]]])
+			# replaces = []
+			# for i in range(len(atributes)):
+			# 	if initials[i] != form.data[atributes[i]]:
+			# 		# print(atributes[i], form.data[atributes[i]])
+			# 		replaces.append([atributes[i], form.data[atributes[i]]])
 
-			songBook.changeInSong(initials[0], replaces)
-			songBook.loadSongs()
-			songBook.createHTML('../docs')
-			songBook.createHTMLForDjango('./docs')
+			# songBook.changeInSong(initials[0], replaces)
+			# songBook.loadSongs()
+			# songBook.createHTML('../docs')
+			# songBook.createHTMLForDjango('./docs')
 			form.full_clean()
 			return HttpResponseRedirect('./handleEdit.html')
 		else:
@@ -47,17 +59,18 @@ def editSong(request):
 		form = NameForm(request.GET)
 		name = (form.data['song'])
 		songsDir = '../songs/'
-		songBookTex = 'Songbook'
-		songBook = SongBook(songsDir,songBookTex)
-		s, i, c, t, o = songBook.infoAboutSong(name)
+		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
+		infoSong = (songBookDb.query("name == @name").iloc[0])
+		formsToEdit = ['songName', 'author', 'capo', 'owner']
 		songForm = SongNameForm(initial={	
-									'songName': s, 
-									'author': i,
-									'capo': c,
-									'transpose': t,
-									'owner': o,
+									formsToEdit[0]: infoSong['name'], 
+									formsToEdit[1]: infoSong['author'],
+									formsToEdit[2]: infoSong['capo'],
+									formsToEdit[3]: infoSong['owner'],
 								})
-		request.session['initials'] = [s, i, c, t, o]
+		for i in range(len(formsToEdit)):
+			request.session[formsToEdit[i]] = str(infoSong[i])
+		request.session['formsToEdit'] = formsToEdit
 	else:
 		songForm = SongNameForm()
 

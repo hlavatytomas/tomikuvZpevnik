@@ -4,9 +4,9 @@
             <title>Let_My_Love_Open_The_Door</title>
             <meta charset="UTF-8">
             {% load static %} 
-            <link rel="stylesheet" href="{% static '../style.css' %}">
+            <link rel="stylesheet" href="{% static './style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src="{% static '../transpose.js' %}"></script>
+            <script src="{% static './transpose.js' %}"></script>
             </head>
             <body>
             <div class="song">
@@ -15,6 +15,7 @@
             <a href="../index.html" id ="return"><span class="back_span">⮌</span></a>
             </div>
             <div id="trans_control">
+            <div ><a href="../editSong.html?song=Let_My_Love_Open_The_Door" id ="return"><span class="back_span">⮌</span></a></div>
             <div>
             <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
             <div class="trans" id="trans" style="text-align:center">0</div><br>
