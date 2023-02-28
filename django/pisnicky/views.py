@@ -558,22 +558,19 @@ def p152(request):
 	return render(request, 'The_Saga_Begins.html')
 
 def p153(request):
-	return render(request, 'A Star Is Born - Shallow.html')
+	return render(request, 'Star Is Born - Shallow.html')
 
 def p154(request):
-	return render(request, 'A Star Is Born - Shallow.html')
-
-def p155(request):
 	return render(request, 'Ayo_Technology.html')
 
-def p156(request):
+def p155(request):
 	return render(request, 'Breakfast_At_Tiffanys.html')
 
-def p157(request):
+def p156(request):
 	return render(request, 'Dont_Go_Breaking_My_Heart.html')
 
-def p158(request):
+def p157(request):
 	return render(request, 'Jdevozem.html')
 
-def p159(request):
+def p158(request):
 	return render(request, 'Not_Fair.html')

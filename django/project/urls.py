@@ -188,13 +188,12 @@ urlpatterns = [
 	path('docs/songs/Sweater_Weather.html', views.p150, name='Sweater_Weather'),
 	path('docs/songs/The_Middle.html', views.p151, name='The_Middle'),
 	path('docs/songs/The_Saga_Begins.html', views.p152, name='The_Saga_Begins'),
-	path('docs/songs/A Star Is Born - Shallow.html', views.p153, name='A Star Is Born - Shallow'),
-	path('docs/songs/A Star Is Born - Shallow.html', views.p154, name='A Star Is Born - Shallow'),
-	path('docs/songs/Ayo_Technology.html', views.p155, name='Ayo_Technology'),
-	path('docs/songs/Breakfast_At_Tiffanys.html', views.p156, name='Breakfast_At_Tiffanys'),
-	path('docs/songs/Dont_Go_Breaking_My_Heart.html', views.p157, name='Dont_Go_Breaking_My_Heart'),
-	path('docs/songs/Jdevozem.html', views.p158, name='Jdevozem'),
-	path('docs/songs/Not_Fair.html', views.p159, name='Not_Fair'),
+	path('docs/songs/Star Is Born - Shallow.html', views.p153, name='Star Is Born - Shallow'),
+	path('docs/songs/Ayo_Technology.html', views.p154, name='Ayo_Technology'),
+	path('docs/songs/Breakfast_At_Tiffanys.html', views.p155, name='Breakfast_At_Tiffanys'),
+	path('docs/songs/Dont_Go_Breaking_My_Heart.html', views.p156, name='Dont_Go_Breaking_My_Heart'),
+	path('docs/songs/Jdevozem.html', views.p157, name='Jdevozem'),
+	path('docs/songs/Not_Fair.html', views.p158, name='Not_Fair'),
 ]
 # for i in range(len(songBook.songsLst)):
 #     urlpatterns.append(path('docs/songs/%s.html'%songBook.songsLst, render('1970.html'), name='home'))
