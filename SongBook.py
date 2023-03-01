@@ -430,6 +430,7 @@ class SongBook:
                         elif 'L' in ownS:
                             owner = 'ŽŽ_LuckaSongs/'
             else:
+                songPath = Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex")
                 with open(Path(self.songsDir).joinpath(owner,nameF.replace(' ','_')+".tex"),'w') as fl:
                     fl.writelines('\\sclearpage')
                     fl.writelines('\\beginsong{%s}[by={%s}]\n'%(name,artist))
@@ -449,7 +450,7 @@ class SongBook:
                     fl.writelines('\\endsong')
                 songAdded = True
                 
-                songInfo = pd.DataFrame({"name":name,"path":songPath,"owner":owner,"author":artist})
+                songInfo = pd.DataFrame({"name":[name],"path":[songPath],"owner":[owner],"author":[artist]})
                 self.songsLst=pd.concat([self.songsLst,songInfo],ignore_index = True)
                 self.saveDB()
 

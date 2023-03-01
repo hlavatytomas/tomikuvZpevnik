@@ -7,7 +7,7 @@ from .forms import *
 import sys
 sys.path.append("..")
 from SongBook import SongBook
-from pathlib import Path,PurePosixPath
+from pathlib import Path
 import pandas as pd
 import os
 import re
@@ -129,8 +129,9 @@ def addSong(request):
 			songBook = SongBook(songsDir,songBookTex)
 			name = songBook.addSong(runFromWeb=True, pageStrW=form.cleaned_data['your_name'])
 			songBook.loadSongs()
-			songBook.createHTML('../docs')
-			songBook.createHTMLForDjango('./docs')
+			songBook.saveDB()
+			# songBook.createHTML('../docs')
+			# songBook.createHTMLForDjango('./docs')
 			return HttpResponseRedirect('editSong.html?song=%s'%name)
 	# if a GET (or any other method) we'll create a blank form
 	else:
