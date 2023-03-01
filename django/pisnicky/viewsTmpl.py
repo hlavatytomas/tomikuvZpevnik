@@ -97,3 +97,6 @@ def addSong(request):
 		form = NameForm()
 
 	return render(request, 'addSong.html', {'form': form})
+
+def song(request):
+	return render(request, 'song.html')

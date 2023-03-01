@@ -638,10 +638,10 @@ class SongBook:
 
                     content = SongBook.getSongHeader(songName,songAuthor,songCapo,django=True)+SongBook.songToHtml(content)
 
-                    with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
-                        html.write(content)
+                    # with open(htmlDir.joinpath("songs",f"{songName}.html"),"w", encoding='utf-8') as html:
+                    #     html.write(content)
 
-                    index.write(f'<div class="song_item" owner="{songOwner}"><a href="./songs/{songName}.html"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+                    index.write(f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 
                     songCount +=1
                 except FileNotFoundError:
@@ -651,28 +651,28 @@ class SongBook:
 
             print(f"{songCount} songs converted to html")
 
-            print("Creating django files...")
-            with open(htmlDir.joinpath('../project/urlsTmpl.py'), 'r') as urls:
-                urlsLns = urls.readlines()
-            newUrlLns = []
-            uz = False
-            for i in range(len(urlsLns)):
-                if "urlpatterns" in urlsLns[i]:
-                    uz = True
-                elif "]" in urlsLns[i] and uz:
-                    uz = False
-                    for songInd,song in self.songsLst["name"].items():
-                        newUrlLns.append("\tpath('docs/songs/%s.html', views.p%d, name='%s'),\n" % (song, songInd, song))
-                newUrlLns.append(urlsLns[i])
-            with open(htmlDir.joinpath('../project/urls.py'), 'w') as urls:
-                urls.writelines(newUrlLns)
+            # print("Creating django files...")
+            # with open(htmlDir.joinpath('../project/urlsTmpl.py'), 'r') as urls:
+            #     urlsLns = urls.readlines()
+            # newUrlLns = []
+            # uz = False
+            # for i in range(len(urlsLns)):
+            #     if "urlpatterns" in urlsLns[i]:
+            #         uz = True
+            #     elif "]" in urlsLns[i] and uz:
+            #         uz = False
+            #         for songInd,song in self.songsLst["name"].items():
+            #             newUrlLns.append("\tpath('docs/songs/%s.html', views.p%d, name='%s'),\n" % (song, songInd, song))
+            #     newUrlLns.append(urlsLns[i])
+            # with open(htmlDir.joinpath('../project/urls.py'), 'w') as urls:
+            #     urls.writelines(newUrlLns)
             
-            with open(htmlDir.joinpath('../pisnicky/viewsTmpl.py'), 'r') as views:
-                viewsLst = views.readlines()
-            for songInd,song in self.songsLst["name"].items():
-                viewsLst.append("\ndef p%d(request):\n\treturn render(request, '%s.html')\n" % (songInd, song))
-            with open(htmlDir.joinpath('../pisnicky/views.py'), 'w') as views:
-                views.writelines(viewsLst)
+            # with open(htmlDir.joinpath('../pisnicky/viewsTmpl.py'), 'r') as views:
+            #     viewsLst = views.readlines()
+            # for songInd,song in self.songsLst["name"].items():
+            #     viewsLst.append("\ndef p%d(request):\n\treturn render(request, '%s.html')\n" % (songInd, song))
+            # with open(htmlDir.joinpath('../pisnicky/views.py'), 'w') as views:
+            #     views.writelines(viewsLst)
                 
 
 
