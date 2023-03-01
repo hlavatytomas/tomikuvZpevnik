@@ -97,7 +97,7 @@ def editSong(request):
 		songForm = SongNameForm(initial={	
 									formsToEdit[0]: infoSong[formsToEdit[0]].replace('_',' '), 
 									formsToEdit[1]: infoSong[formsToEdit[1]],
-									formsToEdit[2]: infoSong[formsToEdit[2]],
+									formsToEdit[2]: int(infoSong[formsToEdit[2]]),
 									formsToEdit[3]: infoSong[formsToEdit[3]],
 									'text': textOfSong,
 								})

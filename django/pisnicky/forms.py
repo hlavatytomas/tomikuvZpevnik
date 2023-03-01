@@ -11,18 +11,12 @@ class SongNameForm(forms.Form):
         widget=forms.TextInput(
         attrs={
             'placeholder': 'Name', 
-            'style': 'width: 400px;', 
+            'class': 'name_field', 
             # 'class': 'form-control'
         }))
-    author = forms.CharField(label=mark_safe('<br><br>Autor/Interpret'), max_length=1000)
-    capo = forms.CharField(label=mark_safe('<br><br>Capo:'), max_length=1000, required=False)
-    owner = forms.CharField(label=mark_safe('<br><br>Přidal:'), max_length=1000)
+    author = forms.CharField(label=mark_safe('Autor/Interpret'), max_length=1000)
+    capo = forms.IntegerField(label=mark_safe('Capo:'),  required=False)
+    owner = forms.CharField(label=mark_safe('Přidal:'), max_length=1000)
     text = forms.CharField(
-        label=mark_safe('<br><br>Text písně: <br>'),
-        widget=forms.Textarea
-        (
-            attrs={
-                'style': 'width: 1000px; height: 1000px;',
-            }
-        )
+        label=mark_safe('Text písně:'),widget=forms.Textarea()
     )

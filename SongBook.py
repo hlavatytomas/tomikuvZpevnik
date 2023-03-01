@@ -63,6 +63,7 @@ class SongBook:
         self.saveDB()
 
     def saveDB(self):
+        self.songsLst ['capo'] = self.songsLst ['capo'].astype('int')
         # sort by name and owner
         lst = zip(list(self.songsLst["name"]),self.songsLst.index)
         lst = sorted(lst,key=SongBook.comparator)
