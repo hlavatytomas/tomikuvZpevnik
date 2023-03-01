@@ -2,3 +2,9 @@ __pycache__
 *log*
 *aux*
 *.pyc
+django/.myenv/*
+Songbook.fdb_latexmk
+Songbook.out
+Songbook.fls
+Songbook.sxc
+django/.myenv/pyvenv.cfg
