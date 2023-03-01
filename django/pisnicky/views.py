@@ -10,6 +10,7 @@ from SongBook import SongBook
 from pathlib import Path,PurePosixPath
 import pandas as pd
 import os
+import re
 from django.http import HttpResponse
 from django.template import loader
 
@@ -22,10 +23,15 @@ def handleEdit(request):
 		if not (len(form.data)) == 0:
 			whtChanges = []
 			formsToEdit = request.session.get('formsToEdit')
-			for i in range(len(formsToEdit)):
+			for i in range(len(formsToEdit)-1):
 				if form.data[formsToEdit[i]].replace(' ','_') != request.session.get(formsToEdit[i]):
 					whtChanges.append(i)
 			
+			if form.data['text'] != request.session.get('text'):
+				with open('../' + request.session.get('path'),"w", encoding='utf-8') as tex:
+					tex.write(form.data['text'])
+
+
 			if len(whtChanges) > 0:
 				name = request.session.get('name')
 				songsDir = '../songs/'
@@ -70,19 +76,25 @@ def editSong(request):
 		name = (form.data['song'])
 		songsDir = '../songs/'
 		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
-		formsToEdit = ['name', 'author', 'capo', 'owner']
+		formsToEdit = ['name', 'author', 'capo', 'owner','path']
 		infoSong = songBookDb.query("name == @name").iloc[0][formsToEdit]
+		with open('../' + infoSong['path'],"r", encoding='utf-8') as tex:
+			content=tex.read()
+		# content = re.search(r'\\transpose{([^}]*)}',content)
+		textOfSong = content
 		# print(infoSong)
 		songForm = SongNameForm(initial={	
-									formsToEdit[0]: infoSong['name'].replace('_',' '), 
-									formsToEdit[1]: infoSong['author'],
-									formsToEdit[2]: infoSong['capo'],
-									formsToEdit[3]: infoSong['owner'],
+									formsToEdit[0]: infoSong[formsToEdit[0]].replace('_',' '), 
+									formsToEdit[1]: infoSong[formsToEdit[1]],
+									formsToEdit[2]: infoSong[formsToEdit[2]],
+									formsToEdit[3]: infoSong[formsToEdit[3]],
+									'text': textOfSong,
 								})
 		name = name.replace(' ', '_')
 		for i in range(len(formsToEdit)):
 			request.session[formsToEdit[i]] = str(infoSong[i])
 		request.session['formsToEdit'] = formsToEdit
+		request.session['text'] = textOfSong
 	else:
 		songForm = SongNameForm()
 
