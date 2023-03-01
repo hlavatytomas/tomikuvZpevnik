@@ -700,7 +700,7 @@ if __name__ == "__main__":
             break
     
     songBook.createHTML("docs")
-    songBook.createHTMLForDjango("django/docs")
+    # songBook.createHTMLForDjango("django/docs")
     # with open('songbook.pkl', 'wb') as f:
     #     pickle.dump(songBook, f)
     # songBook.createSongBook()

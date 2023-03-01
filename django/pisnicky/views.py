@@ -15,7 +15,18 @@ from django.http import HttpResponse
 from django.template import loader
 
 def home(request):
-    return render(request, 'index.html')
+	template = loader.get_template('index.html')
+	songsDir = '../songs/'
+	songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+	songs = ''
+	for _,row in songBookDb.iterrows():
+		songName = row["name"]
+		songOwner = row["owner"]
+		songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+	context = {
+		'songs': songs,
+	}
+	return HttpResponse(template.render(context, request))
 
 def handleEdit(request):
 	if request.method == 'GET':
@@ -60,7 +71,7 @@ def handleEdit(request):
 				songBook.loadSongs()
 				songBook.saveDB()
 				# songBook.createHTML('../docs')
-				songBook.createHTMLForDjango('./docs',sngDir='../')
+				# songBook.createHTMLForDjango('./docs',sngDir='../')
 			form.full_clean()
 			# return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
 			return HttpResponseRedirect('./handleEdit.html')
