@@ -4,7 +4,7 @@ name,path,owner,author,hname,capo
 Accidentally_In_Love,songs/Accidentally_In_Love.tex,T,Counting Crows,Accidentally In Love,0.0
 Africa,songs/Africa.tex,T,Toto,Africa,2.0
 Anděl,songs/Anděl.tex,T,Mirai,Anděl,3.0
-Ani_K_Stáru,songs/Ani_K_Stáru.tex,T,Jaroslav Uhlir,Ani K Stáru,0.0
+Ani_K_Stáru,songs/Ani_K_Stáru.tex,T,Jaroslav Uhlíř,Ani K Stáru,0.0
 Až_Mi_Bude_Pětašedesát,songs/Až_Mi_Bude_Pětašedesát.tex,T,Michal Horák,Až Mi Bude Pětašedesát,0.0
 Bad_Bad_Leroy_Brown,songs/Bad_Bad_Leroy_Brown.tex,T,Jim Croce,Bad Bad Leroy Brown,0.0
 Baroko,songs/Baroko.tex,T,Richard Muller,Baroko,0.0
@@ -69,7 +69,7 @@ Let_Her_Go,songs/Let_Her_Go.tex,T,Passenger,Let Her Go,7.0
 Let_It_Be,songs/Let_It_Be.tex,T,The Beatles,Let It Be,0.0
 Let_It_Go,songs/Let_It_Go.tex,T,Misc Cartoons,Let It Go,1.0
 Living_Next_Door_To_Alice,songs/Living_Next_Door_To_Alice.tex,T,Smokie,Living Next Door To Alice,0.0
-Magdalena,songs/Magdalena.tex,T,Jelen (Czech Republic),Magdalena,0.0
+Magdálena,songs/Magdálena.tex,T,Jelen,Magdalena,0.0
 Malá_Dáma,songs/Malá_Dáma.tex,T,Kabát,Malá Dáma,0.0
 Malování,songs/Malování.tex,T,Divokej Bill,Malování,0.0
 Mamma_Mia,songs/Mamma_Mia.tex,T,ABBA,Mamma Mia,0.0
@@ -127,6 +127,7 @@ Viva_La_Vida,songs/Viva_La_Vida.tex,T,Coldplay,Viva La Vida,1.0
 Vymlácený_Entry,songs/Vymlácený_Entry.tex,T,Pokáč,Vymlácený Entry,4.0
 Vymyslená,songs/Vymyslená.tex,T,Elán,Vymyslená,0.0
 V_7_25,songs/V_7_25.tex,T,Michal Horák,V 7 25,0.0
+V_Blbým_Věku,songs/V_Blbým_Věku.tex,T,Xindl X,,
 V_Lese,songs/V_Lese.tex,T,Pokáč,V Lese,0.0
 Waterloo,songs/Waterloo.tex,T,ABBA,Waterloo,2.0
 When_All_Is_Said_And_Done,songs/When_All_Is_Said_And_Done.tex,T,ABBA,When All Is Said And Done,0.0
