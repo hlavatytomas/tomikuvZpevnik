@@ -23,30 +23,43 @@ def handleEdit(request):
 			whtChanges = []
 			formsToEdit = request.session.get('formsToEdit')
 			for i in range(len(formsToEdit)):
-				if form.data[formsToEdit[i]] != request.session.get(formsToEdit[i]):
+				if form.data[formsToEdit[i]].replace(' ','_') != request.session.get(formsToEdit[i]):
 					whtChanges.append(i)
 			
 			if len(whtChanges) > 0:
 				name = request.session.get('name')
 				songsDir = '../songs/'
-				songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
+				songBookTex = 'Songbook'
+				songBook = SongBook(songsDir,songBookTex)
+				songBookDb = songBook.songsLst 
 				for chI in whtChanges:
 					if chI == 0:
-						request.session['name'] = form.data[formsToEdit[chI]] 
+						request.session['name'] = form.data[formsToEdit[chI]].replace(' ','_')
+						songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]].replace(' ','_') 
+						name = form.data[formsToEdit[chI]].replace(' ','_')
+					if 'owner' in formsToEdit[chI] or chI == 0:
+						if not form.data['owner'] == 'T':
+							ownFL = [fL[0] for fL in songBook.owners]
+							ownInd = ownFL.index(form.data['owner'])
+							pathNew = 'songs/' + 'ŽŽ_%sSongs/%s.tex' % (songBook.owners[ownInd], name)
+						else:
+							pathNew = 'songs/' + '%s.tex' % (name)
+						pathOld = songBookDb.query('name == @name').iloc[0]['path']
+						os.system(f'mv ../{pathOld} ../%s' % (pathNew))
+						songBookDb.loc[songBookDb.query('name == @name').index, 'path'] = pathNew
 					songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]]
 			
 				songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
-			
-			songsDir = '../songs/'
-			songBookTex = 'Songbook'
-			songBook = SongBook(songsDir,songBookTex)
-			songBook.loadSongs()
-			songBook.createHTML('../docs')
-			songBook.createHTMLForDjango('./docs',sngDir='../')
+
+				songBook.loadSongs()
+				songBook.saveDB()
+				# songBook.createHTML('../docs')
+				songBook.createHTMLForDjango('./docs',sngDir='../')
 			form.full_clean()
-			return HttpResponseRedirect('./index.html')
+			# return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
+			return HttpResponseRedirect('./handleEdit.html')
 		else:
-			return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
+			return HttpResponseRedirect('./song.html?song=%s'%request.session.get('name'))
 
 	# return render(request, 'addSong.html', {'form': form})
 
@@ -57,14 +70,16 @@ def editSong(request):
 		name = (form.data['song'])
 		songsDir = '../songs/'
 		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
-		infoSong = (songBookDb.query("name == @name").iloc[0])
 		formsToEdit = ['name', 'author', 'capo', 'owner']
+		infoSong = songBookDb.query("name == @name").iloc[0][formsToEdit]
+		# print(infoSong)
 		songForm = SongNameForm(initial={	
-									formsToEdit[0]: infoSong['name'], 
+									formsToEdit[0]: infoSong['name'].replace('_',' '), 
 									formsToEdit[1]: infoSong['author'],
 									formsToEdit[2]: infoSong['capo'],
 									formsToEdit[3]: infoSong['owner'],
 								})
+		name = name.replace(' ', '_')
 		for i in range(len(formsToEdit)):
 			request.session[formsToEdit[i]] = str(infoSong[i])
 		request.session['formsToEdit'] = formsToEdit
@@ -116,11 +131,15 @@ def song(request):
 	content = SongBook.songToHtml(content)
 
 	capo = ''
-	if songBookDbRow['capo'] != 0:
-		capo = '<div id="capo">Capo %d</div>' % int(songBookDbRow['capo'])
+	try:
+		if songBookDbRow['capo'] != 0:
+			capo = '<div id="capo">Capo %d</div>' % int(songBookDbRow['capo'])
+	except:
+		pass
 
 	context = {
-		'name': name,
+		'name': name.replace('_', ' '),
+		'name2': name,
 		'author':songBookDbRow['author'],
 		'capo': capo,
 		'songText': content,

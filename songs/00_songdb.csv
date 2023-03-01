@@ -23,7 +23,7 @@ Chci_Zas_V_Tobě_Spát,songs/Chci_Zas_V_Tobě_Spát.tex,T,Lucie,Chci Zas V Tobě
 Co_Z_Tebe_Bude,songs/Co_Z_Tebe_Bude.tex,T,Pokáč,Co Z Tebe Bude,3.0
 Čarodějnice_Z_Amesbury,songs/Čarodějnice_Z_Amesbury.tex,T,Asonance,Čarodějnice Z Amesbury,0.0
 Černí_andělé,songs/Černí_andělé.tex,T,Lucie,Černí andělé,0.0
-Darmodej,songs/Darmodej.tex,T,Jaromír Nohavica,Darmoděj,0.0
+Darmoděj,songs/Darmoděj.tex,T,Jaromír Nohavica,Darmoděj,0.0
 Dej_Mi_Víc_Své_Lásky,songs/Dej_Mi_Víc_Své_Lásky.tex,T,Olympic,Dej Mi Víc Své Lásky,0.0
 Demons,songs/Demons.tex,T,Imagine Dragons,Demons,3.0
 Dlouhej_Kouř,songs/Dlouhej_Kouř.tex,T,Chinaski,Dlouhej Kouř,0.0
@@ -102,7 +102,6 @@ Proměny,songs/Proměny.tex,T,Čechomor,Proměny,0.0
 Ráda_Se_Miluje,songs/Ráda_Se_Miluje.tex,T,Karel Plíhal,Ráda Se Miluje,0.0
 Ring-O-Ding,songs/Ring-O-Ding.tex,T,Marta Kubišová,Ring-O-Ding,0.0
 Riptide,songs/Riptide.tex,T,Vance Joy,Riptide,1.0
-Runaway_Train,songs/Runaway_Train.tex,T,Soul Asylum,Runaway Train,0.0
 Sáro,songs/Sáro.tex,T,Traband,Sáro,0.0
 Sbírka_Zvadlejch_Růží,songs/Sbírka_Zvadlejch_Růží.tex,T,Wanastowi vjecy,Sbírka Zvadlejch Růží,0.0
 Sbohem_Galánečko,songs/Sbohem_Galánečko.tex,T,Vlasta Redl,Sbohem Galánečko,0.0
@@ -151,10 +150,11 @@ Love_Again,songs/ŽŽ_HonzikSongs/Love_Again.tex,H,Dua Lipa,Love Again,2.0
 Matfyzák_Na_Discu,songs/ŽŽ_HonzikSongs/Matfyzák_Na_Discu.tex,H,Pokáč,Matfyzák Na Discu,0.0
 Sweater_Weather,songs/ŽŽ_HonzikSongs/Sweater_Weather.tex,H,The Neighbourhood,Sweater Weather,0.0
 The_Middle,songs/ŽŽ_HonzikSongs/The_Middle.tex,H,Jimmy Eat World,The Middle,0.0
+Shallow,songs/ŽŽ_KikiSongs/Shallow.tex,K,Misc Soundtrack,0.0,
 The_Saga_Begins,songs/ŽŽ_LuckaSongs/The_Saga_Begins.tex,L,"""Weird Al"" Yankovic",The Saga Begins,0.0
-Star Is Born - Shallow,songs/ŽŽ_KikiSongs/A_Star_Is_Born_-_Shallow.tex,ŽŽ_KikiSongs/,K,Misc Soundtrack,0.0
-Ayo_Technology,songs/ŽŽ_Ybokem/Ayo_Technology.tex,Y,Milow,Ayo Technology,7.0
-Breakfast_At_Tiffanys,songs/ŽŽ_Ybokem/Breakfast_At_Tiffanys.tex,Y,Deep Blue Something,Breakfast At Tiffanys,0.0
-Dont_Go_Breaking_My_Heart,songs/ŽŽ_Ybokem/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0.0
-Jdevozem,songs/ŽŽ_Ybokem/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0.0
-Not_Fair,songs/ŽŽ_Ybokem/Not_Fair.tex,Y,Lily Allen,Not Fair,0.0
+Ayo_Technology,songs/ŽŽ_YbokemSongs/Ayo_Technology.tex,Y,Milow,Ayo Technology,7.0
+Breakfast_At_Tiffanys,songs/ŽŽ_YbokemSongs/Breakfast_At_Tiffanys.tex,Y,Deep Blue Something,Breakfast At Tiffanys,0.0
+Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0.0
+Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0.0
+Not_Fair,songs/ŽŽ_YbokemSongs/Not_Fair.tex,Y,Lily Allen,Not Fair,0.0
+Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0.0

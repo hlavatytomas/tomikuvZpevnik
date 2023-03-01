@@ -19,6 +19,7 @@ class SongBook:
         self.songBookTex = songBookTex
         self.dbPath = Path(self.songsDir).joinpath("00_songdb.csv")
         self.colOfDb = ["name","path","owner","author","hname","capo"]
+        self.owners = ["Domca","Honzik","Kiki","Lucka","Ybokem"]
         self.loadSongs()
         # self.info()
 
@@ -68,7 +69,7 @@ class SongBook:
         self.songsLst = self.songsLst.reindex([element[1] for element in lst])
         self.songsLst.reset_index(inplace=True,drop=True)
         self.songsLst["temp_index"]=self.songsLst.index
-        ownerOrder = pd.DataFrame(data=[["T",0],["D",1],["H",2],["L",3]],columns=["owner","owner_index"])
+        ownerOrder = pd.DataFrame(data=[["T",0],["D",1],["H",2],["K",3],["L",4]],columns=["owner","owner_index"])
         self.songsLst = self.songsLst.merge(ownerOrder,how='left',on="owner")
         self.songsLst = self.songsLst.sort_values(["owner_index","temp_index"])
         self.songsLst = self.songsLst.drop(["temp_index","owner_index"],axis=1)
