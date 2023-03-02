@@ -40,7 +40,7 @@
     z-index:1;
     /* display:none; */
     backdrop-filter: none;
-    transition: background-color 1s,backdrop-filter 1s;
+    transition: background-color 0.5s linear,backdrop-filter 0.5s linear;
     height: 0;
     width: 0;
 }
