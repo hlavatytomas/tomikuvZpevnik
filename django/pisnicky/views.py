@@ -38,10 +38,22 @@ def handleEdit(request):
 				if form.data[formsToEdit[i]].replace(' ','_') != request.session.get(formsToEdit[i]):
 					whtChanges.append(i)
 			
-			if form.data['text'] != request.session.get('text'):
-				with open('../' + request.session.get('path'),"w", encoding='utf-8') as tex:
-					tex.write(form.data['text'])
+			text = form.data['text']
 
+			text = re.sub(r'beginsong{.*}\[by={.*}\]', 'beginsong{%s}[by={%s}]' % (form.data['name'], form.data['author']), text)
+
+			text = re.sub(r'\\capo{([^}]*)}', r'', text)
+
+			print(text)
+
+			if form.data['capo'] != '0':
+				text = re.sub(r'}]', '}]\\capo{%s}' % (form.data['capo']), text)
+
+			# text = re.sub(r'\\capo{([^}]*)}', r'\\capo{%s}' % form.data['capo'], text)
+
+			if text != request.session.get('text'):
+				with open('../' + request.session.get('path'),"w", encoding='utf-8') as tex:
+					tex.write(text)
 
 			if len(whtChanges) > 0:
 				name = request.session.get('name')
@@ -49,10 +61,12 @@ def handleEdit(request):
 				songBookTex = 'Songbook'
 				songBook = SongBook(songsDir,songBookTex)
 				songBookDb = songBook.songsLst 
+				songIndex = songBookDb.query('name == @name').index
+				print(songIndex)
 				for chI in whtChanges:
 					if chI == 0:
 						request.session['name'] = form.data[formsToEdit[chI]].replace(' ','_')
-						songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]].replace(' ','_') 
+						songBookDb.loc[songIndex, formsToEdit[chI]] = form.data[formsToEdit[chI]].replace(' ','_') 
 						name = form.data[formsToEdit[chI]].replace(' ','_')
 					if 'owner' in formsToEdit[chI] or chI == 0:
 						if not form.data['owner'] == 'T':
@@ -61,10 +75,12 @@ def handleEdit(request):
 							pathNew = 'songs/' + 'ŽŽ_%sSongs/%s.tex' % (songBook.owners[ownInd], name)
 						else:
 							pathNew = 'songs/' + '%s.tex' % (name)
-						pathOld = songBookDb.query('name == @name').iloc[0]['path']
+						pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
+						print(pathOld)
 						os.system(f'mv ../{pathOld} ../%s' % (pathNew))
-						songBookDb.loc[songBookDb.query('name == @name').index, 'path'] = pathNew
-					songBookDb.loc[songBookDb.query('name == @name').index, formsToEdit[chI]] = form.data[formsToEdit[chI]]
+						songBookDb.loc[songIndex,'path'] = pathNew
+					if not chI == 0:
+						songBookDb.loc[songIndex,formsToEdit[chI]] = form.data[formsToEdit[chI]]
 			
 				songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
 
@@ -101,7 +117,6 @@ def editSong(request):
 									formsToEdit[3]: infoSong[formsToEdit[3]],
 									'text': textOfSong,
 								})
-		name = name.replace(' ', '_')
 		for i in range(len(formsToEdit)):
 			request.session[formsToEdit[i]] = str(infoSong[i])
 		request.session['formsToEdit'] = formsToEdit
@@ -145,10 +160,10 @@ def song(request):
 	template = loader.get_template('song.html')
 	songsDir = '../songs/'
 	songBookDbRow = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8").query('name == @name').iloc[0]
-	songBookTex = 'Songbook'
+	# songBookTex = 'Songbook'
 
 	# create song book
-	songBook = SongBook(songsDir,songBookTex)
+	# songBook = SongBook(songsDir,songBookTex)
 	with open(Path('../').joinpath(songBookDbRow['path']),"r", encoding='utf-8') as tex:
 		content=tex.read()
 
