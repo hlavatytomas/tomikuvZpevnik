@@ -24,7 +24,7 @@ class SongBook:
         # self.info()
 
     def comparator(song):
-        czech_alphabet = '0123456789 aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž'
+        czech_alphabet = ' 0123456789ábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž'
         return [(czech_alphabet.index(c) if c in czech_alphabet else 50) for c in song[0].lower()]
 
 

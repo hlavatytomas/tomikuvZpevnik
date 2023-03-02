@@ -44,10 +44,12 @@ def handleEdit(request):
 
 			text = re.sub(r'\\capo{([^}]*)}', r'', text)
 
-			print(text)
+			# print(text)
 
 			if form.data['capo'] != '0':
-				text = re.sub(r'}]', '}]\\capo{%s}' % (form.data['capo']), text)
+				capo = r'}]\\capo{%s}' % (form.data['capo'])
+				print(capo)
+				text = re.sub(r'}]', capo, text)
 
 			# text = re.sub(r'\\capo{([^}]*)}', r'\\capo{%s}' % form.data['capo'], text)
 
