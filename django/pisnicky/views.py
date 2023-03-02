@@ -170,3 +170,41 @@ def song(request):
 	}
 	return HttpResponse(template.render(context, request))
 
+def pdfCompilation(request):
+	if request.method == 'GET':
+		form = NameForm(request.GET)
+		if not (len(form.data)) == 0:	
+			if form.data['inProgress'] == '1':
+				songsDir = '../songs/'
+				songBookTex = 'Songbook'
+				songBook = SongBook(songsDir,songBookTex)
+				songBook.createSongBook(runFromWeb=True) 
+				form.full_clean()
+				template = loader.get_template('pdfCompilation.html')
+				context = {
+					'tlacitko': 'Kompilace dokončena',
+				}
+				return HttpResponse(template.render(context, request))
+		else:
+			template = loader.get_template('pdfCompilation.html')
+			context = {
+				'tlacitko': 'Zkompiluj PDF',
+			}
+			return HttpResponse(template.render(context, request))
+	else:
+		template = loader.get_template('pdfCompilation.html')
+		context = {
+			'tlacitko': 'Zkompiluj PDF',
+		}
+		return HttpResponse(template.render(context, request))
+
+def handleDownload(request):
+	# Define the full file path
+	filepath = '../Songbook.pdf'
+	# Open the file for reading content
+	path = open(filepath, 'rb')
+	response = HttpResponse(path)
+	# Set the HTTP header for sending to browser
+	response['Content-Disposition'] = "attachment; filename=Songbook.pdf"
+	# Return the response value
+	return response

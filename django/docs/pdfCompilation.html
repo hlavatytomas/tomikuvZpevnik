@@ -15,12 +15,21 @@
             </div>
         </div>
         <h2 style="text-align:center">Tomíkův zpěvník</h3>
-        <h3 style="text-align:center">&#127925; Přidej písničku &#127925;</h3>
-        <form action="addSong.html" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit">
-        </form>     
-        <!-- <a href="./index.html" owner=""><div class="song_ref">Zpět na index<span class="owner"></span></div>         -->
+        <h3 style="text-align:center">&#127925; Zkompiluj a stáhni PDF &#127925;</h3>
+        Pozn.: neboj se, že to chvílí trvá, jen to nech pracovat
+        <div>
+            <a href="./pdfCompilation.html?inProgress=1">
+            <div class="control_button pdf_button">
+                {{ tlacitko }}
+            </div>
+            </a>
+        </div><br><br>
+        <div>
+            <a href="./handleDownload.html">
+            <div class="control_button pdf_button">
+                Stáhnout zpěvník v aktuální verzi
+            </div>
+            </a>
+        </div>
     </body>
 </html>

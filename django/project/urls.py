@@ -32,9 +32,11 @@ from django.shortcuts import render
 urlpatterns = [
     path('docs/index.html', views.home, name='home'),    # added
     path('docs/addSong.html', views.addSong, name='addSong'),    # added
+    path('docs/pdfCompilation.html', views.pdfCompilation, name='pdfCompilation'),    # added
     path('docs/editSong.html', views.editSong, name='editSong'),    # added
     path('docs/handleEdit.html', views.handleEdit, name='handleEdit'),    # added
     path('docs/song.html', views.song, name='song'),    # added
+    path('docs/handleDownload.html', views.handleDownload, name='handleDownload'),    # added
     # path('docs/songs/1970.html', views.p1970, name='p1970'),    # added
 ]
 # for i in range(len(songBook.songsLst)):

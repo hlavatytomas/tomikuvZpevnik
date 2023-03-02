@@ -63,7 +63,7 @@ class SongBook:
         self.saveDB()
 
     def saveDB(self):
-        self.songsLst ['capo'] = self.songsLst ['capo'].astype('int')
+        self.songsLst ['capo'] = (self.songsLst['capo']).astype(int)
         # sort by name and owner
         lst = zip(list(self.songsLst["name"]),self.songsLst.index)
         lst = sorted(lst,key=SongBook.comparator)
@@ -125,9 +125,11 @@ class SongBook:
             else:
                 print('I dont understand you')
     
-    def createSongBook(self):
+    def createSongBook(self, runFromWeb = False):
         '''create songbook'''
         print('\n not important stuff from here')
+        if runFromWeb:
+            os.chdir('../')
         os.system('./link-doc.sh %s.pdf > log'%self.songBookTex)
         os.system('texlua ./songidx.lua titleidx.sxd titleidx.sbx > log')
         # os.system('./songidx titleidx.sxd titleidx.sbx > log')
@@ -136,6 +138,8 @@ class SongBook:
         # os.system('./songidx titleidx.sxd titleidx.sbx > log')
         os.system('pdflatex --shell-escape %s.tex > log'%self.songBookTex)
         print('end of not important stuff\n')
+        if runFromWeb:
+            os.chdir('./django')
 
     def addSong(self, runFromWeb = False, pageStrW=""):
         '''function to add song into the songbook'''
