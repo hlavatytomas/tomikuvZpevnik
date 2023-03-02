@@ -2,8 +2,9 @@
             <html lang="en">
             <head>
             {% load static %} 
-            <script src="{% static './songList.js' %}"></script>
+            <script src="{% static './songList.js' %}"></script>            
             <link rel="stylesheet" href="{% static './style.css' %}">
+            <link rel="stylesheet" href="{% static './menu.css' %}">
             <link rel="stylesheet" href="{% static './dropdown.css' %}">
             <title>Tomíkův zpěvník</title>
             <meta charset="UTF-8">
@@ -12,11 +13,9 @@
             <body>
             <div id="control">
             <div>
-                <a href="./pdfCompilation.html?">
-                <div class="control_button pdf_button">
+                <div class="control_button pdf_button" id="open_pdf_menu">
                     PDF
                 </div>
-                </a>
             </div>
             <div>
                 <a href="./addSong.html" class="anchor"><span>+</span></a>
@@ -28,9 +27,33 @@
                 </ul>
             </div>
             </div>
+            <div id="hide"></div>
+            <div id="sidebar">
+                <div id="sidebar_menu">
+                    <div class="menu_item">
+                        <div class="menu_button" id="close_pdf_menu">
+                            back
+                        </div>
+                    </div>
+                    <div class="menu_item">
+                        <a href="./pdfCompilation.html?inProgress=1">
+                        <div class="menu_button">
+                            {{ tlacitko }}
+                        </div>
+                        </a>
+                    </div>
+                    <div class="menu_item">
+                        <a href="./handleDownload.html">
+                        <div class="menu_button">
+                            Stáhnout zpěvník v aktuální verzi
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <h2 style="text-align:center">Tomíkův zpěvník</h3>
             <h3 style="text-align:center">&#127925; Seznam písniček &#127925;</h3>
             <div class="list_container">
             <div class="song_list">
                 {{ songs |safe}}
-            </div></div></body></html>
+            </div></div><script src="{% static './menu.js' %}"></script></body></html>
