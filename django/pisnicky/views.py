@@ -96,7 +96,7 @@ def handleEdit(request):
 
 			path = request.session.get('path')
 			if path == '':
-				path = 'songs/%s' % form.data['name'].replace(' ', '_')
+				path = 'songs/%s.tex' % form.data['name'].replace(' ', '_')
 
 			if text != request.session.get('text'):
 				with open('../' + path,"w", encoding='utf-8') as tex:
@@ -122,9 +122,13 @@ def handleEdit(request):
 							pathNew = 'songs/' + 'ŽŽ_%sSongs/%s.tex' % (songBook.owners[ownInd], name)
 						else:
 							pathNew = 'songs/' + '%s.tex' % (name)
-						pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
-						print(pathOld)
-						os.system(f'mv ../{pathOld} ../%s' % (pathNew))
+							try:
+								pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
+							except:
+								pathOld = path
+								songInfo = pd.DataFrame({"name":[name],"path":[pathNew],"owner":[form.data['owner']],"author":[form.data['author']], 'capo':form.data['capo']})
+								songBookDb=pd.concat([songBookDb,songInfo],ignore_index = True)
+							os.system(f'mv ../{pathOld} ../%s' % (pathNew))
 						songBookDb.loc[songIndex,'path'] = pathNew
 					if not chI == 0:
 						songBookDb.loc[songIndex,formsToEdit[chI]] = form.data[formsToEdit[chI]]
@@ -182,6 +186,10 @@ def editSong(request):
 			songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
 			formsToEdit = ['name', 'author', 'capo', 'owner','path']
 			infoSong = songBookDb.query("name == @name").iloc[0][formsToEdit]
+			try:
+				capoInt = int(infoSong[formsToEdit[2]])
+			except:
+				capoInt = 0
 			with open('../' + infoSong['path'],"r", encoding='utf-8') as tex:
 				content=tex.read()
 			# content = re.search(r'\\transpose{([^}]*)}',content)
@@ -190,7 +198,7 @@ def editSong(request):
 			songForm = SongNameForm(initial={	
 										formsToEdit[0]: infoSong[formsToEdit[0]].replace('_',' '), 
 										formsToEdit[1]: infoSong[formsToEdit[1]],
-										formsToEdit[2]: int(infoSong[formsToEdit[2]]),
+										formsToEdit[2]: capoInt,
 										formsToEdit[3]: infoSong[formsToEdit[3]],
 										'text': textOfSong,
 									})
@@ -199,12 +207,12 @@ def editSong(request):
 			request.session['formsToEdit'] = formsToEdit
 			request.session['text'] = textOfSong
 		else:
-			textOfSong = "\sclearpage\\beginsong{název_písničky...}[by={autor}]\capo{...}\n\\beginverse\n1.sloka\n(např.: \[C]Nevím jestli je to\[Dm] znát, možná by bylo lepší lhát \\brk\n...\n\endverse\n\\beginchorus\nrefren\n\endchorus\n\\beginverse\n2.sloka\n\endverse\n\\beginchorus\nrefren\n\endchorus\n...\n\endsong"
+			textOfSong = "\sclearpage\\beginsong{název_písničky...}[by={autor}]\n\\beginverse\n1.sloka\n(např.: \[C]Nevím jestli je to\[Dm] znát, možná by bylo lepší lhát \\brk\n...\n\endverse\n\\beginchorus\nrefren\n\endchorus\n\\beginverse\n2.sloka\n\endverse\n\\beginchorus\nrefren\n\endchorus\n...\n\endsong"
 			formsToEdit = ['name', 'author', 'capo', 'owner','path']
 			songForm = SongNameForm(initial={	
 										formsToEdit[0]: '', 
 										formsToEdit[1]: '',
-										formsToEdit[2]: '',
+										formsToEdit[2]: 0,
 										formsToEdit[3]: '',
 										'text': textOfSong,
 									})

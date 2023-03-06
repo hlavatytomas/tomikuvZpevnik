@@ -412,7 +412,7 @@ class SongBook:
                             fl.writelines('}\\endverse')
                         fl.writelines('\\endsong')
 
-                        songInfo = pd.DataFrame({"name":[name],"path":[songPath],"owner":[owner],"author":[artist]})
+                        songInfo = pd.DataFrame({"name":[name],"path":[songPath],"owner":[owner],"author":[artist],'capo':[capo]})
                         self.songsLst=pd.concat([self.songsLst,songInfo],ignore_index = True)
                         self.saveDB()
 
