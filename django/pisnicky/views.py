@@ -94,8 +94,12 @@ def handleEdit(request):
 
 			# text = re.sub(r'\\capo{([^}]*)}', r'\\capo{%s}' % form.data['capo'], text)
 
+			path = request.session.get('path')
+			if path == '':
+				path = 'songs/%s' % form.data['name'].replace(' ', '_')
+
 			if text != request.session.get('text'):
-				with open('../' + request.session.get('path'),"w", encoding='utf-8') as tex:
+				with open('../' + path,"w", encoding='utf-8') as tex:
 					tex.write(text)
 
 			if len(whtChanges) > 0:
