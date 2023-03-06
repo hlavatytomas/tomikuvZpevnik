@@ -5,6 +5,7 @@
             <title>{{ name }}</title>
             <meta charset="UTF-8">
             {% load static %}   
+            <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
             <link rel="stylesheet" href=" {% static './style.css' %}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <script src=" {% static './transpose.js' %}"></script>
@@ -22,10 +23,11 @@
             <div>
             <a href="./editSong.html?song={{ name2 }}" id ="edit"><span>Upravit</span></a>
             </div>
-            <div>
-            <button onclick="transpose(+1)" class="control_button trans_button">Transpose +1</button><br>
-            <div class="trans" id="trans" style="text-align:center">0</div><br>
-            <button onclick="transpose(-1)" class="control_button trans_button">Transpose -1</button>
+            <div class="transposition">
+                <div style="grid-area: t_label;">Transpose</div>
+                <div style="grid-area: down;text-align: right;"><button onclick="transpose(-1)" class="control_button trans_button">v</button></div>
+                <div class="trans" id="trans" style="text-align:center;grid-area: number;">0</div>
+                <div style="grid-area: up;text-align: left;"><button onclick="transpose(+1)" class="control_button trans_button">⌃</button></div>
             </div>
             <div>
             <button onclick="scrollpage()" class="control_button scroll_button">Scroll<br>down</button>

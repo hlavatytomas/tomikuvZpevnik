@@ -10,10 +10,13 @@
     transition:0.3s;
 }
 
-#sidebar_menu{
+#sidebar_menu {
     display: grid;
     justify-content: center;
-    grid-template-rows: 40px 40px 40px;
+    grid-template-rows: repeat(3, 60px);
+    position: relative;
+    top: 10px;
+    grid-row-gap: 10px;
 }
 
 .menu_button {
@@ -25,6 +28,8 @@
     width:100%;
     box-sizing:border-box;
     height: 100%;
+    text-align: center;
+    font-style: bold;
 }
 
 .menu_item {

@@ -23,7 +23,6 @@
     color: #363636;
     border-radius: 2px;
     border: 2px solid #d6d6d6; /* Green */
-    width:100px
   }
 
 
@@ -54,6 +53,20 @@
     text-overflow: clip;
 }
 
+.transposition{
+    grid-template-columns: 40px 20px 40px;
+    grid-template-rows: 20px auto;
+    grid-template-areas: "t_label t_label t_label"
+                    "down number up";
+    height:60px;
+    display:grid;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.trans_button{
+    padding:5px 10px;
+}
 .back_span{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -93,7 +106,6 @@
   #return span {
     cursor: pointer;
     display: inline-block;
-    padding:8px;
     transition: 0.5s;
   }
   
