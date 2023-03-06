@@ -204,6 +204,8 @@ def editSong(request):
 										formsToEdit[3]: '',
 										'text': textOfSong,
 									})
+			for i in range(len(formsToEdit)):
+				request.session[formsToEdit[i]] = ''
 			request.session['formsToEdit'] = formsToEdit
 			request.session['text'] = textOfSong
 	else:
