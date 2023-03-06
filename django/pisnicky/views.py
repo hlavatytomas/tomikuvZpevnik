@@ -198,10 +198,13 @@ def addSong(request):
 
 			# create song book
 			songBook = SongBook(songsDir,songBookTex)
-			if form.cleaned_data['your_name'] != '':
-				name = songBook.addSong(runFromWeb=True, pageStrW=form.cleaned_data['your_name'])
-			else:
-				name = ''
+			try:
+				if form.cleaned_data['your_name'] != '':
+					name = songBook.addSong(runFromWeb=True, pageStrW=form.cleaned_data['your_name'])
+				else:
+					name = ''
+			except:
+				name = ""
 			songBook.loadSongs()
 			songBook.saveDB()
 			# songBook.createHTML('../docs')
