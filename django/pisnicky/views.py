@@ -15,18 +15,59 @@ from django.http import HttpResponse
 from django.template import loader
 
 def home(request):
-	template = loader.get_template('index.html')
-	songsDir = '../songs/'
-	songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
-	songs = ''
-	for _,row in songBookDb.iterrows():
-		songName = row["name"]
-		songOwner = row["owner"]
-		songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
-	context = {
-		'songs': songs,
-	}
-	return HttpResponse(template.render(context, request))
+	if request.method == 'GET':
+		form = NameForm(request.GET)
+		if not (len(form.data)) == 0:	
+			if form.data['inProgress'] == '1':
+				songsDir = '../songs/'
+				songBookTex = 'Songbook'
+				songBook = SongBook(songsDir,songBookTex)
+				songBook.createSongBook(runFromWeb=True) 
+				form.full_clean()
+				template = loader.get_template('index.html')
+				songsDir = '../songs/'
+				songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+				songs = ''
+				for _,row in songBookDb.iterrows():
+					songName = row["name"]
+					songOwner = row["owner"]
+					songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+				context = {
+					'songs': songs,
+					'tlacitko': 'Kompilace dokončena.'
+				}
+				return HttpResponse(template.render(context, request))
+				# return HttpResponseRedirect('index.html')
+		else:
+			template = loader.get_template('index.html')
+			songsDir = '../songs/'
+			songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+			songs = ''
+			for _,row in songBookDb.iterrows():
+				songName = row["name"]
+				songOwner = row["owner"]
+				songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+			context = {
+				'songs': songs,
+				'tlacitko': 'Zkompiluj'
+			}
+			return HttpResponse(template.render(context, request))
+	else:
+		template = loader.get_template('index.html')
+		songsDir = '../songs/'
+		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+		songs = ''
+		for _,row in songBookDb.iterrows():
+			songName = row["name"]
+			songOwner = row["owner"]
+			songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+		context = {
+			'songs': songs,
+			'tlacitko': 'Zkompiluj'
+		}
+		return HttpResponse(template.render(context, request))
+
+	
 
 def handleEdit(request):
 	if request.method == 'GET':
@@ -53,8 +94,12 @@ def handleEdit(request):
 
 			# text = re.sub(r'\\capo{([^}]*)}', r'\\capo{%s}' % form.data['capo'], text)
 
+			path = request.session.get('path')
+			if path == '':
+				path = 'songs/%s.tex' % form.data['name'].replace(' ', '_')
+
 			if text != request.session.get('text'):
-				with open('../' + request.session.get('path'),"w", encoding='utf-8') as tex:
+				with open('../' + path,"w", encoding='utf-8') as tex:
 					tex.write(text)
 
 			if len(whtChanges) > 0:
@@ -77,9 +122,13 @@ def handleEdit(request):
 							pathNew = 'songs/' + 'ŽŽ_%sSongs/%s.tex' % (songBook.owners[ownInd], name)
 						else:
 							pathNew = 'songs/' + '%s.tex' % (name)
-						pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
-						print(pathOld)
-						os.system(f'mv ../{pathOld} ../%s' % (pathNew))
+							try:
+								pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
+							except:
+								pathOld = path
+								songInfo = pd.DataFrame({"name":[name],"path":[pathNew],"owner":[form.data['owner']],"author":[form.data['author']], 'capo':form.data['capo']})
+								songBookDb=pd.concat([songBookDb,songInfo],ignore_index = True)
+							os.system(f'mv ../{pathOld} ../%s' % (pathNew))
 						songBookDb.loc[songIndex,'path'] = pathNew
 					if not chI == 0:
 						songBookDb.loc[songIndex,formsToEdit[chI]] = form.data[formsToEdit[chI]]
@@ -96,6 +145,35 @@ def handleEdit(request):
 		else:
 			return HttpResponseRedirect('./song.html?song=%s'%request.session.get('name'))
 
+def handleDelete(request):
+	if request.method == 'GET':
+		form = SongNameFormDel(request.GET)
+		if not (len(form.data)) == 0:
+			name = request.session.get('name')
+			owner = request.session.get('owner')
+			if name == form.data['name'].replace(' ','_') and owner == form.data['owner']:
+				print('tu')
+				songsDir = '../songs/'
+				songBookTex = 'Songbook'
+				songBook = SongBook(songsDir,songBookTex)
+				songBookDb = songBook.songsLst 
+				songIndex = songBookDb.query('name == @name').index
+				pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
+				os.system('rm ../%s' % pathOld)
+				songBookDb.drop(labels=songIndex, axis = 0, inplace=True)
+			
+				songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
+
+				songBook.loadSongs()
+				songBook.saveDB()
+				# songBook.createHTML('../docs')
+				# songBook.createHTMLForDjango('./docs',sngDir='../')
+			form.full_clean()
+			# return HttpResponseRedirect('./songs/%s.html'%request.session.get('name'))
+			return HttpResponseRedirect('./handleDelete.html')
+		else:
+			return HttpResponseRedirect('./index.html')
+
 	# return render(request, 'addSong.html', {'form': form})
 
 def editSong(request):
@@ -103,31 +181,74 @@ def editSong(request):
 	if request.method == 'GET':
 		form = NameForm(request.GET)
 		name = (form.data['song'])
-		songsDir = '../songs/'
-		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
-		formsToEdit = ['name', 'author', 'capo', 'owner','path']
-		infoSong = songBookDb.query("name == @name").iloc[0][formsToEdit]
-		with open('../' + infoSong['path'],"r", encoding='utf-8') as tex:
-			content=tex.read()
-		# content = re.search(r'\\transpose{([^}]*)}',content)
-		textOfSong = content
-		# print(infoSong)
-		songForm = SongNameForm(initial={	
-									formsToEdit[0]: infoSong[formsToEdit[0]].replace('_',' '), 
-									formsToEdit[1]: infoSong[formsToEdit[1]],
-									formsToEdit[2]: int(infoSong[formsToEdit[2]]),
-									formsToEdit[3]: infoSong[formsToEdit[3]],
-									'text': textOfSong,
-								})
-		for i in range(len(formsToEdit)):
-			request.session[formsToEdit[i]] = str(infoSong[i])
-		request.session['formsToEdit'] = formsToEdit
-		request.session['text'] = textOfSong
+		if name != '':
+			songsDir = '../songs/'
+			songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
+			formsToEdit = ['name', 'author', 'capo', 'owner','path']
+			infoSong = songBookDb.query("name == @name").iloc[0][formsToEdit]
+			try:
+				capoInt = int(infoSong[formsToEdit[2]])
+			except:
+				capoInt = 0
+			with open('../' + infoSong['path'],"r", encoding='utf-8') as tex:
+				content=tex.read()
+			# content = re.search(r'\\transpose{([^}]*)}',content)
+			textOfSong = content
+			# print(infoSong)
+			songForm = SongNameForm(initial={	
+										formsToEdit[0]: infoSong[formsToEdit[0]].replace('_',' '), 
+										formsToEdit[1]: infoSong[formsToEdit[1]],
+										formsToEdit[2]: capoInt,
+										formsToEdit[3]: infoSong[formsToEdit[3]],
+										'text': textOfSong,
+									})
+			for i in range(len(formsToEdit)):
+				request.session[formsToEdit[i]] = str(infoSong[i])
+			request.session['formsToEdit'] = formsToEdit
+			request.session['text'] = textOfSong
+		else:
+			textOfSong = "\sclearpage\\beginsong{název_písničky...}[by={autor}]\n\\beginverse\n1.sloka\n(např.: \[C]Nevím jestli je to\[Dm] znát, možná by bylo lepší lhát \\brk\n...\n\endverse\n\\beginchorus\nrefren\n\endchorus\n\\beginverse\n2.sloka\n\endverse\n\\beginchorus\nrefren\n\endchorus\n...\n\endsong"
+			formsToEdit = ['name', 'author', 'capo', 'owner','path']
+			songForm = SongNameForm(initial={	
+										formsToEdit[0]: '', 
+										formsToEdit[1]: '',
+										formsToEdit[2]: 0,
+										formsToEdit[3]: '',
+										'text': textOfSong,
+									})
+			for i in range(len(formsToEdit)):
+				request.session[formsToEdit[i]] = ''
+			request.session['formsToEdit'] = formsToEdit
+			request.session['text'] = textOfSong
 	else:
 		songForm = SongNameForm()
 
 	# return render(request, 'addSong.html', {'form': form})
 	return render(request, 'editSong.html', {'songForm': songForm})
+
+def deleteSong(request):
+    # if this is a POST request we need to process the form data
+	if request.method == 'GET':
+		form = NameForm(request.GET)
+		name = (form.data['song'])
+		if name != '':
+			songsDir = '../songs/'
+			songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8") 
+			formsToEdit = ['name', 'owner']
+			infoSong = songBookDb.query("name == @name").iloc[0][formsToEdit]
+			# content = re.search(r'\\transpose{([^}]*)}',content)
+			# print(infoSong)
+			songForm = SongNameFormDel(initial={	
+										formsToEdit[0]: '', 
+										formsToEdit[1]: '',
+									})
+			request.session['name'] = name
+			request.session['owner'] = infoSong['owner']
+	else:
+		songForm = SongNameFormDel()
+
+	# return render(request, 'addSong.html', {'form': form})
+	return render(request, 'deleteSong.html', {'songForm': songForm})
 
 def addSong(request):
 	# if this is a POST request we need to process the form data
@@ -144,7 +265,13 @@ def addSong(request):
 
 			# create song book
 			songBook = SongBook(songsDir,songBookTex)
-			name = songBook.addSong(runFromWeb=True, pageStrW=form.cleaned_data['your_name'])
+			try:
+				if form.cleaned_data['your_name'] != '':
+					name = songBook.addSong(runFromWeb=True, pageStrW=form.cleaned_data['your_name'])
+				else:
+					name = ''
+			except:
+				name = ""
 			songBook.loadSongs()
 			songBook.saveDB()
 			# songBook.createHTML('../docs')
@@ -187,37 +314,11 @@ def song(request):
 	}
 	return HttpResponse(template.render(context, request))
 
-def pdfCompilation(request):
-	if request.method == 'GET':
-		form = NameForm(request.GET)
-		if not (len(form.data)) == 0:	
-			if form.data['inProgress'] == '1':
-				songsDir = '../songs/'
-				songBookTex = 'Songbook'
-				songBook = SongBook(songsDir,songBookTex)
-				songBook.createSongBook(runFromWeb=True) 
-				form.full_clean()
-				template = loader.get_template('pdfCompilation.html')
-				context = {
-					'tlacitko': 'Kompilace dokončena',
-				}
-				return HttpResponse(template.render(context, request))
-		else:
-			template = loader.get_template('pdfCompilation.html')
-			context = {
-				'tlacitko': 'Zkompiluj PDF',
-			}
-			return HttpResponse(template.render(context, request))
-	else:
-		template = loader.get_template('pdfCompilation.html')
-		context = {
-			'tlacitko': 'Zkompiluj PDF',
-		}
-		return HttpResponse(template.render(context, request))
 
 def handleDownload(request):
 	# Define the full file path
-	filepath = '../Songbook.pdf'
+	filepath = './Songbook.pdf'
+	os.system('cp ../Songbook.pdf ./')
 	# Open the file for reading content
 	path = open(filepath, 'rb')
 	response = HttpResponse(path)

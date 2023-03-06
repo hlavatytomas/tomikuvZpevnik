@@ -24,7 +24,7 @@ class SongBook:
         # self.info()
 
     def comparator(song):
-        czech_alphabet = ' 0123456789ábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž'
+        czech_alphabet = '0123456789 aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž'
         return [(czech_alphabet.index(c) if c in czech_alphabet else 50) for c in song[0].lower()]
 
 
@@ -158,12 +158,19 @@ class SongBook:
             pageStrW = input('Link for song: ')
         # page = urllib.request.urlopen(pageStrW)
 
+        # if not runFromWeb:
         req = urllib.request.Request(
             url=pageStrW, 
             headers={'User-Agent': 'Mozilla/5.0'}
         )
         page = urllib.request.urlopen(req)
         pageStr = (page.read()).decode('utf-8')
+        # else:
+        #     os.system('wget --user-agent="Mozilla" %s -O tmp.html' % pageStrW)
+        #     with open('tmp.html','r') as f:
+        #         pageStr = f.read()
+        #     os.system('rm -f tmp.html')
+        #     print(pageStr)
 
 
         # name of the song
@@ -405,7 +412,7 @@ class SongBook:
                             fl.writelines('}\\endverse')
                         fl.writelines('\\endsong')
 
-                        songInfo = pd.DataFrame({"name":[name],"path":[songPath],"owner":[owner],"author":[artist]})
+                        songInfo = pd.DataFrame({"name":[name],"path":[songPath],"owner":[owner],"author":[artist],'capo':[capo]})
                         self.songsLst=pd.concat([self.songsLst,songInfo],ignore_index = True)
                         self.saveDB()
 
@@ -445,6 +452,8 @@ class SongBook:
                         playingNow = 'verse'
                     if not capo == '':
                         fl.writelines('\\capo{%s}\n'%capo)
+                    else:
+                        capo = 0
                     if not transpose == 0:
                         fl.writelines('\\transpose{%d}\n'%transpose)
                     for i in range(len(finLst)):
