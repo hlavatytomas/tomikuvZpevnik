@@ -445,6 +445,9 @@ class SongBook:
                         playingNow = 'verse'
                     if not capo == '':
                         fl.writelines('\\capo{%s}\n'%capo)
+                    else:
+                        fl.writelines('\\capo{0}\n')
+                        capo = 0
                     if not transpose == 0:
                         fl.writelines('\\transpose{%d}\n'%transpose)
                     for i in range(len(finLst)):
