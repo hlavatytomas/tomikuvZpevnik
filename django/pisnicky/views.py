@@ -143,7 +143,7 @@ def handleDelete(request):
 		if not (len(form.data)) == 0:
 			name = request.session.get('name')
 			owner = request.session.get('owner')
-			if name == form.data['name'] and owner == form.data['owner']:
+			if name == form.data['name'].replace(' ','_') and owner == form.data['owner']:
 				print('tu')
 				songsDir = '../songs/'
 				songBookTex = 'Songbook'
