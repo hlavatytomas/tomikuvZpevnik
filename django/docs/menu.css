@@ -31,6 +31,25 @@
     width:100%;
 }
 
+.pdf_button img {
+    width: 40px;
+}
+
+.pdf_button {
+    padding: 5px;
+    padding-right: 25px;
+    padding-left: 20px;
+    text-align: center;
+    transition-duration: 0.4s;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.pdf_button:hover {
+    background-color: #e6e6e6; /* Green */
+    color: black;
+}
+
 #hide{
     content:"";
     position: fixed;

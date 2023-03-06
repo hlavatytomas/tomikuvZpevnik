@@ -25,16 +25,7 @@
     border: 2px solid #d6d6d6; /* Green */
     width:100px
   }
-  
-.pdf_button{
-    padding:5px;
-    text-align:center;
-}
 
-.pdf_button::after{
-    font-family:  Helvetica, sans-serif,Arial;
-    content: "🗏";
-}
 
 .control_button:hover {
     background-color: #e6e6e6; /* Green */
