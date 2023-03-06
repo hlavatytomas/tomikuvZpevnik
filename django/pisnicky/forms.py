@@ -20,3 +20,22 @@ class SongNameForm(forms.Form):
     text = forms.CharField(
         label=mark_safe('Text písně:'),widget=forms.Textarea()
     )
+
+class SongNameFormDel(forms.Form):
+    # songName = forms.CharField(label='Název písničky:', max_length=1000)
+    name = forms.CharField(
+        label='Název písničky',
+        widget=forms.TextInput(
+        attrs={
+            'placeholder': 'Pokud jses si jisty ze chces pisen smazat napis jeji nazev (idealne mazej jen svoje ;))', 
+            'class': 'name_field', 
+            # 'class': 'form-control'
+        }))
+    owner = forms.CharField(
+        label='Pridal (T H K L Y)',
+        widget=forms.TextInput(
+        attrs={
+            'placeholder': '...a kdo ji pridal ', 
+            # 'class': 'name_field', 
+            # 'class': 'form-control'
+        }))
