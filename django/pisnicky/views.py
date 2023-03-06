@@ -15,18 +15,59 @@ from django.http import HttpResponse
 from django.template import loader
 
 def home(request):
-	template = loader.get_template('index.html')
-	songsDir = '../songs/'
-	songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
-	songs = ''
-	for _,row in songBookDb.iterrows():
-		songName = row["name"]
-		songOwner = row["owner"]
-		songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
-	context = {
-		'songs': songs,
-	}
-	return HttpResponse(template.render(context, request))
+	if request.method == 'GET':
+		form = NameForm(request.GET)
+		if not (len(form.data)) == 0:	
+			if form.data['inProgress'] == '1':
+				songsDir = '../songs/'
+				songBookTex = 'Songbook'
+				songBook = SongBook(songsDir,songBookTex)
+				songBook.createSongBook(runFromWeb=True) 
+				form.full_clean()
+				template = loader.get_template('index.html')
+				songsDir = '../songs/'
+				songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+				songs = ''
+				for _,row in songBookDb.iterrows():
+					songName = row["name"]
+					songOwner = row["owner"]
+					songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+				context = {
+					'songs': songs,
+					'tlacitko': 'Kompilace dokončena.'
+				}
+				return HttpResponse(template.render(context, request))
+				# return HttpResponseRedirect('index.html')
+		else:
+			template = loader.get_template('index.html')
+			songsDir = '../songs/'
+			songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+			songs = ''
+			for _,row in songBookDb.iterrows():
+				songName = row["name"]
+				songOwner = row["owner"]
+				songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+			context = {
+				'songs': songs,
+				'tlacitko': 'Zkompiluj'
+			}
+			return HttpResponse(template.render(context, request))
+	else:
+		template = loader.get_template('index.html')
+		songsDir = '../songs/'
+		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+		songs = ''
+		for _,row in songBookDb.iterrows():
+			songName = row["name"]
+			songOwner = row["owner"]
+			songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+		context = {
+			'songs': songs,
+			'tlacitko': 'Zkompiluj'
+		}
+		return HttpResponse(template.render(context, request))
+
+	
 
 def handleEdit(request):
 	if request.method == 'GET':
@@ -206,37 +247,11 @@ def song(request):
 	}
 	return HttpResponse(template.render(context, request))
 
-def pdfCompilation(request):
-	if request.method == 'GET':
-		form = NameForm(request.GET)
-		if not (len(form.data)) == 0:	
-			if form.data['inProgress'] == '1':
-				songsDir = '../songs/'
-				songBookTex = 'Songbook'
-				songBook = SongBook(songsDir,songBookTex)
-				songBook.createSongBook(runFromWeb=True) 
-				form.full_clean()
-				template = loader.get_template('pdfCompilation.html')
-				context = {
-					'tlacitko': 'Kompilace dokončena',
-				}
-				return HttpResponse(template.render(context, request))
-		else:
-			template = loader.get_template('pdfCompilation.html')
-			context = {
-				'tlacitko': 'Zkompiluj PDF',
-			}
-			return HttpResponse(template.render(context, request))
-	else:
-		template = loader.get_template('pdfCompilation.html')
-		context = {
-			'tlacitko': 'Zkompiluj PDF',
-		}
-		return HttpResponse(template.render(context, request))
 
 def handleDownload(request):
 	# Define the full file path
-	filepath = '../Songbook.pdf'
+	filepath = './Songbook.pdf'
+	os.system('cp ../Songbook.pdf ./')
 	# Open the file for reading content
 	path = open(filepath, 'rb')
 	response = HttpResponse(path)
