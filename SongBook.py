@@ -158,19 +158,19 @@ class SongBook:
             pageStrW = input('Link for song: ')
         # page = urllib.request.urlopen(pageStrW)
 
-        if not runFromWeb:
-            req = urllib.request.Request(
-                url=pageStrW, 
-                headers={'User-Agent': 'Mozilla/5.0'}
-            )
-            page = urllib.request.urlopen(req)
-            pageStr = (page.read()).decode('utf-8')
-        else:
-            os.system('wget --user-agent="Mozilla" %s -O tmp.html' % pageStrW)
-            with open('tmp.html','r') as f:
-                pageStr = f.read()
-            os.system('rm -f tmp.html')
-            print(pageStr)
+        # if not runFromWeb:
+        req = urllib.request.Request(
+            url=pageStrW, 
+            headers={'User-Agent': 'Mozilla/5.0'}
+        )
+        page = urllib.request.urlopen(req)
+        pageStr = (page.read()).decode('utf-8')
+        # else:
+        #     os.system('wget --user-agent="Mozilla" %s -O tmp.html' % pageStrW)
+        #     with open('tmp.html','r') as f:
+        #         pageStr = f.read()
+        #     os.system('rm -f tmp.html')
+        #     print(pageStr)
 
 
         # name of the song
