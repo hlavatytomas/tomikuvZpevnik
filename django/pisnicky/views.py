@@ -109,29 +109,28 @@ def handleEdit(request):
 				songBook = SongBook(songsDir,songBookTex)
 				songBookDb = songBook.songsLst 
 				songIndex = songBookDb.query('name == @name').index
-				print(songIndex)
 				for chI in whtChanges:
 					if chI == 0:
 						request.session['name'] = form.data[formsToEdit[chI]].replace(' ','_')
 						songBookDb.loc[songIndex, formsToEdit[chI]] = form.data[formsToEdit[chI]].replace(' ','_') 
 						name = form.data[formsToEdit[chI]].replace(' ','_')
-					if 'owner' in formsToEdit[chI] or chI == 0:
+					else:
+						songBookDb.loc[songIndex,formsToEdit[chI]] = form.data[formsToEdit[chI]]
+					if 'owner' == formsToEdit[chI] or chI == 0:
 						if not form.data['owner'] == 'T':
 							ownFL = [fL[0] for fL in songBook.owners]
 							ownInd = ownFL.index(form.data['owner'])
 							pathNew = 'songs/' + 'ŽŽ_%sSongs/%s.tex' % (songBook.owners[ownInd], name)
 						else:
 							pathNew = 'songs/' + '%s.tex' % (name)
-							try:
-								pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
-							except:
-								pathOld = path
-								songInfo = pd.DataFrame({"name":[name],"path":[pathNew],"owner":[form.data['owner']],"author":[form.data['author']], 'capo':form.data['capo']})
-								songBookDb=pd.concat([songBookDb,songInfo],ignore_index = True)
-							os.system(f'mv ../{pathOld} ../%s' % (pathNew))
+						try:
+							pathOld = songBookDb.loc[songIndex,'path'].iloc[0]
+						except:
+							pathOld = path
+							songInfo = pd.DataFrame({"name":[name],"path":[pathNew],"owner":[form.data['owner']],"author":[form.data['author']], 'capo':form.data['capo']})
+							songBookDb=pd.concat([songBookDb,songInfo],ignore_index = True)
 						songBookDb.loc[songIndex,'path'] = pathNew
-					if not chI == 0:
-						songBookDb.loc[songIndex,formsToEdit[chI]] = form.data[formsToEdit[chI]]
+						os.system(f'mv ../{pathOld} ../%s' % (pathNew))
 			
 				songBookDb.to_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8",index=False)
 
