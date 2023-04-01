@@ -17,9 +17,7 @@ Boli_Sme_Raz_Milovaní,songs/Boli_Sme_Raz_Milovaní.tex,T,Pavol Habera,Boli Sme 
 Boulevard_Of_Broken_Dreams,songs/Boulevard_Of_Broken_Dreams.tex,T,Green Day,Boulevard Of Broken Dreams,3
 Budu_Všechno_Co_Si_Budeš_Přát,songs/Budu_Všechno_Co_Si_Budeš_Přát.tex,T,Janek Ledecký,Budu Všechno Co Si Budeš Přát,0
 Cant_Help_Falling_In_Love,songs/Cant_Help_Falling_In_Love.tex,T,Elvis Presley,,0
-Cats_In_The_Cradle,songs/Cats_In_The_Cradle.tex,T,Harry Chapin,,0
 Cesta,songs/Cesta.tex,T,Tomáš Klus,Cesta,0
-Cesta_Z_Města,songs/Cesta_Z_Města.tex,T,Mirai,Cesta Z Města,0
 Chci_Zas_V_Tobě_Spát,songs/Chci_Zas_V_Tobě_Spát.tex,T,Lucie,Chci Zas V Tobě Spát,0
 Co_Z_Tebe_Bude,songs/Co_Z_Tebe_Bude.tex,T,Pokáč,Co Z Tebe Bude,3
 Černí_andělé,songs/Černí_andělé.tex,T,Lucie,Černí andělé,0
@@ -34,6 +32,7 @@ Do_Nebe,songs/Do_Nebe.tex,T,Tomáš Klus,Do Nebe,0
 Drive_By,songs/Drive_By.tex,T,Train,Drive By,4
 Drobná_Paralela,songs/Drobná_Paralela.tex,T,Chinaski,Drobná Paralela,0
 Duše_Z_Gumy,songs/Duše_Z_Gumy.tex,T,Chinaski,Duše Z Gumy,0
+Ententýky,songs/Ententýky.tex,T,Chinaski,,0
 Fair_Play,songs/Fair_Play.tex,T,Miro Žbirka,Fair Play,0
 Get_Lucky,songs/Get_Lucky.tex,T,Daft Punk,Get Lucky,2
 Good_Riddance_Time_Of_Your_Life,songs/Good_Riddance_Time_Of_Your_Life.tex,T,Green Day,Good Riddance Time Of Your Life,0
@@ -116,7 +115,6 @@ Sbohem_Galánečko,songs/Sbohem_Galánečko.tex,T,Vlasta Redl,Sbohem Galánečko
 Slzy_Tvý_Mámy,songs/Slzy_Tvý_Mámy.tex,T,Olympic,Slzy Tvý Mámy,0
 Srdce_Jako_Knize_Rohan,songs/Srdce_Jako_Knize_Rohan.tex,T,Richard Müller,Srdce Jako Knize Rohan,0
 Starý_Muž,songs/Starý_Muž.tex,T,Jaromír Nohavica,Starý Muž,0
-Stitches,songs/Stitches.tex,T,Shawn Mendes,Stitches,3
 Svaz_Českých_Bohémů,songs/Svaz_Českých_Bohémů.tex,T,Wohnout,Svaz Českých Bohémů,1
 Šaman,songs/Šaman.tex,T,Kabát,Šaman,0
 Šrouby_A_Matice,songs/Šrouby_A_Matice.tex,T,Mandrage,Šrouby A Matice,2
@@ -171,7 +169,10 @@ The_Saga_Begins,songs/ŽŽ_LuckaSongs/The_Saga_Begins.tex,L,"""Weird Al"" Yankov
 1_Plus_1,songs/ŽŽ_YbokemSongs/1_Plus_1.tex,Y,Ready Kirken,1 Plus 1,0
 Ayo_Technology,songs/ŽŽ_YbokemSongs/Ayo_Technology.tex,Y,Milow,Ayo Technology,7
 Breakfast_At_Tiffanys,songs/ŽŽ_YbokemSongs/Breakfast_At_Tiffanys.tex,Y,Deep Blue Something,Breakfast At Tiffanys,0
+Cats_In_The_Cradle,songs/ŽŽ_YbokemSongs/Cats_In_The_Cradle.tex,Y,Harry Chapin,,0
+Cesta_Z_Města,songs/ŽŽ_YbokemSongs/Cesta_Z_Města.tex,Y,Mirai,Cesta Z Města,0
 Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0
 Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0
 Not_Fair,songs/ŽŽ_YbokemSongs/Not_Fair.tex,Y,Lily Allen,Not Fair,0
 Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0
+Stitches,songs/ŽŽ_YbokemSongs/Stitches.tex,Y,Shawn Mendes,Stitches,3
