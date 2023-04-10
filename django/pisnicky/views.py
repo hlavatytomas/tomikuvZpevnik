@@ -13,6 +13,10 @@ import os
 import re
 from django.http import HttpResponse
 from django.template import loader
+from django.urls import reverse
+from django.shortcuts import redirect
+
+from random import randint 
 
 def home(request):
 	if request.method == 'GET':
@@ -285,8 +289,16 @@ def addSong(request):
 def song(request):
 	form = NameForm(request.GET)
 	name = form.data['song']
+
 	template = loader.get_template('song.html')
 	songsDir = '../songs/'
+
+	if name == "!random":
+		songBookDbNames = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")["name"]
+		name = songBookDbNames.iloc[randint(0,len(songBookDbNames)-1)]
+		url = reverse('song') + f'?song={name}'
+		return redirect(url)
+
 	songBookDbRow = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8").query('name == @name').iloc[0]
 	# songBookTex = 'Songbook'
 

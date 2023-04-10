@@ -31,9 +31,12 @@
     color: black;
 }
 
-.scroll_button{
-    height:60px;
-    margin-left: 10px;
+.tall_button {
+    height: 60px;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
 }
 
 #control {
@@ -48,6 +51,7 @@
     text-align: center;
     display: flex;
     justify-content: flex-end;
+    column-gap:10px;
 }
 
 .trans_control {
@@ -57,7 +61,7 @@
 }
 
 .transposition{
-    grid-template-columns: 40px 20px 40px;
+    grid-template-columns: 30px 20px 30px;
     grid-template-rows: 20px auto;
     grid-template-areas: "t_label t_label t_label"
                     "down number up";

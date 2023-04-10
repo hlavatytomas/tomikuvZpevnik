@@ -41,9 +41,8 @@
     color: black;
 }
 
-.scroll_button{
+.tall_button{
     height:60px;
-    margin-left: 10px;
 }
 
 #control {
@@ -66,22 +65,6 @@
 .back_span{
     font-family: Arial, Helvetica, sans-serif;
 }
-
-#edit {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    display: inline-block;
-    padding: 16px;
-    border-radius: 4px;
-    border: 2px solid #d6d6d6;
-    color: black;
-    text-align: center;
-    height: 26px;
-    transition: all 0.5s;
-    cursor: pointer;
-    position: relative;
-    margin-right: 10px;
-  }
 
 
 #return {
