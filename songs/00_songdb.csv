@@ -3,6 +3,7 @@ name,path,owner,author,hname,capo
 1_Signální,songs/1_Signální.tex,T,Chinaski,1 Signální,0
 Accidentally_In_Love,songs/Accidentally_In_Love.tex,T,Counting Crows,Accidentally In Love,0
 Africa,songs/Africa.tex,T,Toto,Africa,2
+Amerika,songs/Amerika.tex,T,Lucie,,0
 Anděl,songs/Anděl.tex,T,Mirai,Anděl,3
 Ani_K_Stáru,songs/Ani_K_Stáru.tex,T,Jaroslav Uhlir,Ani K Stáru,0
 Až_Mi_Bude_Pětašedesát,songs/Až_Mi_Bude_Pětašedesát.tex,T,Michal Horák,Až Mi Bude Pětašedesát,0
@@ -34,6 +35,7 @@ Drobná_Paralela,songs/Drobná_Paralela.tex,T,Chinaski,Drobná Paralela,0
 Duše_Z_Gumy,songs/Duše_Z_Gumy.tex,T,Chinaski,Duše Z Gumy,0
 Ententýky,songs/Ententýky.tex,T,Chinaski,,0
 Fair_Play,songs/Fair_Play.tex,T,Miro Žbirka,Fair Play,0
+Flowers,songs/Flowers.tex,T,Miley Cyrus,,0
 Get_Lucky,songs/Get_Lucky.tex,T,Daft Punk,Get Lucky,2
 Good_Riddance_Time_Of_Your_Life,songs/Good_Riddance_Time_Of_Your_Life.tex,T,Green Day,Good Riddance Time Of Your Life,0
 Grónská_písnička,songs/Grónská_písnička.tex,T,Jaromír Nohavica,Grónská písnička,0
@@ -85,6 +87,7 @@ Milenci_V_Texaskách,songs/Milenci_V_Texaskách.tex,T,Josef Zíma,Milenci V Texa
 Million_Reasons,songs/Million_Reasons.tex,T,Lady Gaga,Million Reasons,0
 Mimorealita,songs/Mimorealita.tex,T,Tomáš Klus,Mimorealita,0
 Minulost,songs/Minulost.tex,T,Jaromír Nohavica,Minulost,0
+Místečko,songs/Místečko.tex,T,Čechomor,,0
 Mrs_Robinson,songs/Mrs_Robinson.tex,T,Simon  Garfunkel,Mrs Robinson,2
 Můj_Svět,songs/Můj_Svět.tex,T,Chinaski,Můj Svět,0
 Naděje,songs/Naděje.tex,T,Mezitím,Naděje,0
@@ -112,12 +115,15 @@ Sametová,songs/Sametová.tex,T,Žlutý Pes,,0
 Sáro,songs/Sáro.tex,T,Traband,Sáro,0
 Sbírka_Zvadlejch_Růží,songs/Sbírka_Zvadlejch_Růží.tex,T,Wanastowi vjecy,Sbírka Zvadlejch Růží,0
 Sbohem_Galánečko,songs/Sbohem_Galánečko.tex,T,Vlasta Redl,Sbohem Galánečko,0
+Sen,songs/Sen.tex,T,Lucie,,0
 Slzy_Tvý_Mámy,songs/Slzy_Tvý_Mámy.tex,T,Olympic,Slzy Tvý Mámy,0
 Srdce_Jako_Knize_Rohan,songs/Srdce_Jako_Knize_Rohan.tex,T,Richard Müller,Srdce Jako Knize Rohan,0
 Starý_Muž,songs/Starý_Muž.tex,T,Jaromír Nohavica,Starý Muž,0
 Svaz_Českých_Bohémů,songs/Svaz_Českých_Bohémů.tex,T,Wohnout,Svaz Českých Bohémů,1
 Šaman,songs/Šaman.tex,T,Kabát,Šaman,0
 Šrouby_A_Matice,songs/Šrouby_A_Matice.tex,T,Mandrage,Šrouby A Matice,2
+Šťastnej_Chlap,songs/Šťastnej_Chlap.tex,T,Lucie,,0
+Taky_Jsem_Se_Narodil_Bos,songs/Taky_Jsem_Se_Narodil_Bos.tex,T,Olympic,,0
 Těšínská,songs/Těšínská.tex,T,Jaromír Nohavica,Těšínská,0
 Thinking_Out_Loud,songs/Thinking_Out_Loud.tex,T,Ed Sheeran,Thinking Out Loud,2
 This_Is_The_Life,songs/This_Is_The_Life.tex,T,Amy Macdonald,This Is The Life,4
@@ -130,15 +136,14 @@ Untitled,songs/Untitled.tex,T,Simple Plan,Untitled,0
 Včelín,songs/Včelín.tex,T,Čechomor,Včelín,0
 "Veď_mě_dál,_cesto_má","songs/Veď_mě_dál,_cesto_má.tex",T,Pavel Bobek,"Veď mě dál, cesto má",0
 Viva_La_Vida,songs/Viva_La_Vida.tex,T,Coldplay,Viva La Vida,1
-Voda_Živá,songs/Voda_Živá.tex,T,Aneta Langerová,,0
 Vymlácený_Entry,songs/Vymlácený_Entry.tex,T,Pokáč,Vymlácený Entry,4
 Vymyslená,songs/Vymyslená.tex,T,Elán,Vymyslená,0
 V_7_25,songs/V_7_25.tex,T,Michal Horák,V 7 25,0
 V_Blbým_Věku,songs/V_Blbým_Věku.tex,T,Xindl X,V Blbým Věku,0
 V_Lese,songs/V_Lese.tex,T,Pokáč,V Lese,0
-Waterloo,songs/Waterloo.tex,T,ABBA,Waterloo,2
 When_All_Is_Said_And_Done,songs/When_All_Is_Said_And_Done.tex,T,ABBA,When All Is Said And Done,0
 When_Youre_Gone,songs/When_Youre_Gone.tex,T,Bryan Adams,When Youre Gone,0
+Wild_World,songs/Wild_World.tex,T,Cat Stevens (Yusuf Islam),,0
 With_Or_Without_You,songs/With_Or_Without_You.tex,T,U2,With Or Without You,0
 Wonderwall,songs/Wonderwall.tex,T,Oasis,Wonderwall,2
 Zalůbení,songs/Zalůbení.tex,T,Elán,Zalůbení,0
@@ -173,6 +178,11 @@ Cats_In_The_Cradle,songs/ŽŽ_YbokemSongs/Cats_In_The_Cradle.tex,Y,Harry Chapin,
 Cesta_Z_Města,songs/ŽŽ_YbokemSongs/Cesta_Z_Města.tex,Y,Mirai,Cesta Z Města,0
 Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0
 Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0
+Moonlight_Shadow,songs/ŽŽ_YbokemSongs/Moonlight_Shadow.tex,Y,Mike Oldfield,,0
 Not_Fair,songs/ŽŽ_YbokemSongs/Not_Fair.tex,Y,Lily Allen,Not Fair,0
+One_Of_Us,songs/ŽŽ_YbokemSongs/One_Of_Us.tex,Y,Joan Osborne,,0
 Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0
 Stitches,songs/ŽŽ_YbokemSongs/Stitches.tex,Y,Shawn Mendes,Stitches,3
+Šrouby_Do_Hlavy,songs/ŽŽ_YbokemSongs/Šrouby_Do_Hlavy.tex,Y,Lucie,,0
+Voda_Živá,songs/ŽŽ_YbokemSongs/Voda_Živá.tex,Y,Aneta Langerová,,0
+Waterloo,songs/ŽŽ_YbokemSongs/Waterloo.tex,Y,ABBA,Waterloo,2
