@@ -45,6 +45,7 @@
     grid-auto-flow: column;
     justify-content: space-between;
     grid-column-gap: 10px;
+    overflow-x: overlay;
 }
 
 #trans_control {
