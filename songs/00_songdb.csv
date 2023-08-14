@@ -60,10 +60,8 @@ Jižní_Kříž,songs/Jižní_Kříž.tex,T,Jan Nedvěd,,0
 Jožin_Z_Bažin,songs/Jožin_Z_Bažin.tex,T,Ivan Mládek,Jožin Z Bažin,0
 Každý_Ráno,songs/Každý_Ráno.tex,T,Chinaski,Každý Ráno,1
 Kdo_Vchází_Do_Tvých_Snů_Má_Lásko,songs/Kdo_Vchází_Do_Tvých_Snů_Má_Lásko.tex,T,Václav Neckář,Kdo Vchází Do Tvých Snů Má Lásko,0
-Když_Nemůžeš_Tak_Přidej,songs/Když_Nemůžeš_Tak_Přidej.tex,T,Mirai,Když Nemůžeš Tak Přidej,3
 Klára,songs/Klára.tex,T,Chinaski,,0
 Královna_Z_Dundrum_Bay,songs/Královna_Z_Dundrum_Bay.tex,T,Brontosauři,,0
-Krátke_Lásky,songs/Krátke_Lásky.tex,T,TEAM,Krátke Lásky,0
 Kráľovna_Bielych_Tenisiek,songs/Kráľovna_Bielych_Tenisiek.tex,T,Elán,Kráľovna Bielych Tenisiek,0
 Křídla_Z_Mýdla,songs/Křídla_Z_Mýdla.tex,T,Kryštof,Křídla Z Mýdla,0
 Kupte_Si_Hřebeny,songs/Kupte_Si_Hřebeny.tex,T,Jaromír Nohavica,Kupte Si Hřebeny,0
@@ -98,18 +96,14 @@ Nechte_Zvony_Znít,songs/Nechte_Zvony_Znít.tex,T,Marta Kubišová,Nechte Zvony 
 Netušim,songs/Netušim.tex,T,Michal Horák,Netušim,0
 Neviem_Byť_Sám,songs/Neviem_Byť_Sám.tex,T,Elán,Neviem Byť Sám,2
 Okno_Mé_Lásky,songs/Okno_Mé_Lásky.tex,T,Olympic,Okno Mé Lásky,0
-On_Top_Of_The_World,songs/On_Top_Of_The_World.tex,T,Imagine Dragons,On Top Of The World,0
 Osmý_Den,songs/Osmý_Den.tex,T,Olympic,Osmý Den,0
 Panic,songs/Panic.tex,T,Lucie,Panic,0
 Pažitka,songs/Pažitka.tex,T,Xavier Baumaxa,Pažitka,0
-Perfect,songs/Perfect.tex,T,Ed Sheeran,Perfect,1
 Piano_Man,songs/Piano_Man.tex,T,Billy Joel,Piano Man,0
 Pocity,songs/Pocity.tex,T,Tomáš Klus,Pocity,0
 Pohoda,songs/Pohoda.tex,T,Kabát,Pohoda,0
-Pompeii,songs/Pompeii.tex,T,Bastille,Pompeii,2
 Proklínám,songs/Proklínám.tex,T,Janek Ledecký,Proklínám,0
 Proměny,songs/Proměny.tex,T,Čechomor,Proměny,0
-Ptáčata,songs/Ptáčata.tex,T,Brontosauři,,0
 Radioactive,songs/Radioactive.tex,T,Imagine Dragons,,0
 Ráda_Se_Miluje,songs/Ráda_Se_Miluje.tex,T,Karel Plíhal,Ráda Se Miluje,0
 Ring-O-Ding,songs/Ring-O-Ding.tex,T,Marta Kubišová,Ring-O-Ding,0
@@ -170,6 +164,7 @@ Waiting_On_The_World_To_Change,songs/ŽŽ_DomcaSongs/Waiting_On_The_World_To_Cha
 House_Of_Memories,songs/ŽŽ_HonzikSongs/House_Of_Memories.tex,H,Panic! At the Disco,House Of Memories,0
 Love_Again,songs/ŽŽ_HonzikSongs/Love_Again.tex,H,Dua Lipa,Love Again,2
 Matfyzák_Na_Discu,songs/ŽŽ_HonzikSongs/Matfyzák_Na_Discu.tex,H,Pokáč,Matfyzák Na Discu,0
+Pompeii,songs/ŽŽ_HonzikSongs/Pompeii.tex,H,Bastille,Pompeii,2
 Sweater_Weather,songs/ŽŽ_HonzikSongs/Sweater_Weather.tex,H,The Neighbourhood,Sweater Weather,0
 The_Islander,songs/ŽŽ_HonzikSongs/The_Islander.tex,H,Nightwish,,0
 The_Middle,songs/ŽŽ_HonzikSongs/The_Middle.tex,H,Jimmy Eat World,The Middle,0
@@ -184,9 +179,14 @@ Cats_In_The_Cradle,songs/ŽŽ_YbokemSongs/Cats_In_The_Cradle.tex,Y,Harry Chapin,
 Cesta_Z_Města,songs/ŽŽ_YbokemSongs/Cesta_Z_Města.tex,Y,Mirai,Cesta Z Města,0
 Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0
 Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0
+Když_Nemůžeš_Tak_Přidej,songs/ŽŽ_YbokemSongs/Když_Nemůžeš_Tak_Přidej.tex,Y,Mirai,Když Nemůžeš Tak Přidej,3
+Krátke_Lásky,songs/ŽŽ_YbokemSongs/Krátke_Lásky.tex,Y,TEAM,Krátke Lásky,0
 Moonlight_Shadow,songs/ŽŽ_YbokemSongs/Moonlight_Shadow.tex,Y,Mike Oldfield,,0
 Not_Fair,songs/ŽŽ_YbokemSongs/Not_Fair.tex,Y,Lily Allen,Not Fair,0
 One_Of_Us,songs/ŽŽ_YbokemSongs/One_Of_Us.tex,Y,Joan Osborne,,0
+On_Top_Of_The_World,songs/ŽŽ_YbokemSongs/On_Top_Of_The_World.tex,Y,Imagine Dragons,On Top Of The World,0
+Perfect,songs/ŽŽ_YbokemSongs/Perfect.tex,Y,Ed Sheeran,Perfect,1
+Ptáčata,songs/ŽŽ_YbokemSongs/Ptáčata.tex,Y,Brontosauři,,0
 Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0
 Stitches,songs/ŽŽ_YbokemSongs/Stitches.tex,Y,Shawn Mendes,Stitches,3
 Šrouby_Do_Hlavy,songs/ŽŽ_YbokemSongs/Šrouby_Do_Hlavy.tex,Y,Lucie,,0

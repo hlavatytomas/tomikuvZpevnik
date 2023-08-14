@@ -22,16 +22,16 @@
 \renewcommand{\idxtitlefont}{\sffamily\large}
 
 % -- font cisla pisnicky (vedle nazvu)
-% \renewcommand{\thesongnum}{A\arabic{songnum}}   % -- neco okolo
+% \renewcommand{\thesongnum}{\hyperlink{page.2}}   % -- neco okolo
 \renewcommand{\printsongnum}[1]{\sffamily\LARGE\hyperlink{page.2}#1}    % -- font
 % \setlength{\songnumwidth}{0.5cm}                % -- sirka ohraniceni
 
 % -- font autora 
-\makeatletter\renewcommand\showauthors{\setbox\SB@box\hbox{\sfcode`.\@m\large\songauthors}\ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi}\makeatother
+\makeatletter\renewcommand\showauthors{\setbox\SB@box\hbox{\sfcode`.\@m\large\hyperlink{page.2}\songauthors}\ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi}\makeatother
 
 
 % -- font nazev pisne
-\renewcommand{\stitlefont}{\bf\sffamily\Large\hyperlink{page.2}}
+\renewcommand{\stitlefont}[1]{\bf\sffamily\Large\hyperlink{page.2}#1}
 
 % -- font pisne sloky
 \renewcommand{\lyricfont}{\sffamily\large}
