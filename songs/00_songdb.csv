@@ -15,6 +15,7 @@ Behind_Blue_Eyes,songs/Behind_Blue_Eyes.tex,T,Limp Bizkit,Behind Blue Eyes,0
 Bláznova_Ukolébavka,songs/Bláznova_Ukolébavka.tex,T,Pavel Dydovič,Bláznova Ukolébavka,0
 Blíženci,songs/Blíženci.tex,T,Olympic,Blíženci,0
 Boli_Sme_Raz_Milovaní,songs/Boli_Sme_Raz_Milovaní.tex,T,Pavol Habera,Boli Sme Raz Milovaní,0
+Bosorka,songs/Bosorka.tex,T,Elán,Bosorka,0
 Boulevard_Of_Broken_Dreams,songs/Boulevard_Of_Broken_Dreams.tex,T,Green Day,Boulevard Of Broken Dreams,3
 Budu_Všechno_Co_Si_Budeš_Přát,songs/Budu_Všechno_Co_Si_Budeš_Přát.tex,T,Janek Ledecký,Budu Všechno Co Si Budeš Přát,0
 Cant_Help_Falling_In_Love,songs/Cant_Help_Falling_In_Love.tex,T,Elvis Presley,,0
@@ -51,11 +52,12 @@ Honey_Honey,songs/Honey_Honey.tex,T,ABBA,Honey Honey,0
 Hotel_California,songs/Hotel_California.tex,T,Eagles,Hotel California,2
 Hrobar,songs/Hrobar.tex,T,Premier,Hrobar,0
 Hruška,songs/Hruška.tex,T,Čechomor,Hruška,0
+Hvězdář,songs/Hvězdář.tex,T,UDG,,0
 Im_A_Believer,songs/Im_A_Believer.tex,T,The Monkees,Im A Believer,0
-Im_Yours,songs/Im_Yours.tex,T,Jason Mraz,Im Yours,0
 Jarní_Tání,songs/Jarní_Tání.tex,T,Brontosauři,Jarní Tání,0
 Jasná_Zpráva,songs/Jasná_Zpráva.tex,T,Olympic,Jasná Zpráva,0
 Jdou_Po_Mně_Jdou,songs/Jdou_Po_Mně_Jdou.tex,T,Jaromír Nohavica,Jdou Po Mně Jdou,0
+Jednou,songs/Jednou.tex,T,Vladimír Mišík,,1
 Jižní_Kříž,songs/Jižní_Kříž.tex,T,Jan Nedvěd,,0
 Jožin_Z_Bažin,songs/Jožin_Z_Bažin.tex,T,Ivan Mládek,Jožin Z Bažin,0
 Každý_Ráno,songs/Každý_Ráno.tex,T,Chinaski,Každý Ráno,1
@@ -115,16 +117,16 @@ Sbohem_Galánečko,songs/Sbohem_Galánečko.tex,T,Vlasta Redl,Sbohem Galánečko
 Sen,songs/Sen.tex,T,Lucie,,0
 Sila_Starejch_Vin,songs/Sila_Starejch_Vin.tex,T,Skwor,,0
 Slunovrat,songs/Slunovrat.tex,T,Brontosauři,,0
-Slzy_Tvý_Mámy,songs/Slzy_Tvý_Mámy.tex,T,Olympic,Slzy Tvý Mámy,0
 Srdce_Jako_Knize_Rohan,songs/Srdce_Jako_Knize_Rohan.tex,T,Richard Müller,Srdce Jako Knize Rohan,0
 Starý_Muž,songs/Starý_Muž.tex,T,Jaromír Nohavica,Starý Muž,0
 Svaz_Českých_Bohémů,songs/Svaz_Českých_Bohémů.tex,T,Wohnout,Svaz Českých Bohémů,1
 Šaman,songs/Šaman.tex,T,Kabát,Šaman,0
+Šípková_Růženka,songs/Šípková_Růženka.tex,T,Jiří Schelinger,,0
+Šípková_Růženka,songs/Šípková_Růženka.tex,T,Jiří Schelinger,,0
 Šrouby_A_Matice,songs/Šrouby_A_Matice.tex,T,Mandrage,Šrouby A Matice,2
 Šťastnej_Chlap,songs/Šťastnej_Chlap.tex,T,Lucie,,0
 Taky_Jsem_Se_Narodil_Bos,songs/Taky_Jsem_Se_Narodil_Bos.tex,T,Olympic,,0
 Těšínská,songs/Těšínská.tex,T,Jaromír Nohavica,Těšínská,0
-Thinking_Out_Loud,songs/Thinking_Out_Loud.tex,T,Ed Sheeran,Thinking Out Loud,2
 This_Is_The_Life,songs/This_Is_The_Life.tex,T,Amy Macdonald,This Is The Life,4
 Touha,songs/Touha.tex,T,Daniel Landa,Touha,0
 Toulavej,songs/Toulavej.tex,T,Vojta Kiďák Tomáško,Toulavej,0
@@ -132,17 +134,15 @@ Tři_Kříže,songs/Tři_Kříže.tex,T,Hop Trop,Tři Kříže,0
 Ulica,songs/Ulica.tex,T,Elán (Slovakia,Ulica,0
 Umbrella,songs/Umbrella.tex,T,Rihanna,Umbrella,1
 Untitled,songs/Untitled.tex,T,Simple Plan,Untitled,0
+Vakuum,songs/Vakuum.tex,T,Chinaski,,0
 Včelín,songs/Včelín.tex,T,Čechomor,Včelín,0
 "Veď_mě_dál,_cesto_má","songs/Veď_mě_dál,_cesto_má.tex",T,Pavel Bobek,"Veď mě dál, cesto má",0
 Viva_La_Vida,songs/Viva_La_Vida.tex,T,Coldplay,Viva La Vida,1
-Vymlácený_Entry,songs/Vymlácený_Entry.tex,T,Pokáč,Vymlácený Entry,4
 Vymyslená,songs/Vymyslená.tex,T,Elán,Vymyslená,0
 V_7_25,songs/V_7_25.tex,T,Michal Horák,V 7 25,0
 V_Blbým_Věku,songs/V_Blbým_Věku.tex,T,Xindl X,V Blbým Věku,0
 V_Lese,songs/V_Lese.tex,T,Pokáč,V Lese,0
 When_All_Is_Said_And_Done,songs/When_All_Is_Said_And_Done.tex,T,ABBA,When All Is Said And Done,0
-When_Youre_Gone,songs/When_Youre_Gone.tex,T,Bryan Adams,When Youre Gone,0
-Wild_World,songs/Wild_World.tex,T,Cat Stevens (Yusuf Islam),,0
 With_Or_Without_You,songs/With_Or_Without_You.tex,T,U2,With Or Without You,0
 Wonderwall,songs/Wonderwall.tex,T,Oasis,Wonderwall,2
 Zalůbení,songs/Zalůbení.tex,T,Elán,Zalůbení,0
@@ -151,7 +151,6 @@ Zejtra_Mám,songs/Zejtra_Mám.tex,T,Ready Kirken,Zejtra Mám,0
 Země_Vzdálená,songs/Země_Vzdálená.tex,T,BSP,,0
 Zombie,songs/Zombie.tex,T,The Cranberries,Zombie,0
 Better_Together,songs/ŽŽ_DomcaSongs/Better_Together.tex,D,Jack Johnson,Better Together,4
-Bosorka,songs/ŽŽ_DomcaSongs/Bosorka.tex,D,Elán,Bosorka,0
 Brandy_Youre_A_Fine_Girl,songs/ŽŽ_DomcaSongs/Brandy_Youre_A_Fine_Girl.tex,D,Looking Glass,Brandy Youre A Fine Girl,0
 Let_My_Love_Open_The_Door,songs/ŽŽ_DomcaSongs/Let_My_Love_Open_The_Door.tex,D,Pete Townshend,Let My Love Open The Door,0
 Mandy,songs/ŽŽ_DomcaSongs/Mandy.tex,D,Barry Manilow,Mandy,0
@@ -177,7 +176,9 @@ Ayo_Technology,songs/ŽŽ_YbokemSongs/Ayo_Technology.tex,Y,Milow,Ayo Technology,
 Breakfast_At_Tiffanys,songs/ŽŽ_YbokemSongs/Breakfast_At_Tiffanys.tex,Y,Deep Blue Something,Breakfast At Tiffanys,0
 Cats_In_The_Cradle,songs/ŽŽ_YbokemSongs/Cats_In_The_Cradle.tex,Y,Harry Chapin,,0
 Cesta_Z_Města,songs/ŽŽ_YbokemSongs/Cesta_Z_Města.tex,Y,Mirai,Cesta Z Města,0
+Co_Když,songs/ŽŽ_YbokemSongs/Co_Když.tex,Y,Vlasta Redl,,0
 Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0
+Im_Yours,songs/ŽŽ_YbokemSongs/Im_Yours.tex,Y,Jason Mraz,Im Yours,0
 Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0
 Když_Nemůžeš_Tak_Přidej,songs/ŽŽ_YbokemSongs/Když_Nemůžeš_Tak_Přidej.tex,Y,Mirai,Když Nemůžeš Tak Přidej,3
 Krátke_Lásky,songs/ŽŽ_YbokemSongs/Krátke_Lásky.tex,Y,TEAM,Krátke Lásky,0
@@ -188,7 +189,13 @@ On_Top_Of_The_World,songs/ŽŽ_YbokemSongs/On_Top_Of_The_World.tex,Y,Imagine Dra
 Perfect,songs/ŽŽ_YbokemSongs/Perfect.tex,Y,Ed Sheeran,Perfect,1
 Ptáčata,songs/ŽŽ_YbokemSongs/Ptáčata.tex,Y,Brontosauři,,0
 Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0
+Slzy_Tvý_Mámy,songs/ŽŽ_YbokemSongs/Slzy_Tvý_Mámy.tex,Y,Olympic,Slzy Tvý Mámy,0
 Stitches,songs/ŽŽ_YbokemSongs/Stitches.tex,Y,Shawn Mendes,Stitches,3
+Sweet_Home_Alabama,songs/ŽŽ_YbokemSongs/Sweet_Home_Alabama.tex,Y,Lynyrd Skynyrd,,0
 Šrouby_Do_Hlavy,songs/ŽŽ_YbokemSongs/Šrouby_Do_Hlavy.tex,Y,Lucie,,0
+Thinking_Out_Loud,songs/ŽŽ_YbokemSongs/Thinking_Out_Loud.tex,Y,Ed Sheeran,Thinking Out Loud,2
 Voda_Živá,songs/ŽŽ_YbokemSongs/Voda_Živá.tex,Y,Aneta Langerová,,0
+Vymlácený_Entry,songs/ŽŽ_YbokemSongs/Vymlácený_Entry.tex,Y,Pokáč,Vymlácený Entry,4
 Waterloo,songs/ŽŽ_YbokemSongs/Waterloo.tex,Y,ABBA,Waterloo,2
+When_Youre_Gone,songs/ŽŽ_YbokemSongs/When_Youre_Gone.tex,Y,Bryan Adams,When Youre Gone,0
+Wild_World,songs/ŽŽ_YbokemSongs/Wild_World.tex,Y,Cat Stevens (Yusuf Islam),,0
