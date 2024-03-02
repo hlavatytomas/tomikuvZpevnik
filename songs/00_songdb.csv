@@ -1,6 +1,7 @@
 name,path,owner,author,hname,capo
 1970,songs/1970.tex,T,Chinaski,1970,1
 1_Signální,songs/1_Signální.tex,T,Chinaski,1 Signální,0
+21_Guns,songs/21_Guns.tex,T,Green Day,,0
 Accidentally_In_Love,songs/Accidentally_In_Love.tex,T,Counting Crows,Accidentally In Love,0
 Africa,songs/Africa.tex,T,Toto,Africa,2
 Amerika,songs/Amerika.tex,T,Lucie,,0
@@ -183,6 +184,7 @@ Pompeii,songs/ŽŽ_HonzikSongs/Pompeii.tex,H,Bastille,Pompeii,2
 Sweater_Weather,songs/ŽŽ_HonzikSongs/Sweater_Weather.tex,H,The Neighbourhood,Sweater Weather,0
 The_Islander,songs/ŽŽ_HonzikSongs/The_Islander.tex,H,Nightwish,,0
 The_Middle,songs/ŽŽ_HonzikSongs/The_Middle.tex,H,Jimmy Eat World,The Middle,0
+We_Didnt_Start_The_Fire,songs/ŽŽ_HonzikSongs/We_Didnt_Start_The_Fire.tex,H,Fall Out Boy,,0
 Shallow,songs/ŽŽ_KikiSongs/Shallow.tex,K,Misc Soundtrack,Shallow,0
 Čarodějnice_Z_Amesbury,songs/ŽŽ_LuckaSongs/Čarodějnice_Z_Amesbury.tex,L,Asonance,Čarodějnice Z Amesbury,0
 The_Saga_Begins,songs/ŽŽ_LuckaSongs/The_Saga_Begins.tex,L,"""Weird Al"" Yankovic",The Saga Begins,0
@@ -195,16 +197,20 @@ Cesta_Z_Města,songs/ŽŽ_YbokemSongs/Cesta_Z_Města.tex,Y,Mirai,Cesta Z Města,
 Co_Když,songs/ŽŽ_YbokemSongs/Co_Když.tex,Y,Vlasta Redl,,0
 Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0
 Im_Yours,songs/ŽŽ_YbokemSongs/Im_Yours.tex,Y,Jason Mraz,Im Yours,0
+Islands_In_The_Stream,songs/ŽŽ_YbokemSongs/Islands_In_The_Stream.tex,Y,Kenny Rogers,,0
 Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0
 Když_Nemůžeš_Tak_Přidej,songs/ŽŽ_YbokemSongs/Když_Nemůžeš_Tak_Přidej.tex,Y,Mirai,Když Nemůžeš Tak Přidej,3
 Krátke_Lásky,songs/ŽŽ_YbokemSongs/Krátke_Lásky.tex,Y,TEAM,Krátke Lásky,0
 Moonlight_Shadow,songs/ŽŽ_YbokemSongs/Moonlight_Shadow.tex,Y,Mike Oldfield,,0
+Needles_And_Pins,songs/ŽŽ_YbokemSongs/Needles_And_Pins.tex,Y,The Searchers,,0
 Not_Fair,songs/ŽŽ_YbokemSongs/Not_Fair.tex,Y,Lily Allen,Not Fair,0
 One_Of_Us,songs/ŽŽ_YbokemSongs/One_Of_Us.tex,Y,Joan Osborne,,0
 On_Top_Of_The_World,songs/ŽŽ_YbokemSongs/On_Top_Of_The_World.tex,Y,Imagine Dragons,On Top Of The World,0
 Perfect,songs/ŽŽ_YbokemSongs/Perfect.tex,Y,Ed Sheeran,Perfect,1
+Photograph,songs/ŽŽ_YbokemSongs/Photograph.tex,Y,Ed Sheeran,,0
 Ptáčata,songs/ŽŽ_YbokemSongs/Ptáčata.tex,Y,Brontosauři,,0
 Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0
+Shiny_Happy_People,songs/ŽŽ_YbokemSongs/Shiny_Happy_People.tex,Y,R.E.M.,,0
 Slzy_Tvý_Mámy,songs/ŽŽ_YbokemSongs/Slzy_Tvý_Mámy.tex,Y,Olympic,Slzy Tvý Mámy,0
 Stitches,songs/ŽŽ_YbokemSongs/Stitches.tex,Y,Shawn Mendes,Stitches,3
 Sweet_Home_Alabama,songs/ŽŽ_YbokemSongs/Sweet_Home_Alabama.tex,Y,Lynyrd Skynyrd,,0

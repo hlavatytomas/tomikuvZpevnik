@@ -2,6 +2,7 @@
 % \documentclass[twocolumn,10pt]{article}
 \usepackage[utf8]{inputenc}  % Enable UTF-8 typing
 \usepackage{emptypage}
+\usepackage{graphicx}
 % \usepackage[OT2,T1]{fontenc} 
 \usepackage[hidelinks]{hyperref}        % Interactive PDF
 % \usepackage[xetex]{hyperref}        % Interactive PDF
@@ -102,9 +103,11 @@
 % \sepindexesfalse
 
 %% Author, songbook title, year, etc.
-\title{\textbf{\Huge All you need is guitar \dots \quad\quad\quad\quad \\[1cm] \quad\quad\quad \dots and few chords}}
-\author{\Large Tomíkův zpěvník}
-\date{\the\year}
+% \title{\textbf{\Huge All you need is guitar \dots \quad\quad\quad\quad \\[1cm] \quad\quad\quad \dots and few chords}\\[1.5cm]\Large{Tomíkův zpěvník}\\\the\year\\[1cm]\includegraphics[width=0.8\textwidth]{imgs/logo.png}\thispagestyle{empty}}
+% \title{\textbf{\Huge All you need is guitar \dots \quad\quad\quad\quad \\[1cm] \quad\quad\quad \dots and few chords}\\[1.5cm]\Large{Zpěvník Hrůzy}\\\the\year\\[1cm]\includegraphics[width=0.8\textwidth]{imgs/logo.png}}
+\title{\textbf{\Huge All you need is guitar \dots \quad\quad\quad\quad \\[1cm] \quad\quad\quad \dots and few chords}\\[1.5cm]\Large{Tomíkův zpěvník}\\\the\year\\[1cm]\includegraphics[width=0.8\textwidth]{imgs/logo.png}}
+\author{\thispagestyle{empty}}
+\date{}
 
 \begin{document}
 \songcolumns{2}
@@ -113,8 +116,10 @@
 % \flushbottom
 % \twocolumn[\LARGE\centering My Songs]
 %% Front page: title, etc.
+\pagenumbering{gobble}
   \maketitle
-  \thispagestyle{empty}
+  
+
   % \vspace{4cm}
 
 %% Songbook owner's signature
@@ -124,6 +129,7 @@
 % {\begin{music}\trebleclef\end{music}\huge{\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots}\begin{music}\trebleclef\end{music}}
 %    \end{center}
 \clearpage
+\pagenumbering{arabic}
 %% Include rules section
 % \include{rules}
 
@@ -137,6 +143,10 @@
 
 \include{songs/index}
 \flushbottom
+elektronická verze k dispozi na \texttt{http://tomashlavaty.pythonanywhere.com/docs/index.html}\\[1cm]
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{imgs/qrPisnicky.png}
+\end{center}
 \end{document}
 
 % \documentclass{article}
