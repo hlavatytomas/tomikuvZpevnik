@@ -209,7 +209,7 @@ class SongBook:
                     canWanish = False
             if 'quot' in toDel[i] and canWanish:
                 pageStr = pageStr.replace(toDel[i],'')
-        cuttedText = pageStr.replace('&','').replace('iacute;','í').replace('oacute;','ó').replace('uacute;','ú').replace('aacute;','á').replace('eacute;','é').replace('yacute;','ý').replace('scaron;','š').replace('Scaron;','Š').replace('ocirc;','o').replace('auml;','a').replace('rsquo;',"'")
+        cuttedText = pageStr.replace('&','').replace('iacute;','í').replace('oacute;','ó').replace('uacute;','ú').replace('aacute;','á').replace('eacute;','é').replace('yacute;','ý').replace('scaron;','š').replace('Scaron;','Š').replace('ocirc;','o').replace('auml;','a').replace('rsquo;',"'").replace('#039;',"'")
 
         while not songAdded:            
             #find indices of the first and last Word
