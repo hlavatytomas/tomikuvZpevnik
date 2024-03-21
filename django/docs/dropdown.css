@@ -6,10 +6,10 @@
     position: relative;
     cursor: pointer;
     display: inline-block;
-    background-color: white;
-  color: #363636;
+    background-color: var(--background1);
+  color: var(--text2);
   border-radius: 2px;
-  border: 2px solid #d6d6d6; /* Green */
+  border: 2px solid var(--accent1); 
   width:134px;
   padding: 5px;
     
@@ -18,8 +18,8 @@
  .dropdown-check-list .anchor:after {
     position: absolute;
     content: "";
-    border-left: 2px solid black;
-    border-top: 2px solid black;
+    border-left: 2px solid var(--text2);
+    border-top: 2px solid var(--text2);
     padding: 5px;
     right: 10px;
     top: 20%;
@@ -36,15 +36,17 @@
 }
   
 .dropdown-check-list ul.items {
-  background-color: white;
+  background-color: var(--background1);
   padding: 2px;
   display: none;
   margin: 0;
-  border: 1px solid #ccc;
+  border: 2px solid var(--accent1);
   border-top: none;
   position: absolute;
   width: 140px;
   font-family: 'Comic Sans MS';
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .dropdown-check-list ul.items li {
@@ -52,9 +54,13 @@
 }
 
 .dropdown-check-list.visible .anchor {
-  color: #0094ff;
+  color: var(--accent2);
 }
 
 .dropdown-check-list.visible .items {
   display: block;
+}
+
+.dropdown-check-list ul.items li input{
+  accent-color: var(--accent2);
 }

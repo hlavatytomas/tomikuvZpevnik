@@ -1,6 +1,6 @@
 #sidebar {
     position: fixed;
-    background: #f0f0f0;
+    background: var(--background2);
     height: 100%;
     width: 200px;
     top: 0px;
@@ -21,10 +21,10 @@
 
 .menu_button {
     transition-duration: 0.4s;
-    background-color: white;
-    color: #363636;
+    background-color: var(--background);
+    color: var(--text1);
     border-radius: 2px;
-    border: 2px solid #d6d6d6;
+    border: 2px solid var(--accent1);
     width:100%;
     box-sizing:border-box;
     height: 100%;
@@ -34,6 +34,10 @@
 
 .menu_item {
     width:100%;
+}
+
+.song_item{
+    break-inside: avoid-column;
 }
 
 .pdf_button img {
@@ -46,13 +50,13 @@
     padding-left: 20px;
     text-align: center;
     transition-duration: 0.4s;
-    background-color: white;
+    background-color: var(--background1);
     border-radius: 8px;
 }
 
 .pdf_button:hover {
-    background-color: #e6e6e6; /* Green */
-    color: black;
+    background-color: var(--background2); /* Green */
+    color: var(--text1);
 }
 
 #hide{
