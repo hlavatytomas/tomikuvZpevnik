@@ -1,3 +1,19 @@
+:root {
+    --text1: rgb(0, 0, 0);
+    --text2: rgb(76, 76, 76);
+    --text3: rgb(136, 136, 136);
+    --background0: rgb(255,255,255);
+    --background1: rgb(255, 255, 255);
+    --background2: rgb(221, 221, 223);
+    --accent1:rgb(136, 136, 136);
+    --accent2:rgb(136, 136, 136);
+}
+
+body {
+    background-color: var(--background0);
+    color:var(--text1)
+}
+
 .chord { 
     position: relative;
  }
@@ -19,16 +35,16 @@
 
 .control_button {
     transition-duration: 0.4s;
-    background-color: white;
-    color: #363636;
+    background-color: var(--background1);
+    color: var(--text2);
     border-radius: 2px;
-    border: 2px solid #d6d6d6; /* Green */
+    border: 2px solid var(--accent1); 
   }
 
 
 .control_button:hover {
-    background-color: #e6e6e6; /* Green */
-    color: black;
+    background-color: var(--background2);
+    color: var(--text1);
 }
 
 .tall_button {
@@ -79,29 +95,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#edit {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    display: inline-block;
-    padding: 16px;
-    border-radius: 4px;
-    border: 2px solid #d6d6d6;
-    color: black;
-    text-align: center;
-    height: 26px;
-    transition: all 0.5s;
-    cursor: pointer;
-    position: relative;
-    margin-right: 10px;
-  }
-
-
 #return {
     text-decoration: none;
     display: inline-block;
     border-radius: 4px;
-    border: 2px solid #d6d6d6;
-    color: black;
+    border: 2px solid var(--accent1);
+    color: var(--text1);
     text-align: center;
     font-size: 30px;
     width: 80px;
@@ -154,24 +153,27 @@
 }
 
 a {
-    color: black;
+    color: var(--text1);
     text-decoration: none; /* no underline */
   }
 
 .song_ref {
-    color: black;
+    color: var(--text1);
     text-decoration: none;
     text-align: left;
     padding: 10px;
     text-align: left;
     transition: 0.5s;
     border-bottom: 2px solid #f6f6f6;
-    display: flex;
-    justify-content: space-between;
+    display:grid;
+    grid-template-areas:
+    "name owner"
+    "author owner";
+    grid-template-columns: auto 30px;
 }
 
 .song_ref:hover {
-    background-color: #e6e6e6; /* Green */
+    background-color: var(--background2); /* Green */
     transition: 0.25s;
 }
 
@@ -192,11 +194,26 @@ a {
 
 .song_ref .owner {
     font-family: 'Comic Sans MS';
-    color: #a6a6a6;
+    color: var(--background2);
+    grid-area: owner;
+    align-self: center;
+}
+
+.song_ref .song_name {
+    grid-area: name;
+    align-self: center;
+}
+
+.song_ref .song_author {
+    grid-area: author;
+    color: var(--text3);
+    font-style: italic;
+    font-size: small;
+    align-self: center;
 }
 
 .chorus {
-    border-left: 3px solid black;
+    border-left: 3px solid var(--text1);
 }
 
 .chorus::first-line {

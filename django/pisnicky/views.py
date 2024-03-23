@@ -35,7 +35,8 @@ def home(request):
 				for _,row in songBookDb.iterrows():
 					songName = row["name"]
 					songOwner = row["owner"]
-					songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+					songAuth = row["author"]
+					songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="song_author">{re.sub("_"," ",songAuth)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 				context = {
 					'songs': songs,
 					'tlacitko': 'Kompilace dokončena.'
@@ -50,7 +51,8 @@ def home(request):
 			for _,row in songBookDb.iterrows():
 				songName = row["name"]
 				songOwner = row["owner"]
-				songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+				songAuth = row["author"]
+				songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="song_author">{re.sub("_"," ",songAuth)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 			context = {
 				'songs': songs,
 				'tlacitko': 'Zkompiluj'
@@ -64,7 +66,8 @@ def home(request):
 		for _,row in songBookDb.iterrows():
 			songName = row["name"]
 			songOwner = row["owner"]
-			songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
+			songAuth = row["author"]
+			songs += (f'<div class="song_item" owner="{songOwner}"><a href="./song.html?song={songName}"><div class="song_ref"><span class="song_name">{re.sub("_"," ",songName)}</span><span class="song_author">{re.sub("_"," ",songAuth)}</span><span class="owner">{songOwner}</span></div></a></div>\n')
 		context = {
 			'songs': songs,
 			'tlacitko': 'Zkompiluj'

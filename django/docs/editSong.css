@@ -39,7 +39,7 @@ form {
 }
 
 label{
-    color:grey;
+    color:var(--text2);
     font:Arial bold;
 }
 
@@ -48,7 +48,7 @@ label{
 }
 .input_field input {
     border-radius: 2px;
-    border: 2px solid #d6d6d6;
+    border: 2px solid var(--accent1);
     width: -moz-calc(100% - 14px);
     width: -webkit-calc(100% - 14px);
     width: -o-calc(100% - 14px);
@@ -58,7 +58,7 @@ label{
 
 #form_text textarea {
     border-radius: 2px;
-    border: 2px solid #d6d6d6;
+    border: 2px solid var(--accent1);
     display: block;
     width: -moz-calc(100% - 8px);
     width: -webkit-calc(100% - 8px);
@@ -99,7 +99,7 @@ label{
 .submit_button{
     grid-area:edit;
     border-radius: 2px;
-    border: 2px solid #d6d6d6;
+    border: 2px solid var(--accent2);
     width: auto;
     padding: 5px;
     margin:5px;
