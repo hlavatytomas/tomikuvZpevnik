@@ -9,6 +9,7 @@ Anděl,songs/Anděl.tex,T,Mirai,Anděl,3
 Ani_K_Stáru,songs/Ani_K_Stáru.tex,T,Jaroslav Uhlir,Ani K Stáru,0
 Až_Mi_Bude_Pětašedesát,songs/Až_Mi_Bude_Pětašedesát.tex,T,Michal Horák,Až Mi Bude Pětašedesát,0
 Bad_Bad_Leroy_Brown,songs/Bad_Bad_Leroy_Brown.tex,T,Jim Croce,Bad Bad Leroy Brown,0
+Bad_Day,songs/Bad_Day.tex,T,Daniel Powter,,1
 Baroko,songs/Baroko.tex,T,Richard Muller,Baroko,0
 Batalion,songs/Batalion.tex,T,Spirituál kvintet,Batalion,0
 Bára,songs/Bára.tex,T,Kabát,Bára,0
@@ -44,6 +45,7 @@ Fairytale_Gone_Bad,songs/Fairytale_Gone_Bad.tex,T,Sunrise Avenue,,0
 Fair_Play,songs/Fair_Play.tex,T,Miro Žbirka,Fair Play,0
 Falling_Slowly,songs/Falling_Slowly.tex,T,Glen Hansard,,0
 Flowers,songs/Flowers.tex,T,Miley Cyrus,,0
+Fox_On_The_Run,songs/Fox_On_The_Run.tex,T,Sweet,,2
 Get_Lucky,songs/Get_Lucky.tex,T,Daft Punk,Get Lucky,2
 Good_Riddance_Time_Of_Your_Life,songs/Good_Riddance_Time_Of_Your_Life.tex,T,Green Day,Good Riddance Time Of Your Life,0
 Grónská_písnička,songs/Grónská_písnička.tex,T,Jaromír Nohavica,Grónská písnička,0
@@ -63,6 +65,7 @@ Hruška,songs/Hruška.tex,T,Čechomor,Hruška,0
 Hvězda_Na_Vrbě,songs/Hvězda_Na_Vrbě.tex,T,Olympic,,0
 Hvězdář,songs/Hvězdář.tex,T,UDG,,0
 Im_A_Believer,songs/Im_A_Believer.tex,T,The Monkees,Im A Believer,0
+I_Dont_Want_To_Miss_A_Thing,songs/I_Dont_Want_To_Miss_A_Thing.tex,T,Aerosmith,,0
 Jarní_Tání,songs/Jarní_Tání.tex,T,Brontosauři,Jarní Tání,0
 Jasná_Zpráva,songs/Jasná_Zpráva.tex,T,Olympic,Jasná Zpráva,0
 Jdou_Po_Mně_Jdou,songs/Jdou_Po_Mně_Jdou.tex,T,Jaromír Nohavica,Jdou Po Mně Jdou,0
@@ -143,6 +146,7 @@ Svaz_Českých_Bohémů,songs/Svaz_Českých_Bohémů.tex,T,Wohnout,Svaz Český
 Šípková_Růženka,songs/Šípková_Růženka.tex,T,Jiří Schelinger,,0
 Šrouby_A_Matice,songs/Šrouby_A_Matice.tex,T,Mandrage,Šrouby A Matice,2
 Šťastnej_Chlap,songs/Šťastnej_Chlap.tex,T,Lucie,,0
+Tabáček,songs/Tabáček.tex,T,Chinaski,,0
 Taky_Jsem_Se_Narodil_Bos,songs/Taky_Jsem_Se_Narodil_Bos.tex,T,Olympic,,0
 Těšínská,songs/Těšínská.tex,T,Jaromír Nohavica,Těšínská,0
 The_Gambler,songs/The_Gambler.tex,T,Kenny Rogers,,0
@@ -154,16 +158,19 @@ Ulica,songs/Ulica.tex,T,Elán (Slovakia,Ulica,0
 Umbrella,songs/Umbrella.tex,T,Rihanna,Umbrella,1
 Under_The_Bridge,songs/Under_The_Bridge.tex,T,Red Hot Chili Peppers,,0
 Untitled,songs/Untitled.tex,T,Simple Plan,Untitled,0
+Uptown_Girl,songs/Uptown_Girl.tex,T,Billy Joel,,1
 Vakuum,songs/Vakuum.tex,T,Chinaski,,0
 Variace_Na_Renesanční_Téma,songs/Variace_Na_Renesanční_Téma.tex,T,Vladimír Mišík,,0
 Včelín,songs/Včelín.tex,T,Čechomor,Včelín,0
 "Veď_mě_dál,_cesto_má","songs/Veď_mě_dál,_cesto_má.tex",T,Pavel Bobek,"Veď mě dál, cesto má",0
 Viva_La_Vida,songs/Viva_La_Vida.tex,T,Coldplay,Viva La Vida,1
+Vymlácený_Entry,songs/Vymlácený_Entry.tex,T,Pokáč,Vymlácený Entry,4
 Vymyslená,songs/Vymyslená.tex,T,Elán,Vymyslená,0
 V_7_25,songs/V_7_25.tex,T,Michal Horák,V 7 25,0
 V_Blbým_Věku,songs/V_Blbým_Věku.tex,T,Xindl X,V Blbým Věku,0
 V_Lese,songs/V_Lese.tex,T,Pokáč,V Lese,0
 When_All_Is_Said_And_Done,songs/When_All_Is_Said_And_Done.tex,T,ABBA,When All Is Said And Done,0
+Wherever_You_Will_Go,songs/Wherever_You_Will_Go.tex,T,The Calling,,2
 With_Or_Without_You,songs/With_Or_Without_You.tex,T,U2,With Or Without You,0
 Wonderwall,songs/Wonderwall.tex,T,Oasis,Wonderwall,2
 You_Cant_Hurry_Love,songs/You_Cant_Hurry_Love.tex,T,The Supremes,,0
@@ -182,13 +189,18 @@ Sweet_Child_O_Mine,songs/ŽŽ_DomcaSongs/Sweet_Child_O_Mine.tex,D,Guns N' Roses,
 Take_It_Easy,songs/ŽŽ_DomcaSongs/Take_It_Easy.tex,D,Eagles,Take It Easy,0
 The_Weight,songs/ŽŽ_DomcaSongs/The_Weight.tex,D,The Band,The Weight,0
 Waiting_On_The_World_To_Change,songs/ŽŽ_DomcaSongs/Waiting_On_The_World_To_Change.tex,D,John Mayer,Waiting On The World To Change,0
+Another_Love,songs/ŽŽ_HonzikSongs/Another_Love.tex,H,Tom Odell,,0
+Dream_On,songs/ŽŽ_HonzikSongs/Dream_On.tex,H,Aerosmith,,1
+High_Hopes,songs/ŽŽ_HonzikSongs/High_Hopes.tex,H,Panic! At the Disco,,0
 House_Of_Memories,songs/ŽŽ_HonzikSongs/House_Of_Memories.tex,H,Panic! At the Disco,House Of Memories,0
 Love_Again,songs/ŽŽ_HonzikSongs/Love_Again.tex,H,Dua Lipa,Love Again,2
 Matfyzák_Na_Discu,songs/ŽŽ_HonzikSongs/Matfyzák_Na_Discu.tex,H,Pokáč,Matfyzák Na Discu,0
 Pompeii,songs/ŽŽ_HonzikSongs/Pompeii.tex,H,Bastille,Pompeii,2
+Somebody_Told_Me,songs/ŽŽ_HonzikSongs/Somebody_Told_Me.tex,H,The Killers,,1
 Sweater_Weather,songs/ŽŽ_HonzikSongs/Sweater_Weather.tex,H,The Neighbourhood,Sweater Weather,0
 The_Islander,songs/ŽŽ_HonzikSongs/The_Islander.tex,H,Nightwish,,0
 The_Middle,songs/ŽŽ_HonzikSongs/The_Middle.tex,H,Jimmy Eat World,The Middle,0
+Wake_Me_Up_When_September_Ends,songs/ŽŽ_HonzikSongs/Wake_Me_Up_When_September_Ends.tex,H,Green Day,,0
 We_Didnt_Start_The_Fire,songs/ŽŽ_HonzikSongs/We_Didnt_Start_The_Fire.tex,H,Fall Out Boy,,0
 Shallow,songs/ŽŽ_KikiSongs/Shallow.tex,K,Misc Soundtrack,Shallow,0
 Čarodějnice_Z_Amesbury,songs/ŽŽ_LuckaSongs/Čarodějnice_Z_Amesbury.tex,L,Asonance,Čarodějnice Z Amesbury,0
@@ -201,6 +213,7 @@ Cats_In_The_Cradle,songs/ŽŽ_YbokemSongs/Cats_In_The_Cradle.tex,Y,Harry Chapin,
 Cesta_Z_Města,songs/ŽŽ_YbokemSongs/Cesta_Z_Města.tex,Y,Mirai,Cesta Z Města,0
 Co_Když,songs/ŽŽ_YbokemSongs/Co_Když.tex,Y,Vlasta Redl,,0
 Dont_Go_Breaking_My_Heart,songs/ŽŽ_YbokemSongs/Dont_Go_Breaking_My_Heart.tex,Y,Elton John,Dont Go Breaking My Heart,0
+Dont_Stop_Me_Now,songs/ŽŽ_YbokemSongs/Dont_Stop_Me_Now.tex,Y,Queen,,0
 Im_Yours,songs/ŽŽ_YbokemSongs/Im_Yours.tex,Y,Jason Mraz,Im Yours,0
 Islands_In_The_Stream,songs/ŽŽ_YbokemSongs/Islands_In_The_Stream.tex,Y,Kenny Rogers,,0
 Jdevozem,songs/ŽŽ_YbokemSongs/Jdevozem.tex,Y,Tomáš Klus,Jdevozem,0
@@ -216,6 +229,7 @@ Perfect,songs/ŽŽ_YbokemSongs/Perfect.tex,Y,Ed Sheeran,Perfect,1
 Photograph,songs/ŽŽ_YbokemSongs/Photograph.tex,Y,Ed Sheeran,,0
 Ptáčata,songs/ŽŽ_YbokemSongs/Ptáčata.tex,Y,Brontosauři,,0
 Runaway_Train,songs/ŽŽ_YbokemSongs/Runaway_Train.tex,Y,Soul Asylum,Runaway Train,0
+Seven_Nation_Army,songs/ŽŽ_YbokemSongs/Seven_Nation_Army.tex,Y,The White Stripes,,0
 Shiny_Happy_People,songs/ŽŽ_YbokemSongs/Shiny_Happy_People.tex,Y,R.E.M.,,0
 Slzy_Tvý_Mámy,songs/ŽŽ_YbokemSongs/Slzy_Tvý_Mámy.tex,Y,Olympic,Slzy Tvý Mámy,0
 Stitches,songs/ŽŽ_YbokemSongs/Stitches.tex,Y,Shawn Mendes,Stitches,3
@@ -224,7 +238,6 @@ Sweet_Home_Alabama,songs/ŽŽ_YbokemSongs/Sweet_Home_Alabama.tex,Y,Lynyrd Skynyr
 Take_On_Me,songs/ŽŽ_YbokemSongs/Take_On_Me.tex,Y,a-ha,,0
 Thinking_Out_Loud,songs/ŽŽ_YbokemSongs/Thinking_Out_Loud.tex,Y,Ed Sheeran,Thinking Out Loud,2
 Voda_Živá,songs/ŽŽ_YbokemSongs/Voda_Živá.tex,Y,Aneta Langerová,,0
-Vymlácený_Entry,songs/ŽŽ_YbokemSongs/Vymlácený_Entry.tex,Y,Pokáč,Vymlácený Entry,4
 Waterloo,songs/ŽŽ_YbokemSongs/Waterloo.tex,Y,ABBA,Waterloo,2
 When_Youre_Gone,songs/ŽŽ_YbokemSongs/When_Youre_Gone.tex,Y,Bryan Adams,When Youre Gone,0
 Wild_World,songs/ŽŽ_YbokemSongs/Wild_World.tex,Y,Cat Stevens (Yusuf Islam),,0
