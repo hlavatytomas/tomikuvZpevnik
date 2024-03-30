@@ -31,6 +31,7 @@ def home(request):
 				template = loader.get_template('index.html')
 				songsDir = '../songs/'
 				songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+				songBookDb = songBookDb.sort_values("name")
 				songs = ''
 				for _,row in songBookDb.iterrows():
 					songName = row["name"]
@@ -47,6 +48,7 @@ def home(request):
 			template = loader.get_template('index.html')
 			songsDir = '../songs/'
 			songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+			songBookDb = songBookDb.sort_values("name")
 			songs = ''
 			for _,row in songBookDb.iterrows():
 				songName = row["name"]
@@ -62,6 +64,7 @@ def home(request):
 		template = loader.get_template('index.html')
 		songsDir = '../songs/'
 		songBookDb = pd.read_csv(Path(songsDir).joinpath("00_songdb.csv"),encoding="utf-8")
+		songBookDb = songBookDb.sort_values("name")
 		songs = ''
 		for _,row in songBookDb.iterrows():
 			songName = row["name"]

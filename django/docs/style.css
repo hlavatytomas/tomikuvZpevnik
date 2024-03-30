@@ -14,6 +14,22 @@ body {
     color:var(--text1)
 }
 
+.search{
+    text-align: center;
+    margin-left: min(60px, 5%);
+    margin-right: min(60px, 5%);
+    margin-bottom: 20px;
+}
+
+#searchInput{
+    border-radius: 2px;
+    border: 2px solid var(--accent1);
+    width:100%;
+    max-width: 300px;
+    padding: 8px;
+    font-size:medium ;
+}
+
 .chord { 
     position: relative;
  }

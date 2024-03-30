@@ -1,6 +1,8 @@
 window.onload = fillDropdown;
 
 var list;
+var owner_filter;
+var string_filter = "";
 
 function onlyUnique(value, index, array) {
     return array.indexOf(value) === index;
@@ -13,6 +15,7 @@ function fillDropdown() {
         owners.push(list[i].getAttribute("owner"));
     }
     var unique = owners.filter(onlyUnique);
+    owner_filter = new Set(unique);
     document.getElementsByClassName("items")[0].innerHTML = "";
     unique.forEach(element => {
         document.getElementsByClassName("items")[0].innerHTML += '<li><input type="checkbox" onchange="toggleVisibility(this,'+"'"+element+"'"+')" checked/>' + element + '</li>'
@@ -24,21 +27,33 @@ function fillDropdown() {
         else
             checkList.classList.add('visible');
     }
-
+    document.getElementById('searchInput').addEventListener('input',search);
 }
 
 
 function toggleVisibility(obj,owner) {
-    var owned = [...list].filter((value, index, array) => value.getAttribute("owner") == owner)
     if(obj.checked){
-        owned.forEach(song => {
-            song.setAttribute("style","")
-        });
+        owner_filter.add(owner);
     }
     else {
-        owned.forEach(song => {
-            song.setAttribute("style", "display:none;")
-        });
+        owner_filter.delete(owner);
     }
+    refreshFilter();
 }
 
+
+function search(){
+    string_filter = this.value.toLowerCase();
+    refreshFilter();
+}
+
+function refreshFilter() {
+    list.forEach(function(item) {
+        var content = item.textContent.toLowerCase();
+        if (content.includes(string_filter) && owner_filter.has(item.getAttribute("owner"))) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+    });
+}
